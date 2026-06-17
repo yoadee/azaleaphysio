@@ -127,14 +127,18 @@ export default function InsurancePage() {
             <p className="font-sans text-[16px] text-text leading-[1.75] mb-5">
               We direct-bill most major extended health insurers. We submit the claim at the desk and you pay only what your plan does not cover, rather than the full fee followed by a wait for reimbursement.
             </p>
-            <p className="font-sans text-[16px] text-muted leading-[1.75] mb-6">
+            <p className="font-sans text-[16px] text-muted leading-[1.75] mb-8">
               Coverage varies by policy. Some plans need a doctor’s referral to reimburse, and most cap the number of visits or dollar amount per year. We tell you what your plan returns before you commit to a course of treatment. If we cannot direct-bill your insurer, we give you a receipt formatted for an easy claim.
             </p>
-            <div className="flex flex-wrap gap-x-7 gap-y-2 pt-2">
+            <h3 className="font-sans text-[11px] uppercase tracking-[0.14em] text-muted mb-5">Plans we direct-bill</h3>
+            <ul className="list-none grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-2.5">
               {insurers.map((name) => (
-                <span key={name} className="font-sans text-[14px] font-medium text-muted">{name}</span>
+                <li key={name} className="font-sans text-[14px] text-text leading-[1.4]">{name}</li>
               ))}
-            </div>
+            </ul>
+            <p className="font-sans text-[14px] text-muted leading-[1.7] mt-6">
+              Plus ICBC and WorkSafeBC, and a range of union and association benefit plans. If you do not see yours, call us and we will check.
+            </p>
           </div>
           <div className="reveal">
             <h2 className="font-display italic text-[clamp(1.6rem,3vw,2.25rem)] font-light tracking-[-0.02em] text-text mb-5">Pricing</h2>

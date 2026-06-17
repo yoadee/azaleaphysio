@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SITE, insurers } from '@/lib/clinic'
+import { SITE, insurersFeatured } from '@/lib/clinic'
 
 const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Do you direct-bill my insurance?',
-    a: 'Yes. We direct-bill ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, and Desjardins, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
+    a: 'Yes. We direct-bill ICBC, WorkSafeBC, and most major extended health and benefit plans, including Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, Desjardins and Beneva. You pay only the portion your plan does not cover, and our insurance page lists every provider we bill.',
   },
   {
     q: 'What happens at my first visit?',
@@ -182,11 +182,17 @@ export default function Home() {
             Direct billing accepted from
           </p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-            {insurers.map((name) => (
+            {insurersFeatured.map((name) => (
               <span key={name} className="font-sans text-[14px] font-medium text-muted whitespace-nowrap">
                 {name}
               </span>
             ))}
+            <Link
+              href="/insurance"
+              className="font-sans text-[14px] font-medium text-text hover:text-rose-dark no-underline transition-colors whitespace-nowrap"
+            >
+              and many more →
+            </Link>
           </div>
         </div>
       </section>

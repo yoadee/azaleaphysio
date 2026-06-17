@@ -74,15 +74,57 @@ export const locations: Location[] = [
   },
 ]
 
+// Government claims billed directly (auto accident + workplace injury). Handled
+// separately from extended health, and each has its own section on /insurance.
+export const governmentBilling = ['ICBC', 'WorkSafeBC']
+
+// Full extended-health and benefit-plan list we direct-bill (pulled from the
+// clinic's billing network / Telus eClaims). Beyond these, a range of union and
+// association benefit plans are also accepted.
 export const insurers = [
+  'Pacific Blue Cross',
+  'Sun Life',
+  'Manulife',
+  'Canada Life',
+  'Green Shield Canada',
+  'Desjardins Insurance',
+  'iA Financial Group',
+  'Beneva',
+  'Equitable Life of Canada',
+  'ClaimSecure',
+  'GMS',
+  'Johnson',
+  'Johnston Group',
+  'Coughlin & Associates',
+  'Cowan',
+  'D.A. Townley',
+  'First Canadian',
+  'GroupHEALTH',
+  'GroupSource',
+  'Manion',
+  'Maximum Benefit',
+  'People Corporation',
+  'RWAM',
+  'Simply Benefits',
+  'Union Benefits',
+  'BPA',
+  'CINUP',
+  'Chambers of Commerce Group Insurance Plan',
+  'Public Service Health Care Plan',
+  'UV Insurance',
+]
+
+// Curated, recognizable subset for the compact home-page billing strip.
+export const insurersFeatured = [
   'ICBC',
   'WorkSafeBC',
   'Pacific Blue Cross',
   'Sun Life',
   'Manulife',
   'Canada Life',
-  'Green Shield',
+  'Green Shield Canada',
   'Desjardins',
+  'Beneva',
 ]
 
 export type Service = {
@@ -449,7 +491,7 @@ export const faqs: Faq[] = [
   {
     category: 'insurance',
     q: 'Do you direct-bill my insurance?',
-    a: 'Yes. We direct-bill ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, and Desjardins, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
+    a: 'Yes. We direct-bill ICBC, WorkSafeBC, and most major extended health and benefit plans, including Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, Desjardins and Beneva. You pay only the portion your plan does not cover, and our insurance page lists every provider we bill.',
   },
   {
     category: 'treatment',
