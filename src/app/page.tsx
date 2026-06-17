@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SITE } from '@/lib/clinic'
+import { SITE, insurers } from '@/lib/clinic'
 
 const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
@@ -32,7 +32,7 @@ const conditions = [
 ]
 
 const team = [
-  { name: 'Mary Ghoroghi', role: 'Registered Physiotherapist, Owner', img: '/images/existing/team-Mary-Gheissari.jpg', href: '/team/mary-ghoroghi' },
+  { name: 'Mary Ghoroghi', role: 'Registered Physiotherapist', img: '/images/existing/team-Mary-Gheissari.jpg', href: '/team/mary-ghoroghi' },
   { name: 'Braedan Lalor', role: 'Physiotherapist', img: '/images/existing/team-Braedan.jpg', href: '/team/braedan-lalor' },
   { name: 'Mehdi Tafreshi', role: 'Osteopath', img: '/images/existing/team-mehdi-tafreshi.jpg', href: '/team/mehdi-tafreshi' },
   { name: 'Noushin Nouri', role: 'Registered Physiotherapist', img: '/images/existing/team-Noushin.jpg', href: '/team/noushin-nouri' },
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: 'Do you direct-bill my insurance?',
-    a: 'Yes. We bill ICBC, WorkSafeBC, and the major extended health plans directly, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
+    a: 'Yes. We direct-bill ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, and Desjardins, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
   },
   {
     q: 'What happens at my first visit?',
@@ -182,7 +182,7 @@ export default function Home() {
             Direct billing accepted from
           </p>
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-            {['ICBC', 'WorkSafeBC', 'Pacific Blue Cross', 'Sun Life', 'Manulife', 'Canada Life', 'Green Shield', 'Desjardins'].map((name) => (
+            {insurers.map((name) => (
               <span key={name} className="font-sans text-[14px] font-medium text-muted whitespace-nowrap">
                 {name}
               </span>

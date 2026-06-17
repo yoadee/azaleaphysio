@@ -313,7 +313,7 @@ export const team: Practitioner[] = [
   {
     slug: 'mary-ghoroghi',
     name: 'Mary Ghoroghi',
-    role: 'Registered Physiotherapist, Owner',
+    role: 'Registered Physiotherapist',
     credentials: 'Registered Physiotherapist (MPT), CMA, MCPA',
     img: '/images/existing/team-Mary-Gheissari.jpg',
     languages: ['English', 'Farsi'],
@@ -449,7 +449,7 @@ export const faqs: Faq[] = [
   {
     category: 'insurance',
     q: 'Do you direct-bill my insurance?',
-    a: 'Yes. We bill ICBC, WorkSafeBC, and the major extended health plans directly, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
+    a: 'Yes. We direct-bill ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, and Desjardins, so you pay only the portion your plan does not cover, rather than the full fee followed by a wait for reimbursement.',
   },
   {
     category: 'treatment',
