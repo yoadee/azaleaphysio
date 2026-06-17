@@ -80,7 +80,7 @@ The automated **accesslint** audit could not run in this environment (the CDP/Ch
 4. **Sanity CORS:** add the production URL to allowed origins.
 5. **Booking system:** DONE (ClinicMaster wired). Remaining: confirm the portal handles both locations correctly, and wire the funnel events in `src/lib/analytics.ts`.
 6. **Verify Google rating** (currently ★4.6 · 75+) in Google Business.
-7. **Real photography:** hero is generated; About section is a styled placeholder; 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Azam Hosseini) use initials placeholders pending headshots.
+7. **Real photography:** interim AI-generated mood imagery now in place (Higgsfield nano-banana, cohesive warm-stone/oak editorial style, no people): About section interior, plus one image per service page (`public/images/generated/services/<slug>.jpg`). Two alternate hero options saved (`hero-option-1.jpg`, `hero-option-2.jpg`); current hero unchanged pending a pick. All to be swapped for real clinic photography before launch. 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Azam Hosseini) still use initials placeholders pending real headshots (no generated faces, by design).
 8. **Enter Sanity content** then switch pages from `src/lib/clinic.ts` to GROQ.
 
 ---
