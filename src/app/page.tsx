@@ -270,19 +270,14 @@ export default function Home() {
       {/* ─── 6. About ────────────────────────────────────────── */}
       <section className="bg-dark">
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-[42fr_58fr]">
-          <div
-            className="relative min-h-[340px] md:min-h-0 overflow-hidden"
-            style={{ background: 'rgba(237,233,228,0.05)' }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{ background: 'linear-gradient(135deg, rgba(237,233,228,0.07) 0%, transparent 55%)' }}
+          <div className="relative min-h-[360px] md:min-h-0 overflow-hidden">
+            <Image
+              src="/images/generated/clinic-about.jpg"
+              alt="A calm, daylit treatment room in warm wood and stone tones, with coastal trees through the window"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 42vw"
             />
-            <div className="absolute inset-x-0 bottom-0 p-8">
-              <p className="font-sans text-[10px] tracking-[0.18em] uppercase text-dark-text/35">
-                Clinic photography in progress
-              </p>
-            </div>
           </div>
           <div className="px-6 sm:px-10 md:px-14 py-20 md:py-24 flex flex-col justify-center">
             <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-dark-text mb-8 reveal">
