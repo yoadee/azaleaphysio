@@ -11,6 +11,7 @@
   "dependencies": {
     "@sanity/client": "^7.22.1",
     "@sanity/image-url": "^2.1.1",
+    "@sanity/vision": "^5.31.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.20.0",
     "next": "16.2.9",
@@ -18,7 +19,9 @@
     "next-sitemap": "^4.2.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "sanity": "^5.31.1",
     "schema-dts": "^2.0.0",
+    "styled-components": "^6.4.2",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {

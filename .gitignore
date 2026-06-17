@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local visual-check helpers (transient, root only — keeps public/ assets tracked)
+/*.png
+/shot.mjs
+/measure.mjs
+
+# internal design wireframes — not for the public deploy
+public/wireframe-*.html

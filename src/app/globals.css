@@ -1,26 +1,100 @@
+/* Satoshi — Fontshare (not in next/font, loaded via CSS).
+   Must precede @import "tailwindcss" — CSS requires all @import before other rules,
+   and the Tailwind import expands into rules. */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ─── Brand accents ─────────────────────── */
+  --color-rose:       #C97B8A;   /* buttons only — max 4 per page */
+  --color-rose-dark:  #A05A6A;   /* rose hover */
+  --color-gold:       #C4973A;   /* stats + citations on dark bg */
+
+  /* ─── Light surfaces ────────────────────── */
+  --color-bg:         #FFFFFF;
+  --color-stone:      #EDEAE6;   /* hero panel, team bg, location cards */
+  --color-border:     #DDD9D4;
+  --color-text:       #1C1917;
+  --color-muted:      #706B66;
+
+  /* ─── Dark sections ─────────────────────── */
+  --color-dark:       #1C1917;
+  --color-dark-text:  #EDE9E4;
+  --color-footer:     #131110;
+
+  /* ─── Typography ────────────────────────── */
+  /* --font-spectral is injected by next/font on <html> */
+  --font-display: var(--font-spectral), Georgia, serif;
+  --font-sans:    'Satoshi', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─── Base resets ───────────────────────────── */
+/* Must live in @layer base so they do NOT override Tailwind's "@layer utilities".
+   Unlayered rules win the cascade over layered ones — an unlayered universal
+   "padding: 0" reset would silently nullify every padding/margin utility sitewide. */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    /* No -webkit-font-smoothing: antialiased. On Windows it thins type and reads
+       as washed/blurry; default ClearType subpixel rendering is crisper. */
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Display headings: balanced line wraps, no orphans. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ─── Focus — WCAG AA ───────────────────────── */
+:focus-visible {
+  outline: 1.5px solid var(--color-rose);
+  outline-offset: 3px;
+}
+
+/* ─── Scroll-reveal ─────────────────────────────────────────────
+   Content is visible by default. The hidden start state applies ONLY when JS is
+   active (html.js, set by an inline script before paint), so SSR, no-JS, crawlers
+   and headless renderers always get fully visible content — the reveal is pure
+   enhancement, never a visibility gate.
+   The revealed state uses `transform: none` (not translateY(0)) so the element
+   leaves the GPU compositing layer and text rasterizes crisply. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
