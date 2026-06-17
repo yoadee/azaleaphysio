@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
-import { locations } from '@/lib/clinic'
+import { locations, SITE } from '@/lib/clinic'
 
 export const metadata: Metadata = {
   title: 'Locations & Hours',
@@ -44,10 +44,12 @@ export default function LocationsPage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                 <a
-                  href={`tel:${loc.tel}`}
+                  href={SITE.booking}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-rose hover:bg-rose-dark text-white font-sans text-[11px] font-bold tracking-[0.1em] uppercase px-7 py-3.5 transition-colors duration-200 min-h-[44px] no-underline"
                 >
-                  Book at this clinic
+                  Book online
                 </a>
                 <a
                   href={loc.maps}

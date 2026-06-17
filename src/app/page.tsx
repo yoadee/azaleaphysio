@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SITE } from '@/lib/clinic'
 
 const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
@@ -100,12 +101,22 @@ export default function Home() {
             Twelve practitioners across ten disciplines, all under one roof in West Vancouver, so your whole recovery happens in one place.
           </p>
           <div className="flex flex-col gap-5 mb-10">
-            <a
-              href="tel:+16042813345"
-              className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.1em] uppercase px-8 py-4 transition-colors duration-200 self-start min-h-[48px]"
-            >
-              Book an appointment
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href={SITE.booking}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.1em] uppercase px-8 py-4 transition-colors duration-200 min-h-[48px]"
+              >
+                Book online
+              </a>
+              <a
+                href="tel:+16042813345"
+                className="inline-flex items-center font-sans text-[12px] font-semibold tracking-[0.08em] uppercase text-text hover:text-rose-dark px-4 py-4 transition-colors duration-200 min-h-[48px]"
+              >
+                or call (604) 281-3345
+              </a>
+            </div>
             <p className="font-sans text-[13px] text-muted leading-relaxed max-w-[400px]">
               No referral needed. Direct billing. Free parking at both clinics.
             </p>
@@ -436,10 +447,12 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a
-                    href={`tel:${loc.tel}`}
+                    href={SITE.booking}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-rose hover:bg-rose-dark text-white font-sans text-[11px] font-bold tracking-[0.1em] uppercase px-7 py-3.5 transition-colors duration-200 min-h-[44px] no-underline"
                   >
-                    Book at this clinic
+                    Book online
                   </a>
                   <a
                     href={loc.maps}
@@ -464,13 +477,15 @@ export default function Home() {
             Let&#8217;s find out what is actually wrong.
           </h2>
           <p className="font-sans text-[16px] text-dark-text/80 leading-[1.7] mb-10 max-w-[480px] mx-auto">
-            No referral, no insurance bill to pay upfront, and usually an appointment inside the week. Call the clinic closest to you.
+            No referral, no insurance bill to pay upfront, and usually an appointment inside the week. Book online, or call the clinic closest to you.
           </p>
           <a
-            href="tel:+16042813345"
+            href={SITE.booking}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.12em] uppercase px-12 py-5 transition-colors duration-200 mb-9 min-h-[52px] no-underline"
           >
-            Book an appointment
+            Book online
           </a>
           <p className="font-sans text-[13px] text-dark-text/65">
             16th Street <a href="tel:+16042813345" className="text-dark-text font-medium no-underline hover:text-gold transition-colors">(604) 281-3345</a>

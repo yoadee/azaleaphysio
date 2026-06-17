@@ -6,7 +6,7 @@ import RevealObserver from '@/components/RevealObserver'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Portrait from '@/components/Portrait'
 import JsonLd from '@/components/JsonLd'
-import { team, practitionerBySlug, locations } from '@/lib/clinic'
+import { team, practitionerBySlug, SITE } from '@/lib/clinic'
 import { practitionerSchema } from '@/lib/schema'
 
 export function generateStaticParams() {
@@ -49,7 +49,9 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
               <p className="font-sans text-[14px] text-muted mb-8">{p.credentials}</p>
               <p className="font-sans text-[17px] text-text leading-[1.75] mb-10 max-w-[560px]">{p.bio}</p>
               <a
-                href={`tel:${locations[0].tel}`}
+                href={SITE.booking}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.1em] uppercase px-8 py-4 transition-colors duration-200 min-h-[48px] no-underline"
               >
                 Book with {p.name.replace(/^Dr\.?\s+/, '').split(' ')[0]}

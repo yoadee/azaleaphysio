@@ -16,6 +16,13 @@ export const SITE = {
   googleRating: 4.6,
   reviewCount: '75+',
   tagline: 'Multidisciplinary physiotherapy, rooted on the North Shore since 2011.',
+  // Live ClinicMaster online booking portal (handles both locations + practitioner choice).
+  booking: 'https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA',
+  social: [
+    'https://www.facebook.com/AzaleaPhysio/',
+    'https://www.instagram.com/azaleaphysiowestvancouver/',
+    'https://twitter.com/azaleaphysio',
+  ],
 }
 
 export type Location = {
@@ -26,6 +33,7 @@ export type Location = {
   postal: string
   tel: string
   telLabel: string
+  fax: string
   hours: { days: string; time: string }[]
   maps: string
   area: string
@@ -40,6 +48,7 @@ export const locations: Location[] = [
     postal: 'V7V 3R8',
     tel: '+16042813345',
     telLabel: '(604) 281-3345',
+    fax: '(604) 281-3346',
     hours: [
       { days: 'Mon to Fri', time: '8am to 7pm' },
       { days: 'Saturday', time: '9am to 3pm' },
@@ -55,6 +64,7 @@ export const locations: Location[] = [
     postal: 'V6B 5C6',
     tel: '+16042813122',
     telLabel: '(604) 281-3122',
+    fax: '(604) 281-3123',
     hours: [
       { days: 'Mon to Fri', time: '8:30am to 7pm' },
       { days: 'Saturday', time: '9am to 3pm' },
@@ -304,7 +314,7 @@ export const team: Practitioner[] = [
     slug: 'mary-ghoroghi',
     name: 'Mary Ghoroghi',
     role: 'Registered Physiotherapist, Owner',
-    credentials: 'Registered Physiotherapist, CPTBC',
+    credentials: 'Registered Physiotherapist (MPT), CMA, MCPA',
     img: '/images/existing/team-Mary-Gheissari.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Complex and chronic pain', 'Post-surgical rehab', 'Manual therapy'],
@@ -314,7 +324,7 @@ export const team: Practitioner[] = [
     slug: 'braedan-lalor',
     name: 'Braedan Lalor',
     role: 'Physiotherapist',
-    credentials: 'Registered Physiotherapist, CPTBC',
+    credentials: 'Registered Physiotherapist (PT)',
     img: '/images/existing/team-Braedan.jpg',
     languages: ['English'],
     focus: ['Sports injuries', 'Manual therapy', 'Return to activity'],
@@ -324,7 +334,7 @@ export const team: Practitioner[] = [
     slug: 'mehdi-tafreshi',
     name: 'Mehdi Tafreshi',
     role: 'Osteopath',
-    credentials: 'Osteopathic Manual Practitioner',
+    credentials: 'Osteopath, D.O.M.P.',
     img: '/images/existing/team-mehdi-tafreshi.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Whole-body manual therapy', 'Chronic stiffness', 'Postural pain'],
@@ -334,7 +344,7 @@ export const team: Practitioner[] = [
     slug: 'noushin-nouri',
     name: 'Noushin Nouri',
     role: 'Registered Physiotherapist',
-    credentials: 'Registered Physiotherapist, CPTBC',
+    credentials: 'Registered Physiotherapist',
     img: '/images/existing/team-Noushin.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Orthopaedic rehab', 'Neck and back pain', 'ICBC recovery'],
@@ -344,7 +354,7 @@ export const team: Practitioner[] = [
     slug: 'ali-shafiei',
     name: 'Ali Shafiei',
     role: 'Sports & MSK Physiotherapy',
-    credentials: 'Registered Physiotherapist, CPTBC',
+    credentials: 'Registered Physiotherapist, Clinical Specialist',
     img: '/images/existing/team-Ali-Shafiei.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Sports and musculoskeletal injuries', 'Neurological rehab', 'Performance'],
@@ -354,7 +364,7 @@ export const team: Practitioner[] = [
     slug: 'asal',
     name: 'Asal',
     role: 'CBT & Psychotherapy',
-    credentials: 'Registered Clinical Counsellor',
+    credentials: 'Counselling Therapist (CBT, ACT, Mindfulness)',
     img: '/images/existing/team-asal.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Cognitive behavioural therapy', 'Pain and stress', 'Recovery support'],
@@ -364,7 +374,7 @@ export const team: Practitioner[] = [
     slug: 'faranak-shekoohi',
     name: 'Faranak Shekoohi',
     role: 'Kinesiologist',
-    credentials: 'Registered Kinesiologist, BCAK',
+    credentials: 'Practicing Kinesiologist',
     img: '/images/existing/team-Faranak-Shekoohi.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Active rehab', 'ICBC programs', 'Strength rebuilding'],
@@ -378,13 +388,13 @@ export const team: Practitioner[] = [
     img: '/images/existing/team-kambiz.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Pain relief', 'Tension and headaches', 'Integrative care'],
-    bio: 'Kambiz brings a medical background to his acupuncture practice, treating pain, tension, and headaches in a way that integrates with the physiotherapy plans running alongside it.',
+    bio: 'Kambiz treats pain, tension, and headaches with acupuncture, integrating it with the physiotherapy plans running alongside it so the two reinforce each other.',
   },
   {
     slug: 'sirus-vakilian',
     name: 'Dr. Sirus Vakilian',
     role: 'Kinesiology',
-    credentials: 'Kinesiologist',
+    credentials: 'Kinesiologist, BSc',
     languages: ['English', 'Farsi'],
     focus: ['Exercise prescription', 'Movement assessment', 'Conditioning'],
     bio: 'Sirus works on the conditioning side of recovery, assessing movement and prescribing exercise that rebuilds capacity safely. He helps patients close the gap between out of pain and back to full activity.',
@@ -393,7 +403,7 @@ export const team: Practitioner[] = [
     slug: 'ramin-keshmiri',
     name: 'Ramin Keshmiri',
     role: 'Acupuncture',
-    credentials: 'Registered Acupuncturist',
+    credentials: 'Registered Acupuncturist, B.Sc., M.Sc.',
     languages: ['English', 'Farsi'],
     focus: ['Acupuncture', 'Chronic pain', 'Stress and sleep'],
     bio: 'Ramin treats chronic pain, stress, and sleep through acupuncture, often as one part of a broader plan that the rest of the team contributes to.',
@@ -401,8 +411,8 @@ export const team: Practitioner[] = [
   {
     slug: 'azam-hosseini',
     name: 'Dr. Azam Hosseini',
-    role: 'Psychiatry',
-    credentials: 'Psychiatrist, MD',
+    role: 'Psychiatry & Counselling',
+    credentials: 'Psychiatrist, Registered Therapeutic Counsellor (RTC)',
     languages: ['English', 'Farsi'],
     focus: ['Psychiatric assessment', 'Mental health', 'Recovery and wellbeing'],
     bio: 'Dr. Hosseini provides psychiatric assessment and support for patients whose health and recovery have a mental health dimension, completing the range of care available under one roof.',
@@ -411,7 +421,7 @@ export const team: Practitioner[] = [
     slug: 'melina-raad',
     name: 'Melina Raad',
     role: 'Office Manager',
-    credentials: 'Clinic Office Manager',
+    credentials: 'Office Manager, CMA',
     img: '/images/existing/team-Melina-Raad.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Booking and scheduling', 'Insurance and billing', 'Patient coordination'],

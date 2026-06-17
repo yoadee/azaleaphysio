@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { SITE } from '@/lib/clinic'
 
 const navLinks = [
   { href: '/services', label: 'Services' },
@@ -69,7 +70,9 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="tel:+16042813345"
+            href={SITE.booking}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-rose hover:bg-rose-dark text-white text-[11px] font-bold tracking-[0.1em] uppercase px-6 py-[10px] transition-colors duration-200"
           >
             Book Now
@@ -130,7 +133,9 @@ export default function Nav() {
 
           <div className="mt-auto">
             <a
-              href="tel:+16042813345"
+              href={SITE.booking}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="inline-block bg-rose hover:bg-rose-dark text-white text-[12px] font-bold tracking-[0.1em] uppercase px-10 py-4 transition-colors duration-200 min-h-[44px]"
             >

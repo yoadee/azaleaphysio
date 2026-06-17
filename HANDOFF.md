@@ -51,7 +51,7 @@ All 12 phases of the plan are built and the production build passes (`next build
 ## Architecture decisions (important)
 
 - **Content source = `src/lib/clinic.ts`** (local TypeScript), not Sanity yet. Pages render real content from this module so the site works as an MVP without manual CMS entry. The 8 Sanity schemas in `src/sanity/schemaTypes/` mirror these shapes. **Migration path:** once content is entered in the Studio, swap the `src/lib/clinic.ts` reads for GROQ queries of the same fields.
-- **Booking = placeholder.** Booking system unconfirmed (Jane App assumed). All CTAs are `tel:` click-to-call. `/book` is a phone-first page with a `// TODO` for the embed. `src/lib/analytics.ts` has the booking-funnel event taxonomy ready to wire.
+- **Booking = WIRED (ClinicMaster).** Live portal `https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA` (set in `SITE.booking` in `src/lib/clinic.ts`). All primary "Book online" CTAs open it in a new tab; phone numbers remain as the call option. `/book` leads with the portal. Pulled from the old live site along with: corrected practitioner credentials, fax numbers, and Instagram/Twitter (now in footer + JSON-LD sameAs + a ReserveAction). `src/lib/analytics.ts` has the booking-funnel event taxonomy ready to wire.
 - **Analytics = placeholder.** `src/components/Analytics.tsx` loads GA4 only if `NEXT_PUBLIC_GA_ID` is set (safe no-op until then). Vercel Analytics can be toggled in the dashboard.
 
 ---
@@ -78,7 +78,7 @@ The automated **accesslint** audit could not run in this environment (the CDP/Ch
 2. **Deploy:** push to GitHub (auto-deploys via Vercel) or `vercel --prod`. Build already passes locally.
 3. **Vercel env vars:** set `NEXT_PUBLIC_GA_ID` (when GA is created) and confirm Sanity vars.
 4. **Sanity CORS:** add the production URL to allowed origins.
-5. **Booking system:** confirm Jane App (or other); wire `/book` + the `tel:` CTAs + funnel events.
+5. **Booking system:** DONE (ClinicMaster wired). Remaining: confirm the portal handles both locations correctly, and wire the funnel events in `src/lib/analytics.ts`.
 6. **Verify Google rating** (currently ★4.6 · 75+) in Google Business.
 7. **Real photography:** hero is generated; About section is a styled placeholder; 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Azam Hosseini) use initials placeholders pending headshots.
 8. **Enter Sanity content** then switch pages from `src/lib/clinic.ts` to GROQ.

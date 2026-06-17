@@ -112,7 +112,22 @@ const localBusinessSchema = {
   ],
   sameAs: [
     "https://www.facebook.com/AzaleaPhysio/",
+    "https://www.instagram.com/azaleaphysiowestvancouver/",
+    "https://twitter.com/azaleaphysio",
   ],
+  potentialAction: {
+    "@type": "ReserveAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA",
+      inLanguage: "en-CA",
+      actionPlatform: [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+      ],
+    },
+    result: { "@type": "Reservation", name: "Physiotherapy appointment" },
+  },
 };
 
 export default function RootLayout({

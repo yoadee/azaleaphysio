@@ -1,4 +1,4 @@
-import { locations } from '@/lib/clinic'
+import { SITE, locations } from '@/lib/clinic'
 
 /**
  * Reusable dark booking band for the foot of inner pages. Single primary CTA
@@ -21,11 +21,14 @@ export default function BookCta({
           {body}
         </p>
         <a
-          href={`tel:${locations[0].tel}`}
-          className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.12em] uppercase px-12 py-5 transition-colors duration-200 mb-9 min-h-[52px] no-underline"
+          href={SITE.booking}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center bg-rose hover:bg-rose-dark text-white font-sans text-[12px] font-bold tracking-[0.12em] uppercase px-12 py-5 transition-colors duration-200 mb-6 min-h-[52px] no-underline"
         >
-          Book an appointment
+          Book online
         </a>
+        <p className="font-sans text-[13px] text-dark-text/65 mb-2">or call the clinic closest to you</p>
         <p className="font-sans text-[13px] text-dark-text/65">
           {locations.map((loc, i) => (
             <span key={loc.slug}>

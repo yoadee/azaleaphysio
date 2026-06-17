@@ -53,6 +53,16 @@ export default function Footer() {
                 (604) 281-3122 · Ocean Walk
               </a>
             </div>
+            <div className="flex gap-5 mt-6">
+              <a href="https://www.instagram.com/azaleaphysiowestvancouver/" target="_blank" rel="noopener noreferrer"
+                className="text-[12px] tracking-[0.06em] text-dark-text/60 hover:text-dark-text no-underline transition-colors">
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/AzaleaPhysio/" target="_blank" rel="noopener noreferrer"
+                className="text-[12px] tracking-[0.06em] text-dark-text/60 hover:text-dark-text no-underline transition-colors">
+                Facebook
+              </a>
+            </div>
           </div>
 
           {/* Services */}
