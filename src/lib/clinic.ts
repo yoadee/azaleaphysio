@@ -806,24 +806,45 @@ export type Testimonial = {
   service?: string
 }
 
+// Real 5-star Google reviews (pulled from the clinic's Google Business listing).
+// Excerpted to the strongest passage in the reviewer's own words; names as shown
+// publicly on Google. `detail` summarizes the context from each review.
 export const testimonials: Testimonial[] = [
   {
-    quote: 'Mary found what three other physiotherapists had missed and had me back on the slopes in six weeks. She went looking for the cause, not just the symptom.',
-    name: 'Marcus L.',
-    detail: 'ski instructor, North Vancouver',
+    quote: 'I visited Azalea with my chronic pain. She was able to diagnose the cause, and with the correct treatments my 5-year lasting pain was gone. Her knowledge and experience are outstanding.',
+    name: 'Tomáš Majzel',
+    detail: '5-year chronic pain, resolved',
     service: 'physiotherapy',
   },
   {
-    quote: 'After my accident I had no idea where to start. They handled the ICBC paperwork, booked me in the same week, and I never paid a cent upfront.',
-    name: 'Sahar R.',
-    detail: 'ICBC patient, West Vancouver',
+    quote: 'I struggled with a nagging ankle injury that had significantly decreased my mobility. Mary worked with me to significantly reduce my pain, and gave me exercises to improve my ankle strength and mobility.',
+    name: 'Steven Merriman',
+    detail: 'ankle injury',
     service: 'physiotherapy',
   },
   {
-    quote: 'Being able to see the physiotherapist and the kinesiologist in the same building, working from the same notes, made my knee recovery far smoother than last time.',
-    name: 'David K.',
-    detail: 'post-surgical knee rehab',
+    quote: 'I had been to several clinics for my torn meniscus, and after three sessions I was able to walk and put more weight on my knee. The physios were very professional and knowledgeable.',
+    name: 'Kiana Shahbazi',
+    detail: 'torn meniscus recovery',
+    service: 'sports-injury',
+  },
+  {
+    quote: 'Braedan was a great help in the physiotherapy process for my son and incredibly helpful in his recovery. He has the skill to bring a physically and mentally injured athlete back to sport, strong and confident.',
+    name: 'Maryam Zinati',
+    detail: 'son’s sports recovery',
+    service: 'sports-injury',
+  },
+  {
+    quote: 'Great staff and professional practitioners. Braedan is an incredible physiotherapist, and Faranak is very knowledgeable and works to strengthen your muscles without pain. Thank you all.',
+    name: 'Lili Molavi',
+    detail: 'physiotherapy and kinesiology',
     service: 'kinesiology',
+  },
+  {
+    quote: 'This is one of the best physical therapy clinics you might find. Mary knows many techniques that help you long term and short term, and the clinic is beautiful and clean.',
+    name: 'Mahsoo Naderi',
+    detail: 'physiotherapy',
+    service: 'physiotherapy',
   },
 ]
 

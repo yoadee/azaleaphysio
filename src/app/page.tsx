@@ -361,10 +361,10 @@ export default function Home() {
       <section className="bg-dark px-6 sm:px-10 md:px-14 py-28">
         <figure className="max-w-[820px] mx-auto text-center reveal">
           <blockquote className="font-display italic text-[clamp(1.6rem,3.4vw,2.25rem)] font-light leading-[1.4] text-dark-text mb-9">
-            &#8220;Mary found what three other physiotherapists had missed and had me back on the slopes in six weeks. She did not treat the symptom. She went looking for the cause.&#8221;
+            &#8220;I visited Azalea with my chronic pain. She was able to diagnose the cause, and with the correct treatments my 5-year lasting pain was gone. Her knowledge and experience are outstanding.&#8221;
           </blockquote>
           <figcaption className="font-sans text-[12px] uppercase tracking-[0.16em] text-dark-text/65">
-            Marcus L. &nbsp;·&nbsp; ski instructor, North Vancouver
+            Tomáš Majzel &nbsp;·&nbsp; Verified Google review
           </figcaption>
         </figure>
       </section>

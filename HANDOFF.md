@@ -78,7 +78,7 @@ Sections render only when their data exists, so un-enriched services degrade gra
 4. **Vercel env vars:** set `NEXT_PUBLIC_GA_ID` when GA4 is created. Confirm Sanity vars are present.
 5. **Sanity CORS:** add the production URL to allowed origins.
 6. **ClinicMaster:** confirm the portal handles both locations correctly, then wire the booking-funnel events in `src/lib/analytics.ts`.
-7. **Verify Google rating** (currently ★4.6 / 75+) in Google Business dashboard.
+7. **Google rating: 4.6 / 83** (confirmed; sitewide + aggregateRating schema). **Testimonials are now REAL** — pulled 10 verbatim 5-star Google reviews via headless Chrome (Puppeteer, `npm`) past the consent wall; 6 are wired into `clinic.ts` (tagged by service: physiotherapy, sports-injury, kinesiology) and the home testimonial uses Tomáš Majzel ("diagnose the cause... my 5-year lasting pain was gone" — on-hook). Excerpted to the reviewer's own words, names as shown publicly on Google, marked "Verified Google review". 4 more reviews are available to add (Mary/back-pain, post-surgical elbow, Amir Ahmadi cycling, Kia Latifi back pain) and per-service matched quotes can be expanded. Puppeteer kept as a devDep (also enables live-page screenshots for visual QA going forward).
 8. **Real photography:** AI-generated mood imagery is in place as interim. Swap before launch. 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Dr. Azam Hosseini) use initials placeholders -- no generated faces.
 9. **Enter Sanity content** then migrate pages from `src/lib/clinic.ts` to GROQ.
 10. **Re-run accesslint** in a working environment before launch (Chrome/CDP env was broken in earlier sessions; manual WCAG pass was done instead).
