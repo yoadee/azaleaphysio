@@ -37,6 +37,7 @@ export type BlogPost = {
   excerpt: string // meta description + index card
   targetKeyword: string // primary keyword this piece targets (internal note)
   category: BlogCategory
+  coverImage?: string // public path to a cover image (also used as the OG image)
   authorSlug: string // practitioner slug, for E-E-A-T attribution
   publishedAt: string // ISO date
   updatedAt?: string // ISO date; defaults to publishedAt

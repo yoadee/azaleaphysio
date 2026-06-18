@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
@@ -39,6 +40,17 @@ export default function AboutPage() {
           <p className="font-sans text-[18px] text-muted leading-[1.8]">
             We are not trying to be the biggest clinic on the North Shore. We are trying to be the one where your whole recovery happens in one place, handled by people who talk to each other about your case.
           </p>
+        </div>
+        <div className="max-w-[1100px] mx-auto mt-14 md:mt-16">
+          <div className="relative aspect-[16/9] overflow-hidden bg-stone reveal">
+            <Image
+              src="/about-clinic.webp"
+              alt="A calm, light-filled treatment room at Azalea Physiotherapy overlooking the water in West Vancouver"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1100px) 100vw, 1100px"
+            />
+          </div>
         </div>
       </section>
 

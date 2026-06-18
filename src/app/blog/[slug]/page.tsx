@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
@@ -35,6 +36,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: author ? [author.name] : undefined,
+      images: post.coverImage
+        ? [{ url: `${SITE.url}${post.coverImage}`, width: 1280, height: 720, alt: post.title }]
+        : undefined,
     },
   }
 }
@@ -160,6 +164,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         </div>
       </header>
+
+      {/* Cover image — matches the article column width, quiet editorial banner */}
+      {post.coverImage && (
+        <div className="bg-bg px-6 sm:px-10 md:px-14 pt-10 md:pt-12">
+          <div className="max-w-[760px] mx-auto">
+            <div className="relative aspect-[16/9] overflow-hidden bg-stone reveal">
+              <Image
+                src={post.coverImage}
+                alt=""
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 760px) 100vw, 760px"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Key takeaways — answer-first AEO panel */}
       {post.keyTakeaways.length > 0 && (

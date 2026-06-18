@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
@@ -41,19 +42,33 @@ export default function BlogPage() {
           <div className="max-w-[1100px] mx-auto">
             <Link
               href={`/blog/${featured.slug}`}
-              className="group no-underline block p-8 sm:p-10 md:p-12 reveal transition-colors hover:bg-stone"
+              className="group no-underline block reveal transition-colors hover:bg-stone"
               style={{ border: '1px solid var(--color-border)' }}
             >
-              <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-muted mb-5">
-                Latest · {featured.category}
-              </p>
-              <h2 className="font-display italic text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.1] tracking-[-0.02em] text-text mb-4 max-w-[760px] group-hover:text-rose-dark transition-colors">
-                {featured.title}
-              </h2>
-              <p className="font-sans text-[17px] text-muted leading-[1.7] max-w-[620px] mb-5">{featured.excerpt}</p>
-              <p className="font-sans text-[13px] text-muted">
-                {featuredAuthor ? `${featuredAuthor.name} · ` : ''}{featured.readingMinutes} min read
-              </p>
+              {featured.coverImage && (
+                <div className="relative aspect-[2/1] overflow-hidden bg-stone">
+                  <Image
+                    src={featured.coverImage}
+                    alt=""
+                    fill
+                    priority
+                    className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                    sizes="(max-width: 1100px) 100vw, 1100px"
+                  />
+                </div>
+              )}
+              <div className="p-8 sm:p-10 md:p-12">
+                <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-muted mb-5">
+                  Latest · {featured.category}
+                </p>
+                <h2 className="font-display italic text-[clamp(1.75rem,4vw,2.75rem)] font-light leading-[1.1] tracking-[-0.02em] text-text mb-4 max-w-[760px] group-hover:text-rose-dark transition-colors">
+                  {featured.title}
+                </h2>
+                <p className="font-sans text-[17px] text-muted leading-[1.7] max-w-[620px] mb-5">{featured.excerpt}</p>
+                <p className="font-sans text-[13px] text-muted">
+                  {featuredAuthor ? `${featuredAuthor.name} · ` : ''}{featured.readingMinutes} min read
+                </p>
+              </div>
             </Link>
           </div>
         </section>
@@ -72,16 +87,29 @@ export default function BlogPage() {
                     <Link
                       key={p.slug}
                       href={`/blog/${p.slug}`}
-                      className="group no-underline p-6 reveal transition-colors hover:bg-stone flex flex-col gap-3"
+                      className="group no-underline reveal transition-colors hover:bg-stone flex flex-col"
                       style={{ border: '1px solid var(--color-border)' }}
                     >
-                      <p className="font-display italic text-[20px] font-light text-text leading-[1.25] group-hover:translate-x-1 transition-transform duration-300">
-                        {p.title}
-                      </p>
-                      <p className="font-sans text-[14px] text-muted leading-[1.6] grow">{p.excerpt}</p>
-                      <p className="font-sans text-[12px] text-muted/80">
-                        {a ? `${a.name} · ` : ''}{p.readingMinutes} min read
-                      </p>
+                      {p.coverImage && (
+                        <div className="relative aspect-[16/10] overflow-hidden bg-stone">
+                          <Image
+                            src={p.coverImage}
+                            alt=""
+                            fill
+                            className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                          />
+                        </div>
+                      )}
+                      <div className="p-6 flex flex-col gap-3 grow">
+                        <p className="font-display italic text-[20px] font-light text-text leading-[1.25] group-hover:translate-x-1 transition-transform duration-300">
+                          {p.title}
+                        </p>
+                        <p className="font-sans text-[14px] text-muted leading-[1.6] grow">{p.excerpt}</p>
+                        <p className="font-sans text-[12px] text-muted/80">
+                          {a ? `${a.name} · ` : ''}{p.readingMinutes} min read
+                        </p>
+                      </div>
                     </Link>
                   )
                 })}
