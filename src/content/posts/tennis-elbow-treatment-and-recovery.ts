@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'tennis elbow treatment',
   category: 'Injuries & Conditions',
   authorSlug: 'braedan-lalor',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-05-21',
   readingMinutes: 6,
   keyTakeaways: [
     'Tennis elbow is an overload injury of the forearm tendon on the outer elbow, not just an injury from playing tennis.',

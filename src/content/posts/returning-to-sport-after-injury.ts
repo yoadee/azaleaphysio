@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'return to sport after injury',
   category: 'Recovery & Prevention',
   authorSlug: 'braedan-lalor',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-06-04',
   readingMinutes: 7,
   keyTakeaways: [
     'Returning to sport is a staged process built on objective criteria, not a fixed number of weeks on the calendar.',

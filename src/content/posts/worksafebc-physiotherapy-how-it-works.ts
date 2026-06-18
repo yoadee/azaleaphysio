@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'worksafebc physiotherapy',
   category: 'ICBC & Insurance',
   authorSlug: 'ali-shafiei',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-04-09',
   readingMinutes: 7,
   keyTakeaways: [
     'WorkSafeBC covers physiotherapy for accepted work-related injuries, with no doctor referral needed to start.',

@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'how long does whiplash take to heal',
   category: 'ICBC & Insurance',
   authorSlug: 'noushin-nouri',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-03-12',
   readingMinutes: 7,
   keyTakeaways: [
     'Most whiplash improves within 6 to 12 weeks when guided treatment starts in the first week or two.',

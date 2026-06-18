@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'what to do after a car accident in bc',
   category: 'ICBC & Insurance',
   authorSlug: 'noushin-nouri',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-02-25',
   readingMinutes: 8,
   keyTakeaways: [
     'After a crash in BC, check for injuries and call 911 first if anyone is hurt or the scene is unsafe.',

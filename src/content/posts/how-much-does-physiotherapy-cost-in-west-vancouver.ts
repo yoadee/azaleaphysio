@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'how much does physiotherapy cost',
   category: 'How Physiotherapy Works',
   authorSlug: 'melina-raad',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-05-14',
   readingMinutes: 5,
   keyTakeaways: [
     'A first physiotherapy assessment in West Vancouver is around $110 to $135, and follow-ups are around $90 to $110.',

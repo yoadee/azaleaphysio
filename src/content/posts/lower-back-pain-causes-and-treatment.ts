@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'lower back pain treatment',
   category: 'Injuries & Conditions',
   authorSlug: 'mary-ghoroghi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-03-04',
   readingMinutes: 8,
   keyTakeaways: [
     'Most lower back pain is mechanical and not dangerous, and the large majority settles within a few weeks.',

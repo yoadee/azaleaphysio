@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'rotator cuff vs frozen shoulder',
   category: 'Injuries & Conditions',
   authorSlug: 'ali-shafiei',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-05-07',
   readingMinutes: 7,
   keyTakeaways: [
     'A frozen shoulder progressively loses range of motion in every direction, even when someone else moves your arm.',

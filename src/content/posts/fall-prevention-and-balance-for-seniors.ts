@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'fall prevention exercises seniors',
   category: 'Recovery & Prevention',
   authorSlug: 'mary-ghoroghi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-06-10',
   readingMinutes: 8,
   keyTakeaways: [
     'Balance and strength are trainable at any age, so falls are not an inevitable part of getting older.',

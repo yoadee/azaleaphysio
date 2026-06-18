@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'persian physiotherapist vancouver',
   category: 'How Physiotherapy Works',
   authorSlug: 'noushin-nouri',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-06-15',
   readingMinutes: 5,
   keyTakeaways: [
     'Azalea offers physiotherapy and multidisciplinary care in Farsi as well as English at two West Vancouver locations.',

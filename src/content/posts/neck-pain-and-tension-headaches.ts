@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'neck pain headaches',
   category: 'Injuries & Conditions',
   authorSlug: 'mary-ghoroghi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-03-26',
   readingMinutes: 6,
   keyTakeaways: [
     'Many headaches are driven by the neck, so treating the neck often reduces the headaches that come with it.',

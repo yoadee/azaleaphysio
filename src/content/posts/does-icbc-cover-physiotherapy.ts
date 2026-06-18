@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'does icbc cover physiotherapy',
   category: 'ICBC & Insurance',
   authorSlug: 'noushin-nouri',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-02-09',
   readingMinutes: 6,
   keyTakeaways: [
     'ICBC pre-approves 25 physiotherapy visits in the first 12 weeks after a crash in BC.',

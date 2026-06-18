@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'sciatica treatment',
   category: 'Injuries & Conditions',
   authorSlug: 'noushin-nouri',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-04-23',
   readingMinutes: 7,
   keyTakeaways: [
     'Sciatica is a symptom of an irritated nerve root, not a diagnosis in itself, usually from a disc or tight structures.',

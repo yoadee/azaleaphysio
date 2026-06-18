@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'do you need a referral for physiotherapy in bc',
   category: 'How Physiotherapy Works',
   authorSlug: 'mary-ghoroghi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-02-18',
   readingMinutes: 5,
   keyTakeaways: [
     'No, you do not need a doctor referral to see a physiotherapist in British Columbia.',

@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'recovery after knee replacement',
   category: 'Injuries & Conditions',
   authorSlug: 'mary-ghoroghi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-05-28',
   readingMinutes: 7,
   keyTakeaways: [
     'Recovery after a knee replacement runs in phases over roughly a year, with the fastest gains in the first three months.',

@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'knee pain going up stairs',
   category: 'Injuries & Conditions',
   authorSlug: 'braedan-lalor',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-04-16',
   readingMinutes: 6,
   keyTakeaways: [
     'Knee pain on the stairs usually points to how the kneecap tracks, not damage inside the joint.',

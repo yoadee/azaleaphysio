@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'icbc active rehab',
   category: 'ICBC & Insurance',
   authorSlug: 'faranak-shekoohi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-03-19',
   readingMinutes: 6,
   keyTakeaways: [
     'ICBC active rehab is supervised, exercise-based recovery led by a kinesiologist after a motor vehicle crash.',

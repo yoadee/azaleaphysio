@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'first physiotherapy appointment what to expect',
   category: 'How Physiotherapy Works',
   authorSlug: 'braedan-lalor',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-04-30',
   readingMinutes: 6,
   keyTakeaways: [
     'Your first physiotherapy appointment is mostly an assessment and usually runs 45 to 60 minutes.',

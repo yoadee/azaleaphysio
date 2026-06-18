@@ -9,7 +9,7 @@ const post: BlogPost = {
   targetKeyword: 'physiotherapy vs chiropractor',
   category: 'How Physiotherapy Works',
   authorSlug: 'mehdi-tafreshi',
-  publishedAt: '2026-06-18',
+  publishedAt: '2026-04-02',
   readingMinutes: 8,
   keyTakeaways: [
     'Physiotherapists, chiropractors, and osteopaths all treat pain and movement problems through different but overlapping methods.',
