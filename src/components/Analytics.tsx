@@ -11,9 +11,10 @@ import AnalyticsEvents from './AnalyticsEvents'
  *                             Optional; add once the Ads account + conversion
  *                             action exist on the production domain.
  *
- * `send_page_view: false` — the <AnalyticsEvents/> client component sends every
- * pageview (including App Router client-side navigations, which gtag does not
- * detect on its own). Without this the first load would be double-counted.
+ * gtag sends the initial pageview itself (reliable — no dependency on React
+ * having mounted). <AnalyticsEvents/> only sends pageviews for App Router
+ * client-side navigations, which gtag does not detect on its own; it skips the
+ * first render so the initial load is not double-counted.
  *
  * Vercel Analytics can also be toggled on in the Vercel dashboard for this
  * project if you want it alongside GA4.
@@ -32,7 +33,7 @@ export default function Analytics() {
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
           gtag('js', new Date());
-          gtag('config', '${gaId}', { anonymize_ip: true, send_page_view: false });
+          gtag('config', '${gaId}', { anonymize_ip: true });
           ${adsId ? `gtag('config', '${adsId}');` : ''}
         `}
       </Script>

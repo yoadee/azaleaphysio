@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { track } from '@/lib/analytics'
 
@@ -23,9 +23,16 @@ import { track } from '@/lib/analytics'
  */
 export default function AnalyticsEvents() {
   const pathname = usePathname()
+  const isFirstRender = useRef(true)
 
-  // Pageview on first load + every client-side navigation.
+  // gtag's config call already sends the pageview for the initial load, so skip
+  // the first render here (avoids double-counting) and send a pageview only on
+  // subsequent client-side navigations, which gtag does not detect on its own.
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     if (typeof window === 'undefined' || typeof window.gtag !== 'function') return
     window.gtag('event', 'page_view', {
       page_path: pathname,
