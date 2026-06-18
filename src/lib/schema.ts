@@ -157,6 +157,45 @@ export function locationSchema(loc: Location) {
   }
 }
 
+/**
+ * BlogPosting schema for a Notes article. `medical` flips the type to
+ * MedicalWebPage-friendly framing for condition pieces. Author is a practitioner
+ * for E-E-A-T; publisher is the clinic.
+ */
+export function articleSchema(opts: {
+  slug: string
+  title: string
+  description: string
+  authorName: string
+  authorRole: string
+  authorSlug: string
+  publishedAt: string
+  updatedAt?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: opts.title,
+    description: opts.description,
+    datePublished: opts.publishedAt,
+    dateModified: opts.updatedAt ?? opts.publishedAt,
+    url: `${SITE.url}/blog/${opts.slug}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE.url}/blog/${opts.slug}` },
+    author: {
+      '@type': 'Person',
+      name: opts.authorName,
+      jobTitle: opts.authorRole,
+      url: `${SITE.url}/team/${opts.authorSlug}`,
+    },
+    publisher: {
+      '@type': 'MedicalBusiness',
+      name: SITE.name,
+      url: SITE.url,
+    },
+    inLanguage: 'en-CA',
+  }
+}
+
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',

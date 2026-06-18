@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { SITE, services, conditions, team } from '@/lib/clinic'
+import { posts } from '@/content/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url
@@ -44,6 +45,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
   for (const p of team) {
     entries.push({ url: `${base}/team/${p.slug}`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 })
+  }
+  for (const p of posts) {
+    entries.push({
+      url: `${base}/blog/${p.slug}`,
+      lastModified: new Date(p.updatedAt ?? p.publishedAt),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    })
   }
 
   return entries
