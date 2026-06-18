@@ -38,7 +38,7 @@ export default function ServicesPage() {
                 <div className="flex items-start justify-between gap-6">
                   <p className="font-sans text-[15px] text-muted leading-[1.7] max-w-[520px]">{s.excerpt}</p>
                   <span
-                    className="font-sans text-[18px] text-muted shrink-0 opacity-0 -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 hidden md:inline"
+                    className="font-sans text-[18px] text-muted shrink-0 opacity-0 -translate-x-2 transition-[opacity,transform] duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0 hidden md:inline"
                     aria-hidden="true"
                   >
                     →

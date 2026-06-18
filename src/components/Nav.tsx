@@ -15,7 +15,20 @@ const navLinks = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)     // mounted in the DOM
+  const [menuVisible, setMenuVisible] = useState(false) // animated-in state
+
+  // Open on next frame so the enter transition runs from the start state.
+  const openMenu = () => {
+    setMenuOpen(true)
+    requestAnimationFrame(() => setMenuVisible(true))
+  }
+  // Animate out, then unmount after the exit duration (timeout, not
+  // transitionend — under prefers-reduced-motion no transition fires).
+  const closeMenu = () => {
+    setMenuVisible(false)
+    setTimeout(() => setMenuOpen(false), 220)
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -24,7 +37,7 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false) }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeMenu() }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
@@ -39,7 +52,7 @@ export default function Nav() {
       <header
         role="banner"
         className={[
-          'z-50 w-full px-14 flex items-center justify-between transition-all duration-300',
+          'z-50 w-full px-14 flex items-center justify-between transition-[background-color,padding,box-shadow] duration-300 ease-out',
           scrolled
             ? 'fixed top-0 bg-dark py-5 shadow-sm'
             : 'absolute top-0 inset-x-0 py-8',
@@ -86,7 +99,7 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           className="md:hidden flex flex-col gap-[5px] p-2 min-w-[44px] min-h-[44px] items-center justify-center"
-          onClick={() => setMenuOpen(true)}
+          onClick={openMenu}
           aria-label="Open menu"
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
@@ -100,19 +113,22 @@ export default function Nav() {
         </button>
       </header>
 
-      {/* Mobile overlay */}
+      {/* Mobile overlay. Backdrop fades; contents fade + rise with a short
+          stagger. Enter 300ms, exit faster (200ms). `group/menu` + data-open
+          drive every child off the one animated state. */}
       {menuOpen && (
         <div
           id="mobile-menu"
           role="dialog"
           aria-label="Navigation menu"
           aria-modal="true"
-          className="fixed inset-0 z-[100] bg-dark flex flex-col px-10 py-12"
+          data-open={menuVisible}
+          className="group/menu fixed inset-0 z-[100] bg-dark flex flex-col px-10 py-12 opacity-0 transition-opacity ease-out duration-300 data-[open=true]:opacity-100 data-[open=false]:duration-200"
         >
           <div className="flex justify-between items-center mb-16">
             <Logo className="font-display text-[17px] tracking-[0.1em] uppercase text-dark-text" markSize={28} />
             <button
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMenu}
               aria-label="Close menu"
               className="min-w-[44px] min-h-[44px] flex items-center justify-center text-dark-text/50 hover:text-dark-text transition-colors text-xl"
             >
@@ -121,25 +137,29 @@ export default function Nav() {
           </div>
 
           <nav role="navigation" aria-label="Mobile navigation" className="flex flex-col gap-6">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.map(({ href, label }, i) => (
               <Link
                 key={href}
                 href={href}
-                onClick={() => setMenuOpen(false)}
-                className="font-display text-[32px] font-light italic text-dark-text/70 hover:text-dark-text no-underline transition-colors duration-200"
+                onClick={closeMenu}
+                style={{ transitionDelay: menuVisible ? `${60 + i * 45}ms` : '0ms' }}
+                className="font-display text-[32px] font-light italic text-dark-text/70 hover:text-dark-text no-underline opacity-0 translate-y-2 transition-[opacity,transform,color] duration-300 ease-out group-data-[open=true]/menu:opacity-100 group-data-[open=true]/menu:translate-y-0"
               >
                 {label}
               </Link>
             ))}
           </nav>
 
-          <div className="mt-auto">
+          <div
+            className="mt-auto opacity-0 translate-y-2 transition-[opacity,transform] duration-300 ease-out group-data-[open=true]/menu:opacity-100 group-data-[open=true]/menu:translate-y-0"
+            style={{ transitionDelay: menuVisible ? `${60 + navLinks.length * 45}ms` : '0ms' }}
+          >
             <a
               href={SITE.booking}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="inline-block bg-rose hover:bg-rose-dark text-white text-[12px] font-bold tracking-[0.1em] uppercase px-10 py-4 transition-colors duration-200 min-h-[44px]"
+              onClick={closeMenu}
+              className="inline-block bg-rose hover:bg-rose-dark text-white text-[12px] font-bold tracking-[0.1em] uppercase px-10 py-4 min-h-[44px]"
             >
               Book Now
             </a>

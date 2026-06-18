@@ -18,7 +18,7 @@ export default function Portrait({ p, sizes }: { p: Practitioner; sizes?: string
           src={p.img}
           alt={`${p.name}, ${p.role} at Azalea Physiotherapy`}
           fill
-          className="object-cover object-top grayscale group-hover:grayscale-0 transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03]"
+          className="object-cover object-top grayscale group-hover:grayscale-0 transition-[filter,transform] duration-[400ms] ease-out group-hover:scale-[1.03]"
           sizes={sizes ?? '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw'}
         />
       ) : (

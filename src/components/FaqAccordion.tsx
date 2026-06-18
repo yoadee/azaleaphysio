@@ -21,7 +21,7 @@ export default function FaqAccordion({ items, startOpen = 0 }: { items: Faq[]; s
               >
                 <span className="font-display italic text-[19px] font-light text-text leading-[1.35]">{f.q}</span>
                 <span
-                  className="font-sans text-[22px] text-muted shrink-0 mt-0.5 transition-transform duration-300 ease-out select-none"
+                  className="font-sans text-[22px] text-muted shrink-0 mt-0.5 transition-transform duration-200 ease-out select-none"
                   style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
                   aria-hidden="true"
                 >
@@ -29,7 +29,7 @@ export default function FaqAccordion({ items, startOpen = 0 }: { items: Faq[]; s
                 </span>
               </button>
             </h3>
-            <div className="grid transition-[grid-template-rows] duration-300 ease-out" style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}>
+            <div className="grid transition-[grid-template-rows] duration-[250ms] ease-out" style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}>
               <div className="overflow-hidden">
                 <p className="font-sans text-[15px] text-muted leading-[1.8] pb-6 max-w-[640px]">{f.a}</p>
               </div>

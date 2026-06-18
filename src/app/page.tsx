@@ -240,7 +240,7 @@ export default function Home() {
                       {label}
                     </span>
                     <span
-                      className="font-sans text-[18px] text-muted opacity-0 -translate-x-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0"
+                      className="font-sans text-[18px] text-muted opacity-0 -translate-x-2 transition-[opacity,transform] duration-300 ease-out group-hover:opacity-100 group-hover:translate-x-0"
                       aria-hidden="true"
                     >
                       →
@@ -357,7 +357,7 @@ export default function Home() {
                     src={img}
                     alt={`${name}, ${role} at Azalea Physiotherapy`}
                     fill
-                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03]"
+                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-[filter,transform] duration-[400ms] ease-out group-hover:scale-[1.03]"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                 </div>

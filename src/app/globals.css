@@ -27,6 +27,14 @@
   /* --font-spectral is injected by next/font on <html> */
   --font-display: var(--font-spectral), Georgia, serif;
   --font-sans:    'Satoshi', system-ui, sans-serif;
+
+  /* ─── Motion ────────────────────────────────
+     Custom easing curves. Tailwind's built-in ease-out/ease-in-out are too weak
+     to read as intentional; overriding the tokens upgrades every `ease-out` /
+     `ease-in-out` utility sitewide at once. Curves from easing.dev. */
+  --ease-out:     cubic-bezier(0.23, 1, 0.32, 1);    /* entrances, UI feedback */
+  --ease-in-out:  cubic-bezier(0.77, 0, 0.175, 1);   /* on-screen movement */
+  --ease-drawer:  cubic-bezier(0.32, 0.72, 0, 1);    /* iOS-like drawer slide */
 }
 
 /* ─── Base resets ───────────────────────────── */
@@ -75,6 +83,23 @@
   outline-offset: 3px;
 }
 
+/* ─── Press feedback — primary/booking CTAs ──────────────────────
+   Every rose button scales down on press so the click feels heard (Emil
+   Kowalski: buttons must feel responsive). Unlayered so the full `transition`
+   composes with Tailwind's `transition-colors` utility instead of being
+   overridden by it — and so transform is actually in the transition list.
+   Under prefers-reduced-motion the global rule drops the transition; the
+   transform still applies instantly, which is the right behaviour (feedback,
+   not motion). */
+a.bg-rose, button.bg-rose {
+  transition: color 200ms var(--ease-out),
+              background-color 200ms var(--ease-out),
+              transform 140ms var(--ease-out);
+}
+a.bg-rose:active, button.bg-rose:active {
+  transform: scale(0.97);
+}
+
 /* ─── Scroll-reveal ─────────────────────────────────────────────
    Content is visible by default. The hidden start state applies ONLY when JS is
    active (html.js, set by an inline script before paint), so SSR, no-JS, crawlers
@@ -85,8 +110,8 @@
 .js .reveal {
   opacity: 0;
   transform: translateY(14px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.6s var(--ease-out),
+              transform 0.6s var(--ease-out);
 }
 .js .reveal.is-visible {
   opacity: 1;
