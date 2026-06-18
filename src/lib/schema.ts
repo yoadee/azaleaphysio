@@ -1,4 +1,4 @@
-import { SITE, locations, type Service, type Practitioner, type Faq } from './clinic'
+import { SITE, locations, type Location, type Service, type Practitioner, type Faq } from './clinic'
 
 /** Helper to render a JSON-LD object as a <script> payload string. */
 export const jsonLdString = (obj: unknown) => JSON.stringify(obj)
@@ -83,6 +83,68 @@ export function howToSchema(name: string, steps: { name: string; text: string }[
       name: s.name,
       text: s.text,
     })),
+  }
+}
+
+// Parse a clock label like "8am", "8:30am", "7pm" into 24-hour "HH:MM".
+function to24h(label: string): string {
+  const m = label.trim().match(/^(\d{1,2})(?::(\d{2}))?\s*(am|pm)$/i)
+  if (!m) return label
+  let h = parseInt(m[1], 10)
+  const min = m[2] ?? '00'
+  const ap = m[3].toLowerCase()
+  if (ap === 'pm' && h !== 12) h += 12
+  if (ap === 'am' && h === 12) h = 0
+  return `${String(h).padStart(2, '0')}:${min}`
+}
+
+const DAY_MAP: Record<string, string[]> = {
+  'Mon to Fri': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  Saturday: ['Saturday'],
+  Sunday: ['Sunday'],
+}
+
+/** Per-location MedicalClinic schema with NAP, hours, languages and rating. */
+export function locationSchema(loc: Location) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['MedicalClinic', 'Physiotherapy'],
+    '@id': `${SITE.url}/locations/${loc.slug}`,
+    name: `${SITE.name}, ${loc.name.replace(' Clinic', '')}`,
+    url: `${SITE.url}/locations/${loc.slug}`,
+    telephone: loc.telLabel,
+    faxNumber: loc.fax,
+    email: SITE.email,
+    priceRange: '$$',
+    paymentAccepted: 'ICBC, WorkSafeBC, extended health insurance, debit, credit',
+    currenciesAccepted: 'CAD',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: loc.street,
+      addressLocality: 'West Vancouver',
+      addressRegion: 'BC',
+      postalCode: loc.postal,
+      addressCountry: 'CA',
+    },
+    areaServed: AREA_SERVED,
+    availableLanguage: ['English', 'Persian'],
+    hasMap: loc.maps,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: String(SITE.googleRating),
+      reviewCount: SITE.reviewCount,
+      bestRating: '5',
+      worstRating: '1',
+    },
+    openingHoursSpecification: loc.hours.map((h) => {
+      const [opens, closes] = h.time.split(' to ').map(to24h)
+      return {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: DAY_MAP[h.days] ?? [h.days],
+        opens,
+        closes,
+      }
+    }),
   }
 }
 

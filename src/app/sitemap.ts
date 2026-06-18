@@ -5,6 +5,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = SITE.url
   const now = new Date()
 
+  // High-intent money pages (ICBC, WorkSafeBC, pricing, per-location) carry a
+  // higher priority: they are the message-matched Google Ads landing targets.
+  const highIntentRoutes = ['/icbc', '/worksafebc', '/pricing', '/locations/16th-street', '/locations/ocean-walk']
+
   const staticRoutes = [
     '',
     '/services',
@@ -27,6 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: path === '' ? 'weekly' : 'monthly',
     priority: path === '' ? 1 : path === '/book' ? 0.9 : 0.7,
   }))
+
+  for (const path of highIntentRoutes) {
+    entries.push({ url: `${base}${path}`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 })
+  }
 
   for (const s of services) {
     entries.push({ url: `${base}/services/${s.slug}`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 })

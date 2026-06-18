@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
@@ -26,7 +27,9 @@ export default function LocationsPage() {
           {locations.map((loc) => (
             <div key={loc.slug} className="bg-stone p-8 sm:p-10 reveal flex flex-col">
               <p className="font-sans text-[11px] uppercase tracking-[0.14em] text-muted mb-3">{loc.area}</p>
-              <h2 className="font-display italic text-[clamp(1.6rem,3vw,2rem)] font-light text-text mb-6">{loc.name}</h2>
+              <Link href={`/locations/${loc.slug}`} className="no-underline group">
+                <h2 className="font-display italic text-[clamp(1.6rem,3vw,2rem)] font-light text-text mb-6 group-hover:text-rose-dark transition-colors">{loc.name}</h2>
+              </Link>
               <div className="font-sans text-[15px] text-muted leading-[1.85] mb-6">
                 <p>{loc.street}</p>
                 <p>{loc.city} {loc.postal}</p>
@@ -51,15 +54,13 @@ export default function LocationsPage() {
                 >
                   Book online
                 </a>
-                <a
-                  href={loc.maps}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/locations/${loc.slug}`}
                   className="inline-flex items-center justify-center font-sans text-[11px] font-semibold tracking-[0.1em] uppercase px-7 py-3.5 text-text hover:bg-bg transition-colors duration-200 min-h-[44px] no-underline"
                   style={{ border: '1px solid var(--color-border)' }}
                 >
-                  Get directions
-                </a>
+                  Clinic details
+                </Link>
               </div>
             </div>
           ))}

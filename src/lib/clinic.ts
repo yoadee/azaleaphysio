@@ -544,6 +544,14 @@ export type Condition = {
   short: string
   intro: string
   relatedServices: string[]
+  // Enriched fields. Present on the priority conditions (the big four + whiplash);
+  // thinner conditions omit them and render the basic template gracefully.
+  symptoms?: string[] // "Is this you" checklist
+  approach?: string // How we treat it, answer-first paragraph
+  recovery?: string // How long recovery takes, answer-first
+  faqs?: Faq[] // condition Q&A → FAQPage JSON-LD
+  // Shows a cross-link band to the matching insurance landing page.
+  insuranceCallout?: 'icbc' | 'worksafebc'
 }
 
 export const conditions: Condition[] = [
@@ -553,6 +561,21 @@ export const conditions: Condition[] = [
     short: 'Desk strain, disc trouble, and the ache that will not settle.',
     intro: 'Most back and neck pain comes from how you move and hold yourself all day, not from one dramatic moment. We find what is driving it and treat the cause, so relief lasts past the appointment.',
     relatedServices: ['physiotherapy', 'osteopathy', 'chiropractic', 'acupuncture'],
+    symptoms: [
+      'A deep ache in your lower back that worsens after sitting or standing too long.',
+      'Neck stiffness and tension that creeps into headaches by the end of the day.',
+      'Pain that travels into a buttock, leg, shoulder, or arm.',
+      'A back that has gone out before and you want to stop it happening again.',
+      'Morning stiffness that takes longer and longer to loosen off.',
+    ],
+    approach: 'We start by finding what is actually driving the pain, because back and neck pain is rarely just about the spot that hurts. Your physiotherapist assesses how you move, where the load is concentrated, and what is weak or restricted, then treats the pain directly with hands-on therapy and rebuilds the strength and movement that keep it settled. Where it helps, acupuncture, osteopathy, or chiropractic care run in the same plan rather than at a separate clinic.',
+    recovery: 'Many people feel meaningful relief within two to four weeks, and a simple flare-up can settle faster. Long-standing or disc-related problems take longer and are worked in stages. Your physiotherapist gives you a realistic timeline after the first assessment rather than an open-ended schedule.',
+    faqs: [
+      { category: 'treatment', q: 'Should I see a physiotherapist for back or neck pain?', a: 'Yes, particularly if the pain has lasted more than a week, keeps returning, or travels into a limb. A physiotherapist can diagnose what is driving it and treat the cause, which is what stops it coming back. You do not need a referral to book in BC.' },
+      { category: 'treatment', q: 'Should I rest or keep moving with back pain?', a: 'For most back pain, gentle movement helps more than bed rest. Staying still too long tends to stiffen things and slow recovery. The assessment tells us which movements help you and which to ease off, so you are not guessing.' },
+      { category: 'treatment', q: 'How long does back and neck pain take to heal?', a: 'Often two to four weeks for relief with the right treatment, though long-standing or disc-related issues take longer. We give you a realistic range after the first visit and build the plan in stages.' },
+      { category: 'treatment', q: 'What causes most back and neck pain?', a: 'Usually how you load and hold your body over time rather than one injury: long hours at a desk, repetitive strain, weak supporting muscles, or old movement habits. That is why treating only the sore spot rarely lasts. We treat the pattern behind it.' },
+    ],
   },
   {
     slug: 'knee-pain',
@@ -560,6 +583,21 @@ export const conditions: Condition[] = [
     short: 'From sports injuries to recovery after surgery.',
     intro: 'Knees rarely hurt in isolation. We look at the hip, the ankle, and how you load the joint, then build a plan that gets you back to walking, training, or the stairs without thinking about it.',
     relatedServices: ['physiotherapy', 'sports-injury', 'kinesiology'],
+    symptoms: [
+      'Pain at the front of the knee going up or down stairs, or after sitting a while.',
+      'A knee that aches or swells after running, hiking, or sport.',
+      'Catching, locking, or a feeling that the knee might give way.',
+      'Lingering pain from an old injury that never fully settled.',
+      'Stiffness and pain from arthritis that limits how far you walk.',
+    ],
+    approach: 'We trace the pain to its source, which is often not the knee itself but how the hip, ankle, and surrounding muscles load it. Your physiotherapist treats the painful structure, then rebuilds the strength and control that take the strain off the joint, with kinesiology-led strengthening where the knee needs reconditioning. The aim is a knee you stop thinking about on the stairs, not just one that hurts less today.',
+    recovery: 'A straightforward overuse problem often eases within a few weeks. Ligament, cartilage, or post-surgical cases are staged over a longer period and progressed as the joint regains strength. You get a realistic timeline and clear milestones after the first assessment.',
+    faqs: [
+      { category: 'treatment', q: 'Should I see a physiotherapist for knee pain?', a: 'Yes, especially if the pain has lasted more than a couple of weeks, swells, catches, or affects how you walk or climb stairs. A physiotherapist can diagnose the cause and treat it without surgery in most cases. No referral is needed to book in BC.' },
+      { category: 'treatment', q: 'Can physiotherapy help knee pain without surgery?', a: 'Very often, yes. Most knee pain, including many cases of cartilage and tendon trouble and early arthritis, responds well to targeted treatment and strengthening. We tell you honestly if we think a problem needs a surgical opinion.' },
+      { category: 'treatment', q: 'How long does knee pain take to recover?', a: 'A simple overuse strain can settle in a few weeks; ligament, cartilage, or post-surgical recovery is staged over longer and progressed as strength returns. We give you a realistic range and milestones at the first visit.' },
+      { category: 'treatment', q: 'Why does my knee hurt on the stairs?', a: 'Pain going up or down stairs usually points to how the kneecap tracks and the strength of the muscles around the hip and thigh, rather than damage inside the joint. That is good news: it tends to respond well to the right strengthening, which is exactly what the plan targets.' },
+    ],
   },
   {
     slug: 'shoulder-injuries',
@@ -567,6 +605,21 @@ export const conditions: Condition[] = [
     short: 'Rotator cuff, frozen shoulder, and impingement.',
     intro: 'A shoulder that catches, aches at night, or will not lift overhead needs an accurate diagnosis first. We assess what is actually restricted, then treat and rebuild it in the right order.',
     relatedServices: ['physiotherapy', 'sports-injury', 'acupuncture'],
+    symptoms: [
+      'Pain reaching overhead, behind your back, or out to the side.',
+      'A deep ache that wakes you when you roll onto that shoulder at night.',
+      'Weakness or pain lifting, carrying, or pushing.',
+      'A shoulder that is slowly getting stiffer and harder to move (frozen shoulder).',
+      'Clicking, catching, or a sense the shoulder is unstable.',
+    ],
+    approach: 'The shoulder is a complex joint, so an accurate diagnosis comes first: rotator cuff, impingement, frozen shoulder, and instability all look similar but need different treatment, and in the wrong order they get worse. Your physiotherapist works out exactly what is restricted or irritated, settles the pain with hands-on treatment, then rebuilds the strength and control through the right range, in the right sequence. Acupuncture can help with stubborn night pain alongside the plan.',
+    recovery: 'It depends heavily on the diagnosis. A mild rotator-cuff irritation can settle in a few weeks; a frozen shoulder runs through predictable stages over months and the plan is paced to each one. The first assessment gives you an honest timeline for your specific shoulder.',
+    faqs: [
+      { category: 'treatment', q: 'Should I see a physiotherapist for shoulder pain?', a: 'Yes, particularly if the pain wakes you at night, limits reaching overhead, or has lasted more than a couple of weeks. Shoulder problems are easy to misjudge and treating the wrong one slows recovery, so an accurate assessment matters. No referral is needed in BC.' },
+      { category: 'treatment', q: 'How do I know if it is my rotator cuff or a frozen shoulder?', a: 'They feel similar but behave differently: a frozen shoulder progressively loses range in every direction, while rotator-cuff problems are more about pain and weakness with specific movements. The assessment distinguishes them, because the right treatment for one can aggravate the other.' },
+      { category: 'treatment', q: 'How long do shoulder injuries take to heal?', a: 'A mild strain or impingement can ease in a few weeks; a frozen shoulder progresses through stages over months. We pace the plan to your specific diagnosis and give you a realistic timeline at the first visit.' },
+      { category: 'treatment', q: 'Why does my shoulder hurt more at night?', a: 'Night pain is common with rotator-cuff and inflammatory shoulder problems, because lying on it or still positions load the irritated tissue. It is a sign worth getting assessed rather than waiting out, and it usually settles as treatment progresses.' },
+    ],
   },
   {
     slug: 'car-accident-icbc',
@@ -574,6 +627,44 @@ export const conditions: Condition[] = [
     short: 'Whiplash and soft-tissue recovery, billed straight to ICBC.',
     intro: 'After a motor vehicle accident you can start physiotherapy as soon as you have a claim number, with no adjuster approval needed. We treat whiplash and soft-tissue injuries and bill ICBC directly.',
     relatedServices: ['physiotherapy', 'kinesiology', 'occupational-therapy'],
+    insuranceCallout: 'icbc',
+    symptoms: [
+      'Neck pain, stiffness, or headaches that came on in the hours or days after a crash.',
+      'Back, shoulder, or other soft-tissue pain from the impact.',
+      'Dizziness, poor sleep, or difficulty concentrating since the accident.',
+      'You have an ICBC claim number and want to start treatment.',
+      'Pain that seemed minor at first but is not settling on its own.',
+    ],
+    approach: 'ICBC pre-approves 25 physiotherapy visits in your first 12 weeks, and you can start with just a claim number, no referral or adjuster approval. Your physiotherapist assesses what the impact actually injured, treats the pain, and rebuilds the movement and strength so it does not linger or turn chronic. We bill ICBC directly and request any extension you need, so you focus on recovery, not paperwork.',
+    recovery: 'Many soft-tissue and whiplash injuries settle over six to twelve weeks with early, guided treatment, which is why starting soon matters. More significant injuries take longer and are staged. Your physiotherapist gives you a realistic timeline and manages the ICBC side throughout.',
+    faqs: [
+      { category: 'insurance', q: 'How soon can I start physiotherapy after a car accident?', a: 'As soon as you have an ICBC claim number. You do not need a doctor’s referral or adjuster approval, and the 25 pre-approved visits sit inside a 12-week window that starts on the day of the crash, so booking early gets you more from your coverage.' },
+      { category: 'insurance', q: 'Do you bill ICBC directly?', a: 'Yes. Bring your claim number and date of accident to the first visit and we bill ICBC directly for your covered visits, with nothing to pay upfront. If you need treatment beyond the pre-approved visits, we request the extension for you.' },
+      { category: 'treatment', q: 'My pain seemed minor at first. Should I still get assessed?', a: 'Yes. Whiplash and soft-tissue injuries often feel worse a day or two later and can linger if left alone. An early assessment catches what is going on and treats it before it becomes a longer-term problem. There is no downside to getting checked.' },
+    ],
+  },
+  {
+    slug: 'whiplash',
+    name: 'Whiplash',
+    short: 'Neck pain and stiffness after a car accident, treated early.',
+    intro: 'Whiplash is the sudden neck strain caused when your head is thrown back and forward in a collision. It is the most common car-accident injury, and it responds far better to early, guided treatment than to rest. We treat it and bill ICBC directly.',
+    relatedServices: ['physiotherapy', 'acupuncture', 'kinesiology'],
+    insuranceCallout: 'icbc',
+    symptoms: [
+      'Neck pain and stiffness that started within a day or two of a crash.',
+      'Headaches that begin at the base of the skull.',
+      'Reduced movement turning or tilting your head.',
+      'Pain spreading into the shoulders or upper back.',
+      'Dizziness, fatigue, or trouble sleeping since the accident.',
+    ],
+    approach: 'The old advice to rest a whiplash in a collar is out of date; the neck recovers better with early, carefully guided movement. Your physiotherapist confirms what is injured, settles the pain and protective muscle guarding with hands-on treatment, and restores movement and strength in a controlled progression. Acupuncture can ease stubborn neck tension alongside the plan. Because whiplash follows a car accident, ICBC covers the treatment and we bill it directly.',
+    recovery: 'Most whiplash improves within six to twelve weeks when treatment starts early. Left to rest alone, a meaningful share of cases turn into longer-lasting neck pain, which is exactly what early, active treatment prevents. Your physiotherapist gives you a realistic timeline at the first visit.',
+    faqs: [
+      { category: 'treatment', q: 'How long does whiplash take to heal?', a: 'Most cases improve within six to twelve weeks with early, guided treatment. Recovery is slower when the neck is simply rested, because the muscles stiffen and guard. Starting physiotherapy soon after the crash gives you the best and fastest recovery.' },
+      { category: 'treatment', q: 'Should I rest my neck or keep it moving after whiplash?', a: 'Keep it moving, within comfortable limits and guided by your physiotherapist. Prolonged rest and collars are no longer recommended for most whiplash; controlled movement settles the pain faster and prevents long-term stiffness. The assessment shows you exactly what is safe.' },
+      { category: 'insurance', q: 'Is whiplash treatment covered by ICBC?', a: 'Yes. As a car-accident injury, whiplash physiotherapy is covered, with 25 visits pre-approved in your first 12 weeks. You can start with just a claim number, no referral needed, and we bill ICBC directly.' },
+      { category: 'treatment', q: 'My neck did not hurt until the next day. Is that normal?', a: 'Very. Whiplash pain commonly sets in twelve to seventy-two hours after the impact as inflammation builds. A delayed onset does not mean it is minor, and getting assessed early still gives the best outcome.' },
+    ],
   },
   {
     slug: 'sports-injuries',
@@ -588,6 +679,21 @@ export const conditions: Condition[] = [
     short: 'Structured recovery after knee, hip, or shoulder surgery.',
     intro: 'Surgery is the start of recovery, not the end. We follow your surgeon’s protocol and add the supervised progression that restores range, strength, and normal movement on schedule.',
     relatedServices: ['physiotherapy', 'kinesiology', 'osteopathy'],
+    symptoms: [
+      'You have a knee, hip, or shoulder replacement or repair scheduled and want to recover properly.',
+      'You are out of the sling or off the crutches and unsure how hard to push.',
+      'Your surgeon has given you a protocol and you want it run by someone who knows it.',
+      'Range or strength has stalled and you want it moving again safely.',
+      'You want to return to sport or full activity, not just to daily function.',
+    ],
+    approach: 'We follow your surgeon’s protocol to the letter and add the part a protocol cannot give you: supervised, progressive rehabilitation that restores range, strength, and normal movement on the right schedule. Your physiotherapist knows when to protect the repair and when to load it, so you neither rush it nor lose time being too cautious. Kinesiology-led strengthening carries the later stages back toward full activity.',
+    recovery: 'It follows the surgery. A knee or hip replacement, an ACL reconstruction, or a rotator-cuff repair each has its own timeline, typically several months in staged phases. We work to your surgeon’s milestones and tell you at each stage what is on track and what is next.',
+    faqs: [
+      { category: 'treatment', q: 'When should I start physiotherapy after surgery?', a: 'Often sooner than people expect, and usually on a timeline your surgeon sets. Early, guided rehabilitation protects the repair while preventing the stiffness and weakness that set recovery back. Bring your surgical protocol or discharge notes and we work from those.' },
+      { category: 'treatment', q: 'Do you follow my surgeon’s protocol?', a: 'Yes, exactly. Your surgeon’s protocol sets the boundaries, and we run the supervised progression inside them, knowing when to protect the repair and when it is safe to load it. If anything is unclear, we coordinate rather than guess.' },
+      { category: 'treatment', q: 'How long does rehab take after a knee or shoulder operation?', a: 'It depends on the procedure, but most major joint surgeries run several months through staged phases. We work to your surgeon’s milestones and give you a clear picture of each phase at the first visit.' },
+      { category: 'treatment', q: 'Can you get me back to sport after surgery, not just daily life?', a: 'Yes. Returning to sport is a later, distinct phase of rehabilitation that rebuilds the strength, control, and confidence the activity demands. We carry the plan through to that point rather than stopping at pain-free walking.' },
+    ],
   },
   {
     slug: 'workplace-injuries',
@@ -595,6 +701,7 @@ export const conditions: Condition[] = [
     short: 'WorkSafeBC claims and a managed return to work.',
     intro: 'Once your WorkSafeBC claim is open, we coordinate the treatment plan and the reporting, including the documentation for a safe, graded return to your job.',
     relatedServices: ['physiotherapy', 'occupational-therapy', 'kinesiology'],
+    insuranceCallout: 'worksafebc',
   },
   {
     slug: 'arthritis-joint-pain',
