@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SITE, insurersFeatured } from '@/lib/clinic'
+import JsonLd from '@/components/JsonLd'
 
 const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
@@ -85,8 +86,19 @@ export default function Home() {
     return () => observer.disconnect()
   }, [])
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
+
   return (
     <div className="pb-20 md:pb-0">
+      <JsonLd data={faqSchema} />
 
       {/* ─── 1. Hero ─────────────────────────────────────────── */}
       <section className="relative md:min-h-screen grid grid-cols-1 md:grid-cols-[58fr_42fr]">
@@ -95,10 +107,10 @@ export default function Home() {
             West Vancouver · Since 2011
           </p>
           <h1 className="font-display text-[clamp(2.5rem,8vw,4.75rem)] font-light italic leading-[1.04] tracking-[-0.02em] text-text mb-7 max-w-[620px]">
-            Physiotherapy without the runaround.
+            The cause, not just the symptom.
           </h1>
           <p className="font-sans text-[17px] text-muted leading-[1.65] mb-10 max-w-[480px]">
-            Twelve practitioners across ten disciplines, all under one roof in West Vancouver, so your whole recovery happens in one place.
+            West Vancouver comes to Azalea to find what is actually driving the pain, not just to quiet it. Twelve practitioners and ten disciplines under one roof, in English or Farsi.
           </p>
           <div className="flex flex-col gap-5 mb-10">
             <div className="flex flex-wrap items-center gap-4">
@@ -118,7 +130,7 @@ export default function Home() {
               </a>
             </div>
             <p className="font-sans text-[13px] text-muted leading-relaxed max-w-[400px]">
-              No referral needed. Direct billing. Free parking at both clinics.
+              No referral needed. Direct billing. Usually seen within the week.
             </p>
           </div>
           <div className="flex items-center gap-3 mb-12">
@@ -132,7 +144,7 @@ export default function Home() {
             {[
               { n: '12', label: 'Practitioners' },
               { n: '10', label: 'Disciplines' },
-              { n: '14', label: 'Years open' },
+              { n: '15', label: 'Years open' },
               { n: '2', label: 'Locations' },
             ].map(({ n, label }) => (
               <div key={label}>
@@ -289,7 +301,7 @@ export default function Home() {
               A clinic that grew up on the North Shore.
             </h2>
             <p className="font-sans text-[15px] text-dark-text/80 leading-[1.8] mb-5 reveal">
-              Azalea opened on 16th Street in 2011 with a simple idea: a patient should not have to drive across the Lower Mainland to assemble their own care. Fourteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district.
+              Azalea opened on 16th Street in 2011 with a simple idea: a patient should not have to drive across the Lower Mainland to assemble their own care. Fifteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district.
             </p>
             <p className="font-sans text-[15px] text-dark-text/80 leading-[1.8] mb-14 reveal">
               That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who share a hallway, not a fax machine. Several of our practitioners also treat in Farsi, which matters to a community well rooted on the North Shore.
@@ -299,7 +311,7 @@ export default function Home() {
               style={{ borderTop: '1px solid rgba(237,233,228,0.12)' }}
             >
               {[
-                { n: '14', label: 'Years on the North Shore' },
+                { n: '15', label: 'Years on the North Shore' },
                 { n: '12', label: 'Practitioners under one roof' },
                 { n: '2', label: 'West Vancouver locations' },
               ].map(({ n, label }) => (

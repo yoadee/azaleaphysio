@@ -51,6 +51,15 @@ export function practitionerSchema(p: Practitioner) {
     jobTitle: p.role,
     description: p.bio,
     knowsLanguage: p.languages,
+    knowsAbout: p.focus,
+    ...(p.registration
+      ? {
+          memberOf: {
+            '@type': 'Organization',
+            name: 'College of Physical Therapists of British Columbia',
+          },
+        }
+      : {}),
     worksFor: {
       '@type': 'MedicalBusiness',
       name: SITE.name,

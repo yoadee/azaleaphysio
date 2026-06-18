@@ -735,6 +735,9 @@ export type Practitioner = {
   languages: string[]
   focus: string[]
   bio: string
+  // Regulatory college, for E-E-A-T. Only set where the body is certain (BC
+  // physiotherapists are registered with CPTBC). Not a fabricated number.
+  registration?: string
 }
 
 export const team: Practitioner[] = [
@@ -747,6 +750,7 @@ export const team: Practitioner[] = [
     languages: ['English', 'Farsi'],
     focus: ['Complex and chronic pain', 'Post-surgical rehab', 'Manual therapy'],
     bio: 'Mary founded Azalea in 2011 and still treats patients most days. She is known for finding the cause of a problem when other clinics have only treated the symptom, and for explaining what she finds in language that makes sense. She treats in both English and Farsi.',
+    registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
     slug: 'braedan-lalor',
@@ -757,6 +761,7 @@ export const team: Practitioner[] = [
     languages: ['English'],
     focus: ['Sports injuries', 'Manual therapy', 'Return to activity'],
     bio: 'Braedan works with active patients who want a clear path back to training and sport. His approach pairs hands-on treatment with progressive loading, so recovery holds up under real-world demands.',
+    registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
     slug: 'mehdi-tafreshi',
@@ -777,6 +782,7 @@ export const team: Practitioner[] = [
     languages: ['English', 'Farsi'],
     focus: ['Orthopaedic rehab', 'Neck and back pain', 'ICBC recovery'],
     bio: 'Noushin focuses on orthopaedic and motor-vehicle-accident recovery, guiding patients from the acute, painful stage through to full function. She treats in English and Farsi.',
+    registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
     slug: 'ali-shafiei',
@@ -787,6 +793,7 @@ export const team: Practitioner[] = [
     languages: ['English', 'Farsi'],
     focus: ['Sports and musculoskeletal injuries', 'Neurological rehab', 'Performance'],
     bio: 'Ali treats across sports, musculoskeletal, and neurological cases, with a particular interest in getting athletes back to performance. He builds rehab that respects the timeline of the sport, not just the injury.',
+    registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
     slug: 'asal',
@@ -903,6 +910,16 @@ export const faqs: Faq[] = [
     category: 'insurance',
     q: 'How much does physiotherapy cost?',
     a: 'An initial assessment runs roughly $110 to $135 and follow-ups roughly $90 to $110, depending on length and practitioner. Most extended health plans reimburse a significant share, and ICBC and WorkSafeBC visits are typically covered in full with nothing to pay upfront.',
+  },
+  {
+    category: 'general',
+    q: 'Can I be treated in Farsi?',
+    a: 'Yes. Several of our practitioners, across physiotherapy, kinesiology, acupuncture, and counselling, treat in Farsi as well as English. If you would prefer your appointment in Farsi, tell us when you book and we will match you with the right practitioner.',
+  },
+  {
+    category: 'booking',
+    q: 'What is your cancellation policy?',
+    a: 'We ask that you give as much notice as you can if you need to change or cancel, ideally at least 24 hours, so we can offer the time to someone who is waiting. Repeated late cancellations or missed appointments may be subject to a fee. If something comes up, call your clinic and we will sort it out.',
   },
 ]
 

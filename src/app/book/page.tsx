@@ -27,8 +27,11 @@ export default function BookPage() {
             <h2 className="font-display italic text-[clamp(1.75rem,3.5vw,2.5rem)] font-light text-text mb-4">
               Book online
             </h2>
-            <p className="font-sans text-[16px] text-muted leading-[1.7] mb-8 max-w-[520px]">
-              Choose your clinic, practitioner, and time in our secure booking portal. New and returning patients welcome.
+            <p className="font-sans text-[16px] text-muted leading-[1.7] mb-6 max-w-[520px]">
+              Choose your clinic, practitioner, and time in our secure booking portal. New and returning patients welcome. It takes about two minutes.
+            </p>
+            <p className="font-sans text-[14px] text-text leading-[1.7] mb-8 max-w-[520px]">
+              Have your insurance details handy if you would like us to set up direct billing, and your ICBC or WorkSafeBC claim number if you have one. No referral needed either way.
             </p>
             <a
               href={SITE.booking}

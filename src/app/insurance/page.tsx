@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
@@ -82,12 +83,14 @@ export default function InsurancePage() {
               body: 'ICBC covers physiotherapy for injuries from a motor vehicle accident, and you can start treatment without an adjuster’s pre-approval. Under BC’s Enhanced Care, you are pre-authorized for a set number of visits in the weeks after your accident, billed directly to ICBC.',
               steps: ['Report your accident to ICBC and get your claim number.', 'Call either clinic and tell us you have an ICBC claim.', 'Book your first assessment. No referral or lawyer needed to begin.'],
               bring: ['Your ICBC claim number', 'Your date of accident', 'A piece of photo ID', 'Your BC Services Card'],
+              more: { href: '/icbc', label: 'Full ICBC physiotherapy guide' },
             },
             {
               h: 'WorkSafeBC claims',
               body: 'WorkSafeBC covers physiotherapy for injuries that happened at work, and we bill them directly. Once your claim is open, we coordinate the treatment plan and reporting with WorkSafeBC, including the documentation for a managed return to work.',
               steps: ['Report your injury to your employer and to WorkSafeBC, and get your claim number.', 'Call either clinic and tell us it is a WorkSafeBC claim.', 'Book your assessment. We handle the billing and reporting from there.'],
               bring: ['Your WorkSafeBC claim number', 'Your date of injury', 'A piece of photo ID'],
+              more: { href: '/worksafebc', label: 'Full WorkSafeBC physiotherapy guide' },
             },
           ].map((sec) => (
             <div key={sec.h} className="reveal">
@@ -114,6 +117,12 @@ export default function InsurancePage() {
                   </ul>
                 </div>
               </div>
+              <Link
+                href={sec.more.href}
+                className="inline-block mt-7 font-sans text-[13px] font-semibold tracking-[0.06em] text-text no-underline hover:text-rose-dark transition-colors"
+              >
+                {sec.more.label} →
+              </Link>
             </div>
           ))}
         </div>

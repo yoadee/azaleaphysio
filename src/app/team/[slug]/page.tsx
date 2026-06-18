@@ -46,8 +46,19 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
                 {p.name}
               </h1>
               <p className="font-sans text-[13px] uppercase tracking-[0.12em] text-muted mb-1">{p.role}</p>
-              <p className="font-sans text-[14px] text-muted mb-8">{p.credentials}</p>
-              <p className="font-sans text-[17px] text-text leading-[1.75] mb-10 max-w-[560px]">{p.bio}</p>
+              <p className="font-sans text-[14px] text-muted mb-3">{p.credentials}</p>
+              {p.languages.includes('Farsi') && (
+                <span className="inline-flex items-center gap-2 font-sans text-[11px] font-semibold tracking-[0.08em] uppercase text-text px-3 py-1.5 mb-8" style={{ border: '1px solid var(--color-border)' }}>
+                  Treats in English & Farsi
+                </span>
+              )}
+              <p className="font-sans text-[17px] text-text leading-[1.75] mb-6 mt-6 max-w-[560px]">{p.bio}</p>
+              {p.registration && (
+                <p className="font-sans text-[13px] text-muted leading-[1.6] mb-10 max-w-[480px] flex items-start gap-2">
+                  <span className="text-gold mt-px" aria-hidden="true">✓</span>
+                  {p.registration}
+                </p>
+              )}
               <a
                 href={SITE.booking}
                 target="_blank"

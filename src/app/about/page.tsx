@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 }
 
 const values = [
+  { h: 'Find the cause', body: 'Mary built the clinic around one principle: treat what is actually driving the problem, not just the sore spot. It is what patients come back for, and what they tell others about.' },
   { h: 'One team, one record', body: 'Your physiotherapist, kinesiologist, and acupuncturist share a hallway and a chart, not a fax machine. Care moves between them without a fresh referral.' },
-  { h: 'Find the cause', body: 'We assess to find what is actually driving the problem, then treat that, rather than chasing the sore spot from visit to visit.' },
   { h: 'Plain language', body: 'You leave the first visit knowing what is wrong, what the plan is, and roughly how long it will take. No jargon, no mystery.' },
-  { h: 'Rooted locally', body: 'Fourteen years on the North Shore, and several practitioners who treat in Farsi as well as English, for a community that is well rooted here.' },
+  { h: 'Care in your language', body: 'Several practitioners treat in Farsi as well as English, so a community well rooted on the North Shore can be understood, not just treated.' },
 ]
 
 export default function AboutPage() {
@@ -31,7 +31,10 @@ export default function AboutPage() {
       <section className="bg-bg px-6 sm:px-10 md:px-14 py-20 md:py-24">
         <div className="max-w-[760px] mx-auto flex flex-col gap-6 reveal">
           <p className="font-sans text-[18px] text-text leading-[1.8]">
-            Fourteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district. That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who work from the same notes.
+            Mary Ghoroghi opened Azalea on 16th Street in 2011 and still treats patients most days. Her reputation, the one that brings people across the North Shore, is for finding the cause of a problem when other clinics have only treated the symptom, then explaining it in language that makes sense. That is the standard the whole clinic is built to.
+          </p>
+          <p className="font-sans text-[18px] text-muted leading-[1.8]">
+            Fifteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district. That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who share a hallway and a chart, not a fax machine, several of whom treat in Farsi as well as English.
           </p>
           <p className="font-sans text-[18px] text-muted leading-[1.8]">
             We are not trying to be the biggest clinic on the North Shore. We are trying to be the one where your whole recovery happens in one place, handled by people who talk to each other about your case.
