@@ -1,6 +1,21 @@
 # Azalea Physiotherapy — Handoff
 
-_Last updated: 2026-06-18. MVP built; all 10 service pages have full real copy + real Google reviews; logo + brand sign in place (placeholder trace); copy/SEO strategy set. Build passes. NOT deployed._
+_Last updated: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin (see below)._
+
+## What changed this session (2026-06-18 overnight)
+
+Branch `mvp-rebuild` pushed to GitHub; Vercel auto-builds a **Preview** per push (build succeeds, all routes prerender). Latest commits: env fallback, money pages + conditions + locations, home/team/about/AEO.
+
+- **Item 1 — Home hook:** hero now leads with **"The cause, not just the symptom."** + differentiator subline (one roof, English/Farsi). FAQPage schema added to home. Fixed "14 years" -> "15" (founded 2011). Removed unverified "free parking" claim. **3 headline options for Abtin to pick are in the session summary; A is live.**
+- **Item 2 — New money pages:** `/icbc` (25 pre-approved visits, no referral, direct billing; HowTo + FAQPage schema), `/worksafebc` (provider, direct billing, return-to-work), `/pricing` (physio fees $110-135 / $90-110 verified; other disciplines say "call for fee" — see open item). All message-matched as Google Ads landing pages, wired into sitemap (priority 0.9) + footer.
+- **Item 3 — Conditions:** enriched big four (back/neck, knee, shoulder, post-surgical) with symptoms, approach, recovery timeline, FAQPage schema. Added **/conditions/whiplash** (split from car-accident). ICBC/WorkSafeBC cross-link bands on the relevant conditions.
+- **Item 4 — Per-location pages:** `/locations/16th-street` + `/locations/ocean-walk`, unique NAP + framing, hours, directions, per-location `MedicalClinic`+`Physiotherapy` schema with parsed opening hours. Index page links to them.
+- **Item 5 — Team E-E-A-T:** "Registered with the College of Physical Therapists of BC" on the 4 physiotherapists (no fabricated numbers), Farsi badge, schema `memberOf`/`knowsAbout`.
+- **Item 6 — Supporting pages:** About now centers Mary's cause-finding reputation + Farsi roots; Insurance cross-links to /icbc and /worksafebc; Book has expectation-setting copy; FAQ gains Farsi-availability + cancellation-policy Q&As.
+- **Item 7 — Sitewide schema/AEO:** BreadcrumbList already emitted by Breadcrumbs component (confirmed). Enriched `/llms.txt` with money pages, ICBC 25-visit fact, fee ranges, NAP, Farsi. FAQPage schema now on home, conditions, icbc, worksafebc, pricing.
+- **Strategy:** `MARKETING-STRATEGY.md` — keyword research (volumes/CPC labelled Verified/Estimated), Google Ads campaign structure + budget model (~$1-2k/mo, ~$84/booking, ~10:1), 90-day plan, local SEO + AEO. Headline: ICBC/WorkSafeBC + Farsi are the highest-ROI lanes; Search not PMax; conversion tracking first.
+
+**Still on Abtin / blocked:** promote to production (push master was auto-blocked; approve it or click Promote in Vercel). Confirm non-physio discipline fees. Confirm cancellation policy terms. Pick home headline option.
 
 ---
 
