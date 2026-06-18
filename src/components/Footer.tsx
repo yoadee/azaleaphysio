@@ -23,6 +23,7 @@ const clinicLinks = [
   { href: '/worksafebc', label: 'WorkSafeBC' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/blog', label: 'Blog' },
+  { href: '/refer', label: 'Refer a Patient' },
   { href: '/careers', label: 'Careers' },
   { href: '/privacy', label: 'Privacy Policy' },
 ]

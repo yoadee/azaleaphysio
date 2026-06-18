@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/faq',
     '/book',
     '/blog',
+    '/refer',
     '/careers',
     '/privacy',
   ]
