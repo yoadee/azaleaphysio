@@ -1,7 +1,33 @@
-import { SITE, type Service, type Practitioner, type Faq } from './clinic'
+import { SITE, locations, type Service, type Practitioner, type Faq } from './clinic'
 
 /** Helper to render a JSON-LD object as a <script> payload string. */
 export const jsonLdString = (obj: unknown) => JSON.stringify(obj)
+
+// Shared area + languages: the areaServed and Persian-language signals are direct
+// AEO wins (AI assistants quote availableLanguage for "Farsi physio" queries).
+const AREA_SERVED = ['West Vancouver', 'North Vancouver', 'North Shore']
+
+/** The clinic as a structured provider entity, reused across page schemas. */
+export function clinicProvider() {
+  const primary = locations[0]
+  return {
+    '@type': 'MedicalClinic',
+    name: SITE.name,
+    url: SITE.url,
+    telephone: primary.telLabel,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: primary.street,
+      addressLocality: 'West Vancouver',
+      addressRegion: 'BC',
+      postalCode: primary.postal,
+      addressCountry: 'CA',
+    },
+    areaServed: AREA_SERVED,
+    availableLanguage: ['English', 'Persian'],
+    paymentAccepted: 'ICBC, WorkSafeBC, extended health insurance, debit, credit',
+  }
+}
 
 export function serviceSchema(service: Service) {
   return {
@@ -11,11 +37,8 @@ export function serviceSchema(service: Service) {
     description: service.excerpt,
     procedureType: 'https://schema.org/TherapeuticProcedure',
     howPerformed: service.whatWeDo,
-    provider: {
-      '@type': 'MedicalBusiness',
-      name: SITE.name,
-      url: SITE.url,
-    },
+    areaServed: AREA_SERVED,
+    provider: clinicProvider(),
     url: `${SITE.url}/services/${service.slug}`,
   }
 }

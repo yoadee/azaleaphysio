@@ -45,6 +45,17 @@ const localBusinessSchema = {
   url: "https://www.azaleaphysio.com",
   email: "info@azaleaphysio.com",
   foundingDate: "2011",
+  priceRange: "$$",
+  paymentAccepted: "ICBC, WorkSafeBC, extended health insurance, debit, credit",
+  areaServed: ["West Vancouver", "North Vancouver", "North Shore"],
+  availableLanguage: ["English", "Persian"],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.6",
+    reviewCount: "83",
+    bestRating: "5",
+    worstRating: "1",
+  },
   medicalSpecialty: [
     "Physiotherapy",
     "Sports Medicine",

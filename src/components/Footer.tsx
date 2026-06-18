@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Logo from './Logo'
 
 const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
@@ -28,15 +29,22 @@ export default function Footer() {
     <footer style={{ background: 'var(--color-footer)' }} className="px-14 pt-16 pb-9">
       <div className="max-w-[1200px] mx-auto">
 
+        {/* Brand sign — the full lockup; sits on near-black like the wall sign. */}
+        <div className="pb-12 mb-12" style={{ borderBottom: '1px solid rgba(237,233,228,0.08)' }}>
+          <Logo
+            className="font-display text-[15px] sm:text-[16px] md:text-[18px] tracking-[0.1em] sm:tracking-[0.12em] uppercase text-dark-text"
+            markClass="w-8 h-8 sm:w-[34px] sm:h-[34px]"
+            subline
+            gapClass="gap-3"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 pb-12"
           style={{ borderBottom: '1px solid rgba(237,233,228,0.05)' }}>
 
           {/* Brand */}
           <div>
-            <p className="font-display text-[16px] tracking-[0.08em] uppercase text-dark-text mb-2">
-              Azalea Physiotherapy
-            </p>
-            <p className="font-display italic text-[13px] text-dark-text/55 mb-6">
+            <p className="font-display italic text-[14px] text-dark-text/55 mb-6 max-w-[280px]">
               Multidisciplinary physiotherapy, rooted on the North Shore since 2011.
             </p>
             <div className="text-[13px] text-dark-text/65 leading-[2.2]">

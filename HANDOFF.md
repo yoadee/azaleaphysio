@@ -1,6 +1,6 @@
 # Azalea Physiotherapy — Session Handoff
 
-_Last updated: 2026-06-17. MVP build complete (all 12 phases). Replace at the end of every session._
+_Last updated: 2026-06-18. MVP build complete. Physiotherapy service page rebuilt to a full "finished" template. Build passes. Not yet deployed._
 
 ## Project goal
 
@@ -8,84 +8,84 @@ Full rebuild of azaleaphysio.com. West Vancouver physiotherapy clinic. 2 locatio
 
 ---
 
-## STATUS: MVP build complete ✅
+## STATUS: Review in progress — service pages polished this session
 
-All 12 phases of the plan are built and the production build passes (`next build` → 51 pages, 0 TypeScript/lint errors). The site runs end to end with real content. It has **not** been deployed to production yet — left for Abtin to review first (see "Remaining before launch").
-
-### What was built this session (Phases 4–12 + home page rework)
-
-| Phase | What | Status |
-|---|---|---|
-| 0–2 | Copy, foundation, Nav/Footer | ✅ (carried over) |
-| 3 | Home page, all 12 sections | ✅ + major fixes (see below) |
-| 4 | 8 Sanity schemas + registered | ✅ |
-| 5 | `/services` index + 10 detail pages | ✅ |
-| 6 | `/team` index + 12 bio pages | ✅ |
-| 7 | about, locations, insurance, conditions (+10), what-to-expect, faq, book, blog, careers, privacy | ✅ |
-| 8 | sitemap.ts, robots.ts, /llms.txt, schema.ts (MedicalProcedure/Physician/FAQPage/HowTo/WebSite/BreadcrumbList), per-page metadata + canonicals | ✅ |
-| 9 | next/image AVIF+WebP, priority hero, font preconnects, security headers | ✅ |
-| 10 | GA4 placeholder (env-gated) + booking-funnel event taxonomy | ✅ placeholder |
-| 11 | Skip link, semantic HTML, manual WCAG AA pass | ✅ (see a11y note) |
-| 12 | `next build` passes; deploy prep done | ✅ code-complete |
+All 12 phases built, build passes (`next build` 51 pages, 0 errors). Abtin started the review pass this session. Home page, nav, footer, booking CTA, phone numbers all confirmed good. Service pages had issues (see below) — now fixed. **Not yet deployed.**
 
 ---
 
-## Three critical bugs found and fixed this session
+## This session: Physiotherapy service page rebuilt to a finished template
 
-1. **All spacing was collapsed sitewide.** `globals.css` had an unlayered `* { margin:0; padding:0 }` reset. In Tailwind v4, utilities live in `@layer utilities`, and unlayered rules beat layered ones, so the reset nullified every `px-*`/`pt-*`/`mb-*` on the site ("nothing in the right place"). Fixed by moving resets into `@layer base` and dropping the redundant margin/padding zeroing.
-2. **Satoshi `@import` 500 error.** The Fontshare `@import url()` came after `@import "tailwindcss"`, violating the CSS rule that `@import` precede other rules. Moved it above.
-3. **Blurry text + blank sections on scroll-reveal.** `.reveal.is-visible` used `transform: translateY(0)`, keeping elements GPU-composited (blurry text), and `.reveal { opacity:0 }` gated content on JS (sections blank for crawlers/headless). Fixed: revealed state uses `transform: none`; hidden state scoped to `html.js` (set by an inline script) so content is visible by default. Also removed `-webkit-font-smoothing: antialiased` (thins type on Windows).
+The page was a thin spine (image → list → one paragraph → portraits → links → CTA). Rebuilt it into a substantial, on-brand template, using the `impeccable` skill (polish + brand register) and a fresh-eyes design-critique subagent. **Physiotherapy is now the reference template; the other 9 services are not yet enriched.**
+
+**Data model — `src/lib/clinic.ts`:** `Service` type extended with optional `approach`, `firstVisit` (ordered `ServiceStep[]`), `goodToKnow` (`ServiceFact[]`), `faqs` (`Faq[]`), and `practitioners` (explicit slugs). Added `defaultGoodToKnow` fallback derived from clinic facts. Physiotherapy fully populated: 4 distinct `whoThisHelps`, tightened `whatWeDo`, an `approach` paragraph, a 4-step `firstVisit` arc, 5 facts (incl. fee range), 5 curated FAQs, and explicit practitioners (mary-ghoroghi, braedan-lalor, noushin-nouri).
+
+**Page — `src/app/services/[slug]/page.tsx`:** New section flow with clean rhythm (stone → white → stone → dark → white → stone → white → stone → dark):
+1. PageHeader (stone)
+2. Hero image
+3. "What we do" + approach, paired with a "Good to know" facts rail (white, 2-col)
+4. "Is this you?" — checklist grid (stone), distinct layout so the sticky-heading device isn't overused
+5. "Your first visit" — numbered sequence (dark) + HowTo JSON-LD
+6. "Who you might see" — portraits (white)
+7. "Conditions we treat" — fixed cards, white-on-stone with single coherent hover (was the stone-on-stone invisible-card bug)
+8. "Common questions" — per-service FAQ (white) + FAQPage JSON-LD
+9. Service-matched testimonial (stone), placed right before the CTA as social proof at the decision point
+10. BookCta (dark)
+
+Sections render only when their data exists, so un-enriched services degrade gracefully. `schema.ts` `faqPageSchema` + `howToSchema` are now wired in (were scaffolded but unused).
+
+**Critique fixes applied:** removed a verbatim duplicated sentence; cut em dashes from facts copy (house rule); fixed the fragile practitioner-matching (explicit slugs); de-duplicated a `whoThisHelps` bullet; surfaced fees; softened a slightly defensive first-visit line; resolved gold-on-name discipline by moving the testimonial to stone.
+
+`next build` passes: 51 pages, 0 errors. `tsc --noEmit` clean.
+
+**Taste-skill pass (this session):** Ran the `design-taste-frontend` skill as a second lens. It validated the impeccable pass (zero em dashes, eyebrows within budget, no AI tells). Three fixes applied: (1) **rose is now strictly booking-only on the service page** — removed rose from condition-card and practitioner-name hovers (per the locked "rose on buttons only" rule); condition cards now hover via border + supporting-line darkening, practitioner names via a hairline underline. (2) Conditions grid renders 2x2 for 4 items instead of a 3+1 orphan. (3) Trimmed the Marcus L. testimonial to ~3 lines (also improves the home page, which shares it). **Note:** the same rose-on-hover pattern likely exists on the team index and other link lists — sweep it during rollout to keep rose = booking sitewide.
+
+**Logo (this session):** No clean vector existed, only low-res color JPGs (in `logo/`) plus a photo of the office wall sign, which Abtin liked best (the logo rendered monochrome/metallic on dark). Recreated that treatment: traced the cleanest raster mark (`logo/images.jpg`) to a single-color silhouette via a color-distance mask (sharp) + potrace, slimmed to `public/logo-mark.svg` (~21KB). New `src/components/Logo.tsx` renders the mark via CSS `mask-image` + `background-color: currentColor`, so it inherits each section's ink color (ink on stone/white, off-white on dark) with no color-variant assets. Wired into `Nav` (header + mobile overlay) and `Footer` as a mark + Spectral wordmark lockup. The tracing scripts live in `scripts/logo-*.mjs` (need `npm i -D potrace` to re-run; potrace was uninstalled after generating to keep deps clean). Source uploads kept in `logo/` for reference. Build passes.
+
+**Brand sign (this session):** Full lockup as a brand moment at the top of the `Footer` (near-black `--color-footer`): flat off-white mark + "Azalea Physiotherapy" wordmark + a centered "Advanced Health Centre" subline between two flanking rule lines, as on the wall. A brushed-metal/gradient/warm-glow treatment was tried and rejected (Abtin: worse than flat); only the centered-subline-with-rules was kept. `Logo` props: `subline` (centered with flanking rules), responsive `markClass`. Nav stays flat mark + wordmark, no subline. Build passes.
+
+**Logo follow-ups / options:** (1) Still no true high-res vector master, only this trace from a 322px source. Good enough for on-screen at current sizes; commission a proper vector before any large-format/print use. (2) Optional brand moment: the mark could appear large and off-white in a dark section (about page or footer) to echo the wall sign directly. (3) Wordmark is the site's Spectral serif; the original logo uses a sans. If Abtin prefers fidelity to the original lockup, swap the wordmark to a tracked Satoshi caps treatment.
+
+**Next:** Abtin reviews the Physiotherapy template live (`/services/physiotherapy`) and the new logo in the nav/footer. On approval, roll the same depth (approach, firstVisit, goodToKnow, faqs, practitioners) across the other 9 services. Note: `relatedPractitioners` heuristic can mis-staff services without explicit `practitioners` (e.g. weight-loss falls back to physios) — give every service explicit `practitioners` during rollout.
 
 ---
 
-## Abtin's feedback, applied this session
+## Previously fixed bugs (prior sessions, for reference)
 
-- **No em dashes anywhere.** Swept all rendered copy; uses commas/periods/parentheses instead. (Saved as a durable memory.)
-- **Insurer names were repeated too much.** Reduced: the named list now lives canonically in the insurance strip and `/insurance`; hero microcopy and trust strip no longer re-list them.
-- **Text felt blurry / not crisp.** Fixed via the reveal/compositing fix, removing `antialiased`, and replacing washed-out low-opacity text with solid colors.
-- **Too-light text on too-light backgrounds** (insurer strip): bumped to solid `text-muted` (4.6:1 AA) and audited contrast across Nav/Footer.
-- **No AI slop:** ran the `impeccable` skill (brand register). Removed the `01–10` service numbering (flagged as scaffolding), kept restraint, no eyebrow-on-every-section.
+1. **All spacing collapsed sitewide.** Unlayered `* { margin:0; padding:0 }` reset beat Tailwind utilities. Fixed by moving into `@layer base`.
+2. **Satoshi 500 error.** `@import` order violated CSS spec. Moved Fontshare import above `@import "tailwindcss"`.
+3. **Blurry text + blank sections on scroll-reveal.** `transform: translateY(0)` kept elements composited (blurry); `opacity:0` gated content on JS (blank for crawlers). Fixed with `transform: none` and `html.js` scoping.
 
 ---
 
 ## Architecture decisions (important)
 
-- **Content source = `src/lib/clinic.ts`** (local TypeScript), not Sanity yet. Pages render real content from this module so the site works as an MVP without manual CMS entry. The 8 Sanity schemas in `src/sanity/schemaTypes/` mirror these shapes. **Migration path:** once content is entered in the Studio, swap the `src/lib/clinic.ts` reads for GROQ queries of the same fields.
-- **Booking = WIRED (ClinicMaster).** Live portal `https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA` (set in `SITE.booking` in `src/lib/clinic.ts`). All primary "Book online" CTAs open it in a new tab; phone numbers remain as the call option. `/book` leads with the portal. Pulled from the old live site along with: corrected practitioner credentials, fax numbers, and Instagram/Twitter (now in footer + JSON-LD sameAs + a ReserveAction). `src/lib/analytics.ts` has the booking-funnel event taxonomy ready to wire.
-- **Analytics = placeholder.** `src/components/Analytics.tsx` loads GA4 only if `NEXT_PUBLIC_GA_ID` is set (safe no-op until then). Vercel Analytics can be toggled in the dashboard.
+- **Content source = `src/lib/clinic.ts`** (local TypeScript), not Sanity yet. Pages render real content without CMS entry. The 8 Sanity schemas in `src/sanity/schemaTypes/` mirror these shapes. Migration path: once content is entered in the Studio, swap reads for GROQ queries of the same fields.
+- **Booking = WIRED (ClinicMaster).** Live portal `https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA` (set in `SITE.booking` in `src/lib/clinic.ts`). All "Book online" CTAs open it in a new tab. `/book` leads with the portal.
+- **Analytics = placeholder.** `src/components/Analytics.tsx` loads GA4 only if `NEXT_PUBLIC_GA_ID` is set. Safe no-op until then.
 
 ---
 
-## Key new files this session
+## Remaining before launch
 
-- `src/lib/clinic.ts` — single source of truth for services, team, conditions, faqs, locations, insurers, testimonials.
-- `src/lib/schema.ts` — JSON-LD builders. `src/components/JsonLd.tsx` — injector.
-- `src/components/` — `PageHeader`, `BookCta`, `Breadcrumbs`, `RevealObserver`, `Portrait`, `FaqAccordion`, `Analytics`.
-- `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/llms.txt/route.ts`.
-- `src/sanity/schemaTypes/` — service, practitioner, condition, testimonial, location, faq, post, siteSettings.
+1. **Continue review pass** -- service pages now fixed, remaining pages to walk: team bios, conditions, about, locations, FAQ, book, blog, careers, insurance, what-to-expect.
+2. **Service-page copy enrichment: ALL 10 DONE.** Full revenue/copy strategy in `COPY-STRATEGY.md` (two Opus research agents: SEO/AEO + CRO/offering). Decided: offer = assurance + lead magnet, no discount, traffic via Google Ads, conversion tracking first. All 10 service pages now at template depth (approach, firstVisit, goodToKnow, 5 answer-first FAQs, practitioners). Built with the actual RampStack skills loaded (`seo-aeo-geo`, `landing-page-copy`), not paraphrased. CRO additions from the skill: hero booking CTA on every service page (PageHeader `cta` prop); `relatedPractitioners` no longer falls back to physios, so services with no matching practitioner hide that section instead of mis-staffing. Service schema enriched (areaServed, availableLanguage Persian, provider address, paymentAccepted). FAQ "Common questions" left column made purposeful (helper line + call CTA).
 
----
+   **Practitioner flags for Mary:** weight-loss → faranak-shekoohi (kinesiologist) and elderly-care → mary-ghoroghi + noushin-nouri (physios) are inferred from how those services are delivered — confirm. occupational-therapy, chiropractic, yoga-therapy have NO team member in that discipline, so "Who you might see" is hidden on those pages until Mary supplies the practitioners. Also deferred pending Mary: skin/aesthetic service page, Farsi/Persian landing page.
 
-## Accessibility note (Phase 11)
-
-The automated **accesslint** audit could not run in this environment (the CDP/Chrome engine returned non-JSON for every input, including a trivial test snippet — a tooling/env issue, not a site issue). A **manual WCAG AA pass** was done instead: `lang`, skip-to-content link, single `<main>`, descriptive `alt`, accessible button/link names, `aria-expanded` accordions, focus-visible ring, reduced-motion fallback, semantic `figure`/`blockquote`/`dl`/`ol`/`table[scope]`. **Re-run accesslint in a working environment before launch** to confirm.
-
----
-
-## Remaining before launch (needs Abtin / dashboard access)
-
-1. **Review the site** (the point of waiting): `npm run dev`, walk every page.
-2. **Deploy:** push to GitHub (auto-deploys via Vercel) or `vercel --prod`. Build already passes locally.
-3. **Vercel env vars:** set `NEXT_PUBLIC_GA_ID` (when GA is created) and confirm Sanity vars.
-4. **Sanity CORS:** add the production URL to allowed origins.
-5. **Booking system:** DONE (ClinicMaster wired). Remaining: confirm the portal handles both locations correctly, and wire the funnel events in `src/lib/analytics.ts`.
-6. **Verify Google rating** (currently ★4.6 · 75+) in Google Business.
-7. **Real photography:** interim AI-generated mood imagery now in place (Higgsfield nano-banana, cohesive warm-stone/oak editorial style, no people): About section interior, plus one image per service page (`public/images/generated/services/<slug>.jpg`). Two alternate hero options saved (`hero-option-1.jpg`, `hero-option-2.jpg`); current hero unchanged pending a pick. All to be swapped for real clinic photography before launch. 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Azam Hosseini) still use initials placeholders pending real headshots (no generated faces, by design).
-8. **Enter Sanity content** then switch pages from `src/lib/clinic.ts` to GROQ.
+   **Service-page perfection still to do before commit:** seo-onpage titles/meta pass (call `seo-onpage`); social-proof-early (move a proof point above the fold) is pending rating verification. Then: home hook rewrite, new /icbc + /pricing pages, sitewide FAQ/MedicalClinic schema + /llms.txt, GA4 + Google Ads conversion tracking.
+3. **Deploy:** push to GitHub (auto-deploys via Vercel). Build passes locally.
+4. **Vercel env vars:** set `NEXT_PUBLIC_GA_ID` when GA4 is created. Confirm Sanity vars are present.
+5. **Sanity CORS:** add the production URL to allowed origins.
+6. **ClinicMaster:** confirm the portal handles both locations correctly, then wire the booking-funnel events in `src/lib/analytics.ts`.
+7. **Verify Google rating** (currently ★4.6 / 75+) in Google Business dashboard.
+8. **Real photography:** AI-generated mood imagery is in place as interim. Swap before launch. 3 practitioners (Sirus Vakilian, Ramin Keshmiri, Dr. Azam Hosseini) use initials placeholders -- no generated faces.
+9. **Enter Sanity content** then migrate pages from `src/lib/clinic.ts` to GROQ.
+10. **Re-run accesslint** in a working environment before launch (Chrome/CDP env was broken in earlier sessions; manual WCAG pass was done instead).
 
 ---
 
-## Design — LOCKED (unchanged)
+## Design — LOCKED
 
 Palette B: Warm Stone + Restrained Rose. Spectral (next/font) + Satoshi (Fontshare CSS import). Rose on buttons only. No border-radius. WCAG AA. RTL-ready via CSS logical properties. Tokens in `src/app/globals.css` `@theme {}` (Tailwind v4, no config file). Full details in `DESIGN.md`.
 
@@ -118,5 +118,6 @@ Palette B: Warm Stone + Restrained Rose. Spectral (next/font) + Satoshi (Fontsha
 ## How Abtin wants to work
 
 - Direct and concise. State assumptions. No clarifying questions when context makes the answer obvious.
+- Don't hand off verification tasks that can be checked from code -- only escalate genuine UI questions or third-party system access.
 - Models: Opus for design/copy/planning, Sonnet for code, Haiku for quick checks.
-- **No em dashes. No AI-slop copy. No repeated content. Crisp, high-contrast type.** (Durable feedback — see memory.)
+- **No em dashes. No AI-slop copy. No repeated content. Crisp, high-contrast type.**

@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3 mb-12">
             <span className="text-gold text-[15px] tracking-tight" aria-hidden="true">★★★★★</span>
-            <span className="font-sans text-[13px] text-text font-medium">4.6 out of 5, from 75+ Google reviews</span>
+            <span className="font-sans text-[13px] text-text font-medium">{SITE.googleRating} out of 5, from {SITE.reviewCount} Google reviews</span>
           </div>
           <div
             className="grid grid-cols-4 gap-4 pt-9"
@@ -151,6 +151,11 @@ export default function Home() {
             className="object-cover object-center"
             priority
             sizes="42vw"
+          />
+          {/* Light scrim at the top so the dark nav links stay legible over the photo */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-stone/85 to-transparent pointer-events-none"
           />
         </div>
       </section>

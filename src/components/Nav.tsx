@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Logo from './Logo'
 import { SITE } from '@/lib/clinic'
 
 const navLinks = [
@@ -48,11 +49,14 @@ export default function Nav() {
           href="/"
           aria-label="Azalea Physiotherapy, home"
           className={[
-            'font-display text-[17px] tracking-[0.1em] uppercase no-underline transition-colors duration-200',
+            'no-underline transition-colors duration-200',
             scrolled ? 'text-dark-text' : 'text-text',
           ].join(' ')}
         >
-          Azalea Physiotherapy
+          <Logo
+            className="font-display text-[17px] tracking-[0.1em] uppercase"
+            markSize={28}
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -62,8 +66,8 @@ export default function Nav() {
               key={href}
               href={href}
               className={[
-                'text-[11px] font-medium tracking-[0.1em] uppercase no-underline transition-colors duration-200',
-                scrolled ? 'text-dark-text/75 hover:text-dark-text' : 'text-text/70 hover:text-text',
+                'text-[11px] font-semibold tracking-[0.1em] uppercase no-underline transition-colors duration-200',
+                scrolled ? 'text-dark-text/85 hover:text-dark-text' : 'text-text/90 hover:text-text',
               ].join(' ')}
             >
               {label}
@@ -106,9 +110,7 @@ export default function Nav() {
           className="fixed inset-0 z-[100] bg-dark flex flex-col px-10 py-12"
         >
           <div className="flex justify-between items-center mb-16">
-            <span className="font-display text-[17px] tracking-[0.1em] uppercase text-dark-text">
-              Azalea Physiotherapy
-            </span>
+            <Logo className="font-display text-[17px] tracking-[0.1em] uppercase text-dark-text" markSize={28} />
             <button
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
