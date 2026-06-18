@@ -1,6 +1,36 @@
 # Azalea Physiotherapy — Handoff
 
-_Last updated: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin (see below)._
+_Last updated: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO, 19-article SEO/AEO blog. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin._
+
+---
+
+## ▶ NEXT SESSION: Emil Kowalski design pass (start here)
+
+**Task:** Run Abtin's **Emil Kowalski design skill** over the site for a craft-level polish pass (interaction/motion, visual hierarchy, spacing rhythm, typographic precision, micro-interactions). Load that skill FIRST before making any design judgement (per memory: do not assume design principles before the relevant skill is loaded). The skill was not present in the prior session; Abtin confirmed it exists and is opening a fresh session so it loads.
+
+**Recommended approach:** audit-first. Produce findings + a short phased plan, get Abtin's nod, then implement. Abtin is hands-off but wants to approve direction on a pass this size.
+
+**Suggested scope (highest-traffic / highest-value first):** home (`src/app/page.tsx`), the money/landing pages (`/icbc`, `/worksafebc`, `/pricing`), the new blog (`/blog` index + `/blog/[slug]` renderer at `src/app/blog/[slug]/page.tsx`), then service/condition/team templates. Ask Abtin if he wants whole-site or just these.
+
+**DESIGN SYSTEM IS LOCKED — do not break it (see `DESIGN.md`):**
+- Palette B: Warm Stone + Restrained Rose. **Rose is for buttons/booking only** (not link hovers, not accents).
+- Fonts: Spectral (display, via next/font) + Satoshi (sans, Fontshare CSS import). Gold is a sparing accent (eyebrows, numerals, takeaway ticks).
+- **NO border-radius anywhere.** Square corners are a deliberate brand choice.
+- WCAG AA. **Crisp, high-contrast type — avoid low-opacity / washed-out text** (Abtin feedback; tune any faint `/60`-ish greys on important copy).
+- RTL-ready: use CSS **logical properties** (padding-inline, margin-inline, inset-inline-start) for any new spacing — there is a future `/fa` Farsi route.
+- Tailwind **v4**, CSS-first: all tokens live in `src/app/globals.css` inside `@theme {}`. **No tailwind.config.** Colors are `bg`, `stone`, `text`, `muted`, `dark`, `dark-text`, `rose`, `rose-dark`, `gold`, `border`.
+
+**Motion notes (relevant to an Emil Kowalski pass):** scroll-reveal is `.reveal` -> `.is-visible` via `RevealObserver` / an IntersectionObserver, scoped to `html.js` (set in `layout.tsx` before paint to avoid FOUC / blank sections for no-JS + crawlers). Any new animation must respect `prefers-reduced-motion` and must not hide content from crawlers. Keep transitions tasteful and fast; the brand is editorial/restrained, not flashy.
+
+**Key components to polish:** `Nav.tsx` (scroll state + mobile overlay), `Footer.tsx`, `PageHeader.tsx`, `BookCta.tsx`, `FaqAccordion.tsx`, `Portrait.tsx`, `Breadcrumbs.tsx`, `RichText.tsx` (blog inline), and the blog article renderer.
+
+**Abtin's working prefs:** direct/concise; no em dashes; no AI-slop; state assumptions; don't ask to verify things checkable from code. Models: Opus for design.
+
+**Workflow / deploy:** project at `C:\Users\abtin\azaleaphysio`, branch `mvp-rebuild`. Shell resets cwd each call (cd every time). gh at `C:\Program Files\GitHub CLI` (add to PATH). Verify with `npx tsc --noEmit` then `npx next build` (both currently clean). Commit + `git push origin mvp-rebuild` -> auto Vercel **Preview**. **Production (master) push is blocked by the safety classifier — needs Abtin to approve or click Promote in Vercel.** Preview URLs sit behind Vercel login (Abtin views them logged in). Latest preview build: commit on `mvp-rebuild`, all routes green.
+
+**Still open (not design):** promote to production; pick home headline (3 options, A is live); confirm non-physio fees + cancellation policy; add blog cover images; GA4 + conversion tracking before ads.
+
+---
 
 ## What changed this session (2026-06-18 overnight)
 
