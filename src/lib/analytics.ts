@@ -1,9 +1,11 @@
 /**
  * Booking-funnel analytics helper (CRO research P0 events).
  *
- * PLACEHOLDER: events are sent to GA4 via gtag when NEXT_PUBLIC_GA_ID is set.
- * Until a measurement ID is configured (and/or a booking system is wired up),
- * track() is a safe no-op in the browser and does nothing on the server.
+ * Events are sent to GA4 via gtag. They are fired from <AnalyticsEvents/> (a
+ * sitewide delegated click listener) — booking_start when any ClinicMaster
+ * link is clicked, phone_tap on any tel: link. Safe no-op until
+ * NEXT_PUBLIC_GA_ID is set: track() does nothing on the server and logs to the
+ * console in dev so funnel wiring can be verified before GA is live.
  */
 
 type GtagFn = (...args: unknown[]) => void
