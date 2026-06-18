@@ -3,6 +3,21 @@
 import { useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { track } from '@/lib/analytics'
+import { SITE } from '@/lib/clinic'
+
+/**
+ * Host of the booking portal, derived from SITE.booking rather than hardcoded.
+ * The clinic is migrating from ClinicMaster to Jane App; when SITE.booking is
+ * repointed to the Jane URL, booking_start tracking follows automatically and
+ * does not silently break.
+ */
+const BOOKING_HOST = (() => {
+  try {
+    return new URL(SITE.booking).host
+  } catch {
+    return ''
+  }
+})()
 
 /**
  * Owns the two things gtag's auto-config cannot do on its own for an App Router
@@ -14,12 +29,12 @@ import { track } from '@/lib/analytics'
  *     captured without forcing useSearchParams — which would deopt static pages
  *     out of prerendering).
  *
- *  2. Conversion events. Every booking CTA is a plain <a> to the ClinicMaster
- *     portal and every phone CTA is a tel: link, scattered across ~35 files. A
- *     single delegated click listener catches them all (and any future CTA) so
- *     we never have to wire onClick per button. booking_start + phone_tap are
- *     the P0 funnel events; mark them as conversions in GA4 (and map to a
- *     Google Ads conversion action once Ads is live).
+ *  2. Conversion events. Every booking CTA is a plain <a> to the booking portal
+ *     (SITE.booking) and every phone CTA is a tel: link, scattered across ~35
+ *     files. A single delegated click listener catches them all (and any future
+ *     CTA) so we never have to wire onClick per button. booking_start +
+ *     phone_tap are the P0 funnel events; mark them as conversions in GA4 (and
+ *     map to a Google Ads conversion action once Ads is live).
  */
 export default function AnalyticsEvents() {
   const pathname = usePathname()
@@ -55,9 +70,10 @@ export default function AnalyticsEvents() {
         return
       }
 
-      // The ClinicMaster booking portal — any link to it is a booking start,
-      // wherever it lives (nav, hero, BookCta band, footer, blog inline).
-      if (href.includes('clinicmaster.com')) {
+      // Any link to the booking portal is a booking start, wherever it lives
+      // (nav, hero, BookCta band, footer, blog inline). Matched by the live
+      // booking host so it survives the ClinicMaster -> Jane migration.
+      if (BOOKING_HOST && href.includes(BOOKING_HOST)) {
         track('booking_start', { destination: href, source_path: pathname })
       }
     }
