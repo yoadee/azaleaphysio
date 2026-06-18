@@ -17,6 +17,16 @@ Branch `mvp-rebuild` pushed to GitHub; Vercel auto-builds a **Preview** per push
 
 **Still on Abtin / blocked:** promote to production (push master was auto-blocked; approve it or click Promote in Vercel). Confirm non-physio discipline fees. Confirm cancellation policy terms. Pick home headline option.
 
+## Blog / Notes (2026-06-18 overnight, session 2)
+
+Built the blog from an empty placeholder into a working SEO/AEO content engine with **19 published articles**.
+
+- **Architecture:** articles are local typed data in `src/content/posts/<slug>.ts` (one file per article) registered in `src/content/posts/index.ts`, rendered by `src/app/blog/[slug]/page.tsx`. The `BlogPost` type (`src/content/blog.ts`) mirrors the Sanity `post` schema, so this migrates into Sanity later (body blocks → Portable Text). Chose local-first to match the clinic.ts pattern and because there is no Sanity write token; the value is live and indexable now.
+- **Per article:** answer-first "Key takeaways" panel (AEO 18-token rule), H2/H3 body, inline `[label](/path)` internal links to money/service/condition pages (revenue), 4-6 FAQs (FAQPage JSON-LD), `BlogPosting` JSON-LD, practitioner author byline + E-E-A-T strip, related services/conditions cards, related reading. Blog index grouped by category; all 19 in the sitemap.
+- **Coverage (mapped to the MARKETING-STRATEGY keyword research):** ICBC/insurance (does-icbc-cover-physiotherapy, whiplash-heal, after-a-car-accident, icbc-active-rehab, worksafebc); injuries/conditions (knee-pain-stairs, lower-back-pain, neck-pain-headaches, sciatica, rotator-cuff-vs-frozen-shoulder, knee-replacement-recovery, tennis-elbow); how-physio-works (referral-in-BC, physio-vs-chiro-vs-osteo, first-appointment, cost-in-west-van, farsi-speaking-physio); recovery/prevention (return-to-sport, fall-prevention-seniors).
+- Built clean: `tsc` 0 errors, `next build` 0 errors. Written via 5 research subagents + 2 hand-written exemplars; all fact-checked (whiplash WAD grades, ICBC 25+12 visits, BC direct access, MSP supplementary benefit, cauda equina red flags).
+- **To do later:** add cover images (coverImage field exists in the Sanity schema; renderer currently text-only), and when ready migrate articles into Sanity Studio. Authors/dates are all 2026-06-18; stagger publish dates if you prefer a drip.
+
 ---
 
 ## Project goal
