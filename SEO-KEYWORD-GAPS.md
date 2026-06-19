@@ -17,9 +17,13 @@ On-page work done; `next build` clean (16 condition pages, was 11). Not yet comm
 5. **MARKETING-STRATEGY.md refreshed:** added massage/RMT (2.3), sciatica/tennis/plantar (2.4), golf/ski (new 2.4a) and counselling note; osteopathy flagged UNSTAFFED and de-prioritised; takeaway (2.7) and on-page map (4.3) updated; stale "12 practitioners" callout fixed.
 6. **Factual count fixes:** "12 practitioners" → 8 and "ten disciplines" → eleven sitewide (home hero + stat grid, /services, /locations, /about, layout meta).
 
+### ✅ Farsi `/fa` shipped (same day, commit `e926f27`)
+- **`/fa`** Farsi landing/hub + **`/fa/icbc`** Farsi ICBC page, both live, build clean (82 pages). RTL via `dir="rtl" lang="fa"` wrapper + Vazirmatn Persian webfont; English Nav/Footer gated off `/fa*` (guarded vs `/faq`); `/fa` ships its own Farsi header/footer (`src/app/fa/layout.tsx`). Reciprocal hreflang `/fa/icbc` ↔ `/icbc`. Farsi FAQPage + HowTo schema. **All Farsi copy written by Claude — Abtin can't read Farsi, so it's not gated on his review** (see memory [[user_farsi]]).
+- **Scope decision (Abtin):** do NOT mirror the rest of the site in Farsi. The audience is bilingual; the goal is search-lane capture + trust signal, not translation. Only ICBC + the landing hub got Farsi. Next candidate if ever needed: Farsi physiotherapy. Counselling/Persian-therapist still folds here if pursued.
+
 ### Still open after this session
-- **`/fa` Farsi landing + Farsi ICBC** — deferred by Abtin (needs his native Farsi review; biggest single item). Still the #1 uncontested lane. **Next dedicated piece.**
-- **Counselling / Persian therapist page** — fold into the `/fa` work (Asal is Farsi-only/virtual).
+- **Counselling / Persian therapist page** — only if pursued; fold into the Farsi set (Asal is Farsi-only/virtual).
+- **`<html lang>` on /fa** is flipped client-side (FaLangDir); SSR `<html>` stays `lang="en"` with the content wrapper `lang="fa" dir="rtl"`. Fine for the lane; revisit only if doing full i18n.
 - **Hyperlocal P1 #7** partly done via location titles/body; could go deeper later.
 - **Osteopathy decision** — page kept but unstaffed and now de-emphasised on home; Abtin to either staff it or de-list it. The "eleven disciplines" count includes it.
 - Pull real volumes from Keyword Planner once the Ads account exists.
