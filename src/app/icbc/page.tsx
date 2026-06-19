@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: 'ICBC Physiotherapy in West Vancouver | Direct Billing, No Referral',
   description:
     'ICBC covers 25 pre-approved physiotherapy visits in the first 12 weeks after a crash, with no referral needed. We bill ICBC directly. Book at either West Vancouver clinic.',
-  alternates: { canonical: '/icbc' },
+  alternates: {
+    canonical: '/icbc',
+    languages: { 'en-CA': '/icbc', fa: '/fa/icbc' },
+  },
 }
 
 // Answer-first steps → HowTo JSON-LD. Mirrors how a patient actually starts.

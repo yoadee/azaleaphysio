@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // High-intent money pages (ICBC, WorkSafeBC, pricing, per-location) carry a
   // higher priority: they are the message-matched Google Ads landing targets.
-  const highIntentRoutes = ['/icbc', '/worksafebc', '/pricing', '/locations/16th-street', '/locations/ocean-walk']
+  const highIntentRoutes = ['/icbc', '/worksafebc', '/pricing', '/locations/16th-street', '/locations/ocean-walk', '/fa', '/fa/icbc']
 
   const staticRoutes = [
     '',

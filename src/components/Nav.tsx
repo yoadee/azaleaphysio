@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import { SITE } from '@/lib/clinic'
 
@@ -14,6 +15,7 @@ const navLinks = [
 ]
 
 export default function Nav() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)     // mounted in the DOM
   const [menuVisible, setMenuVisible] = useState(false) // animated-in state
@@ -46,6 +48,10 @@ export default function Nav() {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
+
+  // The /fa Farsi section ships its own RTL chrome; hide the English nav there.
+  // Guard against matching /faq.
+  if (pathname === '/fa' || pathname.startsWith('/fa/')) return null
 
   return (
     <>

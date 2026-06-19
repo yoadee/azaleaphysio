@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 
 const services = [
@@ -30,6 +33,10 @@ const clinicLinks = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  // The /fa Farsi section ships its own RTL footer; hide the English one there.
+  if (pathname === '/fa' || pathname.startsWith('/fa/')) return null
+
   return (
     <footer style={{ background: 'var(--color-footer)' }} className="px-14 pt-16 pb-9">
       <div className="max-w-[1200px] mx-auto">
