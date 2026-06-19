@@ -8,7 +8,7 @@ const post: BlogPost = {
     'A frozen shoulder progressively loses range in every direction, while a rotator cuff problem is pain and weakness with specific movements. Here is how to tell them apart and why the diagnosis matters.',
   targetKeyword: 'rotator cuff vs frozen shoulder',
   category: 'Injuries & Conditions',
-  authorSlug: 'ali-shafiei',
+  authorSlug: 'braedan-lalor',
   publishedAt: '2026-05-07',
   readingMinutes: 7,
   keyTakeaways: [

@@ -8,7 +8,7 @@ const post: BlogPost = {
     'WorkSafeBC covers physiotherapy for work injuries with no referral needed and nothing to pay at a WorkSafeBC provider. Here is how to report your injury, start treatment, and return to work safely.',
   targetKeyword: 'worksafebc physiotherapy',
   category: 'ICBC & Insurance',
-  authorSlug: 'ali-shafiei',
+  authorSlug: 'noushin-nouri',
   publishedAt: '2026-04-09',
   readingMinutes: 7,
   keyTakeaways: [

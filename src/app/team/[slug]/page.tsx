@@ -93,7 +93,7 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
         <div className="max-w-[1100px] mx-auto flex items-center justify-between gap-6">
           <p className="font-display italic text-[18px] font-light text-text">See the rest of the team</p>
           <Link href="/team" className="font-sans text-[12px] font-semibold tracking-[0.1em] uppercase text-text hover:text-rose-dark no-underline transition-colors">
-            All twelve →
+            All eight →
           </Link>
         </div>
       </section>

@@ -8,7 +8,7 @@ const post: BlogPost = {
     'Physiotherapists, chiropractors, and osteopaths all treat pain and movement problems, but they approach the body differently. Here is what each does, how they differ, and when to choose each one.',
   targetKeyword: 'physiotherapy vs chiropractor',
   category: 'How Physiotherapy Works',
-  authorSlug: 'mehdi-tafreshi',
+  authorSlug: 'sirus-vakilian',
   publishedAt: '2026-04-02',
   readingMinutes: 8,
   keyTakeaways: [

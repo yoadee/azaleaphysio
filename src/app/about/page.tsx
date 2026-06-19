@@ -8,7 +8,7 @@ import RevealObserver from '@/components/RevealObserver'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Azalea Physiotherapy has served West Vancouver and the North Shore since 2011. Twelve practitioners, ten disciplines, two locations, one connected team.',
+    'Azalea Physiotherapy has served West Vancouver and the North Shore since 2011. Eight practitioners, ten disciplines, two locations, one connected team.',
   alternates: { canonical: '/about' },
 }
 
@@ -35,7 +35,7 @@ export default function AboutPage() {
             Mary Ghoroghi opened Azalea on 16th Street in 2011 and still treats patients most days. Her reputation, the one that brings people across the North Shore, is for finding the cause of a problem when other clinics have only treated the symptom, then explaining it in language that makes sense. That is the standard the whole clinic is built to.
           </p>
           <p className="font-sans text-[18px] text-muted leading-[1.8]">
-            Fifteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district. That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who share a hallway and a chart, not a fax machine, several of whom treat in Farsi as well as English.
+            Fifteen years on, eight practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district. That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who share a hallway and a chart, not a fax machine, several of whom treat in Farsi as well as English.
           </p>
           <p className="font-sans text-[18px] text-muted leading-[1.8]">
             We are not trying to be the biggest clinic on the North Shore. We are trying to be the one where your whole recovery happens in one place, handled by people who talk to each other about your case.
@@ -70,7 +70,7 @@ export default function AboutPage() {
       <section className="bg-stone px-6 sm:px-10 md:px-14 py-16">
         <div className="max-w-[1100px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <p className="font-display italic text-[clamp(1.5rem,3vw,2rem)] font-light text-text max-w-[560px]">
-            Meet the twelve people who make that possible.
+            Meet the people who make that possible.
           </p>
           <Link href="/team" className="font-sans text-[12px] font-semibold tracking-[0.1em] uppercase text-text hover:text-rose-dark no-underline transition-colors shrink-0">
             See the team →

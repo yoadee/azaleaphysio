@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Azalea Physiotherapy",
   },
   description:
-    "Multidisciplinary physiotherapy clinic in West Vancouver. 12 practitioners, 10 disciplines, 2 locations. Direct billing to ICBC, WorkSafeBC and most extended health plans. No referral needed.",
+    "Multidisciplinary physiotherapy clinic in West Vancouver. 8 practitioners, 10 disciplines, 2 locations. Direct billing to ICBC, WorkSafeBC and most extended health plans. No referral needed.",
   metadataBase: new URL("https://www.azaleaphysio.com"),
   openGraph: {
     type: "website",

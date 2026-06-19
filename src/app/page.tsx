@@ -35,12 +35,10 @@ const conditions = [
 const team = [
   { name: 'Mary Ghoroghi', role: 'Registered Physiotherapist', img: '/images/existing/team-Mary-Gheissari.jpg', href: '/team/mary-ghoroghi' },
   { name: 'Braedan Lalor', role: 'Physiotherapist', img: '/images/existing/team-Braedan.jpg', href: '/team/braedan-lalor' },
-  { name: 'Mehdi Tafreshi', role: 'Osteopath', img: '/images/existing/team-mehdi-tafreshi.jpg', href: '/team/mehdi-tafreshi' },
   { name: 'Noushin Nouri', role: 'Registered Physiotherapist', img: '/images/existing/team-Noushin.jpg', href: '/team/noushin-nouri' },
-  { name: 'Ali Shafiei', role: 'Sports & MSK Physiotherapy', img: '/images/existing/team-Ali-Shafiei.jpg', href: '/team/ali-shafiei' },
-  { name: 'Asal', role: 'CBT & Psychotherapy', img: '/images/existing/team-asal.jpg', href: '/team/asal' },
   { name: 'Faranak Shekoohi', role: 'Kinesiologist', img: '/images/existing/team-Faranak-Shekoohi.jpg', href: '/team/faranak-shekoohi' },
-  { name: 'Kambiz Navirian', role: 'Acupuncture', img: '/images/existing/team-kambiz.jpg', href: '/team/kambiz-navirian' },
+  { name: 'Kambiz Navirian', role: 'Acupuncturist', img: '/images/existing/team-kambiz.jpg', href: '/team/kambiz-navirian' },
+  { name: 'Asal Akbari', role: 'Registered Clinical Counsellor', img: '/images/existing/team-asal.jpg', href: '/team/asal-akbari' },
 ]
 
 const faqs = [
@@ -110,7 +108,7 @@ export default function Home() {
             The cause, not just the symptom.
           </h1>
           <p className="font-sans text-[17px] text-muted leading-[1.65] mb-10 max-w-[480px]">
-            West Vancouver comes to Azalea to find what is actually driving the pain, not just to quiet it. Twelve practitioners and ten disciplines under one roof, in English or Farsi.
+            West Vancouver comes to Azalea to find what is actually driving the pain, not just to quiet it. Eight practitioners and ten disciplines under one roof, in English or Farsi.
           </p>
           <div className="flex flex-col gap-5 mb-10">
             <div className="flex flex-wrap items-center gap-4">
@@ -301,7 +299,7 @@ export default function Home() {
               A clinic that grew up on the North Shore.
             </h2>
             <p className="font-sans text-[15px] text-dark-text/80 leading-[1.8] mb-5 reveal">
-              Azalea opened on 16th Street in 2011 with a simple idea: a patient should not have to drive across the Lower Mainland to assemble their own care. Fifteen years on, twelve practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district.
+              Azalea opened on 16th Street in 2011 with a simple idea: a patient should not have to drive across the Lower Mainland to assemble their own care. Fifteen years on, eight practitioners treat under one roof, and a second clinic on Marine Drive serves the west side of the district.
             </p>
             <p className="font-sans text-[15px] text-dark-text/80 leading-[1.8] mb-14 reveal">
               That breadth is the point. A knee that needs physiotherapy, kinesiology, and the occasional acupuncture session is treated by people who share a hallway, not a fax machine. Several of our practitioners also treat in Farsi, which matters to a community well rooted on the North Shore.
@@ -312,7 +310,7 @@ export default function Home() {
             >
               {[
                 { n: '15', label: 'Years on the North Shore' },
-                { n: '12', label: 'Practitioners under one roof' },
+                { n: '8', label: 'Practitioners under one roof' },
                 { n: '2', label: 'West Vancouver locations' },
               ].map(({ n, label }) => (
                 <div key={label} className="reveal">
@@ -334,14 +332,14 @@ export default function Home() {
                 The people behind your recovery.
               </h2>
               <p className="font-sans text-[16px] text-muted">
-                Twelve practitioners, each with a specific focus, and several who treat in Farsi as well as English. This is who you will actually see.
+                Eight practitioners, each with a specific focus, and several who treat in Farsi as well as English. This is who you will actually see.
               </p>
             </div>
             <Link
               href="/team"
               className="font-sans text-[12px] font-semibold tracking-[0.1em] uppercase text-text hover:text-rose-dark no-underline transition-colors shrink-0 reveal"
             >
-              Meet all twelve →
+              Meet all eight →
             </Link>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-9">

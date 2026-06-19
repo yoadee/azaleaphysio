@@ -27,9 +27,9 @@ export function GET() {
 
   const body = `# Azalea Physiotherapy
 
-> A multidisciplinary physiotherapy clinic in West Vancouver, BC, offering ten rehabilitation and wellness services across two locations, with direct billing to ICBC, WorkSafeBC, and extended health insurers. No referral required. Treatment available in English and Farsi.
+> A multidisciplinary physiotherapy clinic in West Vancouver, BC, offering a range of rehabilitation and wellness services across two locations, with direct billing to ICBC, WorkSafeBC, and extended health insurers. No referral required. Treatment available in English and Farsi.
 
-Azalea Physiotherapy has served the North Shore since 2011. The clinic employs twelve registered practitioners across physiotherapy, sports injury, acupuncture, occupational therapy, kinesiology, osteopathy, chiropractic, weight loss programs, yoga therapy, and elderly care. Owner Mary Ghoroghi is a registered physiotherapist known for finding the underlying cause of a problem rather than treating only the symptom. Several practitioners treat in Farsi (Persian) as well as English.
+Azalea Physiotherapy has served the North Shore since 2011. The clinic employs eight registered practitioners across physiotherapy, sports injury, acupuncture, massage therapy, occupational therapy, kinesiology, chiropractic, weight loss programs, yoga therapy, and elderly care. Owner Mary Ghoroghi is a registered physiotherapist known for finding the underlying cause of a problem rather than treating only the symptom. Several practitioners treat in Farsi (Persian) as well as English.
 
 ## Key facts
 - No doctor's referral is required to see a physiotherapist in British Columbia. You can book directly.
@@ -55,7 +55,7 @@ ${serviceLines}
 ${conditionLines}
 
 ## Practitioners
-- [Team overview](${base}/team): Twelve registered practitioners with credentials and focus areas. Physiotherapists are registered with the College of Physical Therapists of British Columbia.
+- [Team overview](${base}/team): Eight registered practitioners with credentials and focus areas. Physiotherapists are registered with the College of Physical Therapists of British Columbia.
 
 ## Insurance and billing
 - [Insurance & Billing](${base}/insurance): Direct billing to ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life, Green Shield, Desjardins and more.

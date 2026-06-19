@@ -9,7 +9,7 @@ import { team } from '@/lib/clinic'
 export const metadata: Metadata = {
   title: 'Our Team',
   description:
-    'Meet the twelve practitioners at Azalea Physiotherapy in West Vancouver. Physiotherapists, osteopaths, kinesiologists, acupuncturists and more. Several treat in Farsi.',
+    'Meet the eight practitioners at Azalea Physiotherapy in West Vancouver. Physiotherapists, a chiropractor, kinesiologist, acupuncturist, massage therapist and counsellor. Several treat in Farsi.',
   alternates: { canonical: '/team' },
 }
 
@@ -20,7 +20,7 @@ export default function TeamPage() {
       <PageHeader
         trail={[{ label: 'Team' }]}
         title="The people behind your recovery."
-        lead="Twelve practitioners, each with a specific focus, and several who treat in Farsi as well as English. This is who you will actually see."
+        lead="Eight practitioners, each with a specific focus, and several who treat in Farsi as well as English. This is who you will actually see."
       />
 
       <section className="bg-bg px-6 sm:px-10 md:px-14 py-20 md:py-24">

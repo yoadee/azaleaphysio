@@ -8,7 +8,7 @@ const post: BlogPost = {
     'A physiotherapy assessment in West Vancouver is around $110 to $135, with follow-ups around $90 to $110. Most extended health plans reimburse a share, and ICBC and WorkSafeBC visits are typically fully covered.',
   targetKeyword: 'how much does physiotherapy cost',
   category: 'How Physiotherapy Works',
-  authorSlug: 'melina-raad',
+  authorSlug: 'mary-ghoroghi',
   publishedAt: '2026-05-14',
   readingMinutes: 5,
   keyTakeaways: [

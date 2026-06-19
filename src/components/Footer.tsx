@@ -5,6 +5,7 @@ const services = [
   { href: '/services/physiotherapy', label: 'Physiotherapy' },
   { href: '/services/sports-injury', label: 'Sports Injury' },
   { href: '/services/acupuncture', label: 'Acupuncture' },
+  { href: '/services/massage-therapy', label: 'Massage Therapy' },
   { href: '/services/occupational-therapy', label: 'Occupational Therapy' },
   { href: '/services/kinesiology', label: 'Kinesiology' },
   { href: '/services/osteopathy', label: 'Osteopathy' },
