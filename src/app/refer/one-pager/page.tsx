@@ -144,13 +144,15 @@ export default async function ReferOnePager() {
             {locations.map((loc) => (
               <div key={loc.slug} className="text-center sm:text-left">
                 <p className="font-display text-[16px] text-text mb-1">{loc.name.replace(' Clinic', '')}</p>
-                <p className="font-sans text-[13px] text-muted leading-[1.7]">
-                  {loc.street}, {loc.city} {loc.postal}
+                <address className="font-sans text-[13px] text-muted leading-[1.7] not-italic [text-wrap:pretty]">
+                  {loc.street}
+                  <br />
+                  {loc.city} {loc.postal.replace(' ', ' ')}
                   <br />
                   Tel {loc.telLabel} · Fax {loc.fax}
                   <br />
                   {loc.hours.map((h) => `${h.days} ${h.time}`).join(' · ')}
-                </p>
+                </address>
               </div>
             ))}
           </div>

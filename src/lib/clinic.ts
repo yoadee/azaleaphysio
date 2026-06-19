@@ -854,7 +854,7 @@ export const team: Practitioner[] = [
     name: 'Behzad Azari Mobarakeh',
     role: 'Registered Massage Therapist',
     credentials: 'Registered Massage Therapist (RMT)',
-    languages: ['English'],
+    languages: ['English', 'Farsi'],
     focus: ['Therapeutic massage', 'Muscle tension and pain', 'Recovery support'],
     bio: 'Behzad is a registered massage therapist who works alongside the physiotherapy and rehabilitation team. He uses massage to release the muscle tension and soft-tissue restriction that sit behind a lot of pain, so the hands-on and active sides of your recovery reinforce each other rather than work in isolation.',
   },
