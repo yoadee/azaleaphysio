@@ -92,9 +92,10 @@ export default function Home() {
       {/* ─── 1. Hero ─────────────────────────────────────────── */}
       <section className="relative md:min-h-screen grid grid-cols-1 md:grid-cols-[58fr_42fr]">
         <div className="bg-stone flex flex-col justify-center px-6 sm:px-10 md:px-14 lg:px-16 pt-36 pb-14 md:pt-44 md:pb-20">
-          <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-muted mb-8">
+          <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-muted mb-5">
             West Vancouver · Since 2011
           </p>
+          <div className="w-12 h-[3px] bg-gold mb-8" aria-hidden="true" />
           <h1 className="font-display text-[clamp(2.5rem,8vw,4.75rem)] font-light italic leading-[1.04] tracking-[-0.02em] text-text mb-7 max-w-[620px]">
             The cause, not just the symptom.
           </h1>
@@ -171,7 +172,7 @@ export default function Home() {
             { value: 'Farsi spoken', desc: 'Several of our practitioners treat in Persian as well as English.' },
           ].map(({ value, desc }) => (
             <div key={value} className="reveal">
-              <p className="font-display italic text-[23px] text-dark-text mb-3">{value}</p>
+              <p className="font-display italic text-[23px] text-gold mb-3">{value}</p>
               <p className="font-sans text-[14px] text-dark-text/75 leading-[1.65]">{desc}</p>
             </div>
           ))}

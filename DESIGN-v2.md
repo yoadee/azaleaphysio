@@ -28,9 +28,9 @@ These map onto the **same token names** as v1 (`globals.css` `@theme`), so the w
 ```css
 @theme {
   /* ── Brand accents ── */
-  --color-rose:       #0A6EB4;  /* PRIMARY / all CTAs — deepened logo azure (was rose) */
-  --color-rose-dark:  #08568C;  /* CTA hover */
-  --color-gold:       #F2A20C;  /* logo amber — stats, rating stars, citations on dark */
+  --color-rose:       #00AEFB;  /* PRIMARY / all CTAs — TRUE logo azure (was rose) */
+  --color-rose-dark:  #0094D6;  /* CTA hover (deeper azure) */
+  --color-gold:       #FDA000;  /* logo amber — accents, stats, labels, rating stars */
 
   /* ── Light surfaces ── */
   --color-bg:         #FFFFFF;  /* page body */
@@ -46,16 +46,15 @@ These map onto the **same token names** as v1 (`globals.css` `@theme`), so the w
 }
 ```
 
-Plus a non-token swap: the hardcoded divider/overlay `rgba(237,233,228, …)` (warm off-white at low alpha, used on dark sections) becomes `rgba(232,238,242, …)` (the cool dark-text rgb) sitewide.
+Plus two non-token rules: (1) azure buttons get **dark navy text** (`color: var(--color-text)` on `a.bg-rose`/`button.bg-rose` in `globals.css`), because white on bright azure fails contrast; (2) the hardcoded divider/overlay `rgba(237,233,228, …)` becomes `rgba(232,238,242, …)` (cool) sitewide.
 
 ### Full reference
 
 | Token | Hex | RGB | HSL | Notes |
 |---|---|---|---|---|
-| Brand blue (CTA) | `#0A6EB4` | 10,110,180 | 205° 89% 37% | logo hue, darkened for white-text AA |
-| Brand blue hover | `#08568C` | 8,86,140 | 206° 89% 29% | |
-| Logo azure (source) | `#00AEFB` | 0,174,251 | 198° 100% 49% | the mark itself; too light for text/CTA |
-| Gold | `#F2A20C` | 242,162,12 | 39° 90% 50% | accents on dark only |
+| Brand azure (CTA) | `#00AEFB` | 0,174,251 | 198° 100% 49% | the true logo blue; buttons use dark navy text |
+| Azure hover | `#0094D6` | 0,148,214 | 199° 100% 42% | |
+| Gold | `#FDA000` | 253,160,0 | 38° 100% 50% | true logo amber — accents + emphasis |
 | White | `#FFFFFF` | 255,255,255 | — | body |
 | Stone (cool) | `#E9EEF3` | 233,238,243 | 210° 30% 93% | hero panel, cards |
 | Border | `#D5DDE4` | 213,221,228 | 208° 22% 86% | |
@@ -79,19 +78,21 @@ Same bar as v1: dark body copy passes AA; nothing washed out (per the project's 
 | Text `#0F2230` on stone `#E9EEF3` | ~13:1 | AAA |
 | Muted `#4C5A65` on white | ~5.3:1 | AA (body) |
 | Muted `#4C5A65` on stone | ~4.7:1 | AA (body) |
-| White on CTA blue `#0A6EB4` | ~5.1:1 | AA (large/bold button text) |
+| Dark navy text `#0F2230` on azure button `#00AEFB` | ~6.7:1 | AA (button text) |
 | Dark-text `#E8EEF3` on dark `#0E2231` | ~15:1 | AAA |
-| Gold `#F2A20C` on dark `#0E2231` | ~8.5:1 | AAA |
+| Gold `#FDA000` on dark `#0E2231` | ~9:1 | AAA |
 
-Focus ring uses the brand blue (`--color-rose`), so it now reads as a blue outline.
+Focus ring uses the brand azure (`--color-rose`).
+
+**Why dark text on the buttons:** the true logo azure (`#00AEFB`) is too light for white text (only ~2.5:1, fails). Using it faithfully means the button label is dark navy, which reads at ~6.7:1. The alternative (a darker blue with white text) was rejected because it no longer looks like the logo.
 
 ---
 
 ## 4. Usage hierarchy & rules
 
 - **Neutrals dominate.** White body, cool-stone panels, navy dark sections. Colour is the exception, not the field.
-- **Blue is for action.** Every booking CTA is blue (`--color-rose` slot). Blue is *not* a background or section fill — same discipline rose had in v1 (buttons only).
-- **Gold is for emphasis on dark.** Stat numbers, rating stars, citations, the ICBC "after a crash" eyebrow. Never gold body text on white (fails contrast).
+- **Blue is for action.** Every booking CTA is bright azure (`--color-rose` slot), with dark navy text. Blue is *not* a background or section fill — same discipline rose had in v1 (buttons only).
+- **Gold is the warm counter-note, used in two ways:** (1) **as text on dark** — trust-band labels, stat numbers, rating stars, dark-section eyebrows (high contrast on navy); (2) **as a thin graphic accent rule** (`bg-gold`, 3px) on light surfaces — under the hero headline and above the booking band — where gold *text* would fail contrast but a gold *line* reads fine. This is what makes gold feel present site-wide. Never gold body text on white.
 - **Dark sections are navy**, giving the same rhythm as v1 but tying the darks to the brand hue.
 
 ### Allowed pairings

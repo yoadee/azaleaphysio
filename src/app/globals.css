@@ -8,10 +8,12 @@
 @theme {
   /* ─── Brand accents (v2 — logo blue & gold; see DESIGN-v2.md) ───────
      Token names kept from v1 so the whole site re-themes by value alone.
-     The --color-rose slot now holds the brand BLUE (all CTAs). */
-  --color-rose:       #0A6EB4;   /* PRIMARY / CTAs — deepened logo azure */
-  --color-rose-dark:  #08568C;   /* CTA hover */
-  --color-gold:       #F2A20C;   /* logo amber — stats + citations on dark bg */
+     The --color-rose slot now holds the brand BLUE (all CTAs). Azure is the
+     TRUE logo colour (#00AEFB); buttons use dark navy text (set below) since
+     white on bright azure fails contrast. */
+  --color-rose:       #00AEFB;   /* PRIMARY / CTAs — true logo azure */
+  --color-rose-dark:  #0094D6;   /* CTA hover (deeper azure) */
+  --color-gold:       #FDA000;   /* logo amber — accents, stats, labels */
 
   /* ─── Light surfaces ────────────────────── */
   --color-bg:         #FFFFFF;
@@ -94,6 +96,9 @@
    transform still applies instantly, which is the right behaviour (feedback,
    not motion). */
 a.bg-rose, button.bg-rose {
+  /* v2: the brand blue is bright azure, so button text is dark navy for AA
+     legibility (white on azure fails). Unlayered, so it overrides text-white. */
+  color: var(--color-text);
   transition: color 200ms var(--ease-out),
               background-color 200ms var(--ease-out),
               transform 140ms var(--ease-out);
