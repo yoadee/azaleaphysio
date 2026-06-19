@@ -860,6 +860,12 @@ export const team: Practitioner[] = [
   },
 ]
 
+/** Natural-language list of a practitioner's languages: "English", "English and Farsi", "Farsi". */
+export function formatLanguages(langs: string[]): string {
+  if (langs.length <= 1) return langs[0] ?? ''
+  return `${langs.slice(0, -1).join(', ')} and ${langs[langs.length - 1]}`
+}
+
 export type Faq = {
   q: string
   a: string

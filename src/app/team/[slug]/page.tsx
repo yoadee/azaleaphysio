@@ -6,7 +6,7 @@ import RevealObserver from '@/components/RevealObserver'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Portrait from '@/components/Portrait'
 import JsonLd from '@/components/JsonLd'
-import { team, practitionerBySlug, SITE } from '@/lib/clinic'
+import { team, practitionerBySlug, SITE, formatLanguages } from '@/lib/clinic'
 import { practitionerSchema } from '@/lib/schema'
 
 export function generateStaticParams() {
@@ -47,9 +47,9 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
               </h1>
               <p className="font-sans text-[13px] uppercase tracking-[0.12em] text-muted mb-1">{p.role}</p>
               <p className="font-sans text-[14px] text-muted mb-3">{p.credentials}</p>
-              {p.languages.includes('Farsi') && (
+              {p.languages.length > 0 && (
                 <span className="inline-flex items-center gap-2 font-sans text-[11px] font-semibold tracking-[0.08em] uppercase text-text px-3 py-1.5 mb-8" style={{ border: '1px solid var(--color-border)' }}>
-                  Treats in English & Farsi
+                  Treats in {formatLanguages(p.languages)}
                 </span>
               )}
               <p className="font-sans text-[17px] text-text leading-[1.75] mb-6 mt-6 max-w-[560px]">{p.bio}</p>
@@ -84,7 +84,7 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
           </div>
           <div className="reveal">
             <h2 className="font-sans text-[11px] uppercase tracking-[0.16em] text-muted mb-5">Languages</h2>
-            <p className="font-display italic text-[20px] font-light text-text">{p.languages.join(', ')}</p>
+            <p className="font-display italic text-[20px] font-light text-text">{formatLanguages(p.languages)}</p>
           </div>
         </div>
       </section>
