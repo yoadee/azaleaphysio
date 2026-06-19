@@ -65,7 +65,8 @@ Opus for design, copy, and planning. Sonnet for coding. Haiku for quick checks.
 
 ## Working agreement
 
-- Commit and push only when asked. Default working branch is `mvp-rebuild` (preview
-  deploys); `master` is production.
+- Commit and push only when asked. Work happens on a preview branch (check the current
+  branch with `git branch --show-current`; do not commit straight to `master`, which is
+  production). `master` is what deploys live.
 - After user-facing copy changes, sweep for em dashes and repeated content.
 - End commit messages with: `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`
