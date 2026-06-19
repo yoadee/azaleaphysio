@@ -142,7 +142,7 @@ export default function ReferPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
             {locations.map((loc) => (
-              <div key={loc.slug} className="reveal" style={{ borderTop: '1px solid rgba(237,233,228,0.14)' }}>
+              <div key={loc.slug} className="reveal" style={{ borderTop: '1px solid rgba(232,238,242,0.14)' }}>
                 <h3 className="font-display text-[20px] font-normal text-dark-text pt-5 mb-4">
                   {loc.name.replace(' Clinic', '')}
                 </h3>
@@ -179,7 +179,7 @@ export default function ReferPage() {
 
           <div
             className="mt-14 pt-10 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10"
-            style={{ borderTop: '1px solid rgba(237,233,228,0.14)' }}
+            style={{ borderTop: '1px solid rgba(232,238,242,0.14)' }}
           >
             <div>
               <p className="font-sans text-[11px] uppercase tracking-[0.16em] text-dark-text/50 mb-2">General enquiries</p>

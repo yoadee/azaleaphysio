@@ -6,22 +6,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* ─── Brand accents ─────────────────────── */
-  --color-rose:       #C97B8A;   /* buttons only — max 4 per page */
-  --color-rose-dark:  #A05A6A;   /* rose hover */
-  --color-gold:       #C4973A;   /* stats + citations on dark bg */
+  /* ─── Brand accents (v2 — logo blue & gold; see DESIGN-v2.md) ───────
+     Token names kept from v1 so the whole site re-themes by value alone.
+     The --color-rose slot now holds the brand BLUE (all CTAs). */
+  --color-rose:       #0A6EB4;   /* PRIMARY / CTAs — deepened logo azure */
+  --color-rose-dark:  #08568C;   /* CTA hover */
+  --color-gold:       #F2A20C;   /* logo amber — stats + citations on dark bg */
 
   /* ─── Light surfaces ────────────────────── */
   --color-bg:         #FFFFFF;
-  --color-stone:      #EDEAE6;   /* hero panel, team bg, location cards */
-  --color-border:     #DDD9D4;
-  --color-text:       #1C1917;
-  --color-muted:      #706B66;
+  --color-stone:      #E9EEF3;   /* cool pale blue-grey: hero panel, team bg, cards */
+  --color-border:     #D5DDE4;
+  --color-text:       #0F2230;   /* deep blue-charcoal */
+  --color-muted:      #4C5A65;   /* cool slate */
 
   /* ─── Dark sections ─────────────────────── */
-  --color-dark:       #1C1917;
-  --color-dark-text:  #EDE9E4;
-  --color-footer:     #131110;
+  --color-dark:       #0E2231;   /* deep navy */
+  --color-dark-text:  #E8EEF3;
+  --color-footer:     #0A1A26;
 
   /* ─── Typography ────────────────────────── */
   /* --font-spectral is injected by next/font on <html> */

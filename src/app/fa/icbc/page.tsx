@@ -118,7 +118,7 @@ export default function FaIcbc() {
                 <span className="text-[22px] font-light text-gold leading-none pt-1 shrink-0" aria-hidden="true">
                   {['۰۱', '۰۲', '۰۳', '۰۴'][i]}
                 </span>
-                <div className="pt-4 grow" style={{ borderTop: '1px solid rgba(237,233,228,0.14)' }}>
+                <div className="pt-4 grow" style={{ borderTop: '1px solid rgba(232,238,242,0.14)' }}>
                   <h3 className="text-[20px] font-medium text-dark-text mb-2">{step.name}</h3>
                   <p className="text-[15px] text-dark-text/70 leading-[1.9]">{step.text}</p>
                 </div>

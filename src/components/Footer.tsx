@@ -42,7 +42,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto">
 
         {/* Brand sign — the full lockup; sits on near-black like the wall sign. */}
-        <div className="pb-12 mb-12" style={{ borderBottom: '1px solid rgba(237,233,228,0.08)' }}>
+        <div className="pb-12 mb-12" style={{ borderBottom: '1px solid rgba(232,238,242,0.08)' }}>
           <Logo
             className="font-display text-[15px] sm:text-[16px] md:text-[18px] tracking-[0.1em] sm:tracking-[0.12em] uppercase text-dark-text"
             markClass="w-8 h-8 sm:w-[34px] sm:h-[34px]"
@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12 pb-12"
-          style={{ borderBottom: '1px solid rgba(237,233,228,0.05)' }}>
+          style={{ borderBottom: '1px solid rgba(232,238,242,0.05)' }}>
 
           {/* Brand */}
           <div>

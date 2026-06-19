@@ -146,7 +146,7 @@ export default function WorkSafeBcPage() {
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div style={{ borderTop: '1px solid rgba(237,233,228,0.14)' }} className="pt-4 grow">
+                <div style={{ borderTop: '1px solid rgba(232,238,242,0.14)' }} className="pt-4 grow">
                   <h3 className="font-display text-[20px] font-normal text-dark-text mb-2">{step.name}</h3>
                   <p className="font-sans text-[15px] text-dark-text/70 leading-[1.65] max-w-[42ch]">{step.text}</p>
                 </div>

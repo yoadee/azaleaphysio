@@ -297,7 +297,7 @@ export default function Home() {
             </p>
             <div
               className="grid grid-cols-3 gap-8 pt-10"
-              style={{ borderTop: '1px solid rgba(237,233,228,0.12)' }}
+              style={{ borderTop: '1px solid rgba(232,238,242,0.12)' }}
             >
               {[
                 { n: '15', label: 'Years on the North Shore' },
@@ -503,7 +503,7 @@ export default function Home() {
       </section>
 
       {/* ─── Mobile sticky call bar ─────────────────────────── */}
-      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden flex" style={{ background: 'var(--color-dark)', borderTop: '1px solid rgba(237,233,228,0.1)' }}>
+      <div className="fixed bottom-0 inset-x-0 z-40 md:hidden flex" style={{ background: 'var(--color-dark)', borderTop: '1px solid rgba(232,238,242,0.1)' }}>
         <a
           href="tel:+16042813345"
           className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 no-underline active:bg-dark-text/10 transition-colors"
@@ -511,7 +511,7 @@ export default function Home() {
           <span className="font-sans text-[9px] font-semibold tracking-[0.14em] uppercase text-dark-text/70">16th Street</span>
           <span className="font-sans text-[14px] font-semibold text-dark-text">(604) 281-3345</span>
         </a>
-        <div style={{ width: '1px', background: 'rgba(237,233,228,0.1)' }} />
+        <div style={{ width: '1px', background: 'rgba(232,238,242,0.1)' }} />
         <a
           href="tel:+16042813122"
           className="flex-1 flex flex-col items-center justify-center py-3 gap-0.5 no-underline active:bg-dark-text/10 transition-colors"

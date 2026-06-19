@@ -56,7 +56,7 @@ export default function FaLayout({ children }: { children: React.ReactNode }) {
       {/* Farsi footer — NAP + phones for both clinics, kept in the language. */}
       <footer className="bg-dark px-6 sm:px-10 md:px-14 py-16">
         <div className="max-w-[1100px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-10" style={{ borderBottom: '1px solid rgba(237,233,228,0.1)' }}>
+          <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-10 pb-10" style={{ borderBottom: '1px solid rgba(232,238,242,0.1)' }}>
             <div>
               <Logo className="font-display text-[18px] tracking-[0.12em] uppercase text-dark-text" markSize={30} />
               <p className="text-[14px] text-dark-text/70 leading-[1.9] mt-5 max-w-[300px]">
