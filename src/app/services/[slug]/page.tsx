@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const s = serviceBySlug(slug)
   if (!s) return {}
   return {
-    title: `${s.name} in West Vancouver`,
+    title: s.metaTitle ?? `${s.name} in West Vancouver`,
     description: `${s.excerpt} Direct billing and usually same-week. Book online or call.`,
     alternates: { canonical: `/services/${s.slug}` },
   }

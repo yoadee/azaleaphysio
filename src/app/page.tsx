@@ -3,21 +3,12 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { SITE, insurersFeatured } from '@/lib/clinic'
+import { SITE, insurersFeatured, services as allServices } from '@/lib/clinic'
 import JsonLd from '@/components/JsonLd'
 
-const services = [
-  { href: '/services/physiotherapy', label: 'Physiotherapy' },
-  { href: '/services/sports-injury', label: 'Sports Injury' },
-  { href: '/services/acupuncture', label: 'Acupuncture' },
-  { href: '/services/occupational-therapy', label: 'Occupational Therapy' },
-  { href: '/services/kinesiology', label: 'Kinesiology' },
-  { href: '/services/osteopathy', label: 'Osteopathy' },
-  { href: '/services/chiropractic', label: 'Chiropractic' },
-  { href: '/services/weight-loss', label: 'Weight Loss Program' },
-  { href: '/services/yoga-therapy', label: 'Yoga Therapy' },
-  { href: '/services/elderly-care', label: 'Elderly Care' },
-]
+// Derived from the canonical services list so every discipline (incl. massage)
+// is linked from the homepage and new services appear automatically.
+const services = allServices.map((s) => ({ href: `/services/${s.slug}`, label: s.name }))
 
 const conditions = [
   { href: '/conditions/back-neck-pain', label: 'Back & Neck Pain', desc: 'Desk strain, disc trouble, and the ache that will not settle.' },
@@ -108,7 +99,7 @@ export default function Home() {
             The cause, not just the symptom.
           </h1>
           <p className="font-sans text-[17px] text-muted leading-[1.65] mb-10 max-w-[480px]">
-            West Vancouver comes to Azalea to find what is actually driving the pain, not just to quiet it. Eight practitioners and ten disciplines under one roof, in English or Farsi.
+            West Vancouver comes to Azalea to find what is actually driving the pain, not just to quiet it. Eight practitioners and eleven disciplines under one roof, in English or Farsi.
           </p>
           <div className="flex flex-col gap-5 mb-10">
             <div className="flex flex-wrap items-center gap-4">
@@ -140,8 +131,8 @@ export default function Home() {
             style={{ borderTop: '1px solid var(--color-border)' }}
           >
             {[
-              { n: '12', label: 'Practitioners' },
-              { n: '10', label: 'Disciplines' },
+              { n: '8', label: 'Practitioners' },
+              { n: '11', label: 'Disciplines' },
               { n: '15', label: 'Years open' },
               { n: '2', label: 'Locations' },
             ].map(({ n, label }) => (
@@ -218,10 +209,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-12 md:gap-16">
             <div className="md:sticky md:top-28 md:self-start">
               <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-text mb-6 reveal">
-                Ten disciplines.<br />One address.
+                Eleven disciplines.<br />One address.
               </h2>
               <p className="font-sans text-[15px] text-muted leading-[1.75] mb-4 reveal">
-                Most clinics send you elsewhere the moment your case crosses a line. We do not. Physiotherapy, acupuncture, kinesiology, osteopathy and six more disciplines work from the same building, so your treatment plan moves between them without a fresh referral or a new waiting list.
+                Most clinics send you elsewhere the moment your case crosses a line. We do not. Physiotherapy, massage therapy, acupuncture, kinesiology and seven more disciplines work from the same building, so your treatment plan moves between them without a fresh referral or a new waiting list.
               </p>
               <p className="font-display italic text-[17px] text-text reveal">
                 One team, one record, one recovery.

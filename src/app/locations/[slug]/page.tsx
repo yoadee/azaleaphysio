@@ -13,12 +13,12 @@ const locationBySlug = (slug: string) => locations.find((l) => l.slug === slug)
 // Unique framing per location so the two pages do not read as duplicate content.
 const blurbs: Record<string, { lead: string; body: string }> = {
   '16th-street': {
-    lead: 'Our clinic at 585 16th Street sits in central West Vancouver, a few minutes from Marine Drive and easy to reach from across the North Shore.',
-    body: 'This is where Azalea began. The full multidisciplinary team works from here, so whatever you come in for, the rest of your plan is in the same building rather than scattered across clinics. Weekday hours run to 7pm and we open Saturday mornings, which makes it easier to fit treatment around work.',
+    lead: 'Our clinic at 585 16th Street sits in the heart of Ambleside, a few minutes from Marine Drive and easy to reach from across the North Shore.',
+    body: 'This is where Azalea began. The full multidisciplinary team works from here, so whatever you come in for, the rest of your plan is in the same building rather than scattered across clinics. We are a short drive for patients across Ambleside, the British Properties, and central West Vancouver. Weekday hours run to 7pm and we open Saturday mornings, which makes it easier to fit treatment around work.',
   },
   'ocean-walk': {
     lead: 'Our Ocean Walk clinic on Marine Drive serves the west side of West Vancouver, with the same disciplines and the same direct billing as our 16th Street location.',
-    body: 'If Marine Drive is the easier side of the North Shore for you, this is your clinic. It offers the same multidisciplinary care under one roof, the same same-week availability, and the same direct billing to ICBC, WorkSafeBC, and most extended health plans.',
+    body: 'If Marine Drive is the easier side of the North Shore for you, this is your clinic. It is an easy reach from Dundarave, the west side of the district, and out toward Horseshoe Bay and Lions Bay. It offers the same multidisciplinary care under one roof, the same same-week availability, and the same direct billing to ICBC, WorkSafeBC, and most extended health plans.',
   },
 }
 
@@ -30,10 +30,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const loc = locationBySlug(slug)
   if (!loc) return {}
-  const where = loc.slug === 'ocean-walk' ? 'Marine Drive' : '16th Street'
+  // Each location owns a distinct hyperlocal query (Ambleside vs Marine Drive) so
+  // neither competes with /services/physiotherapy for the "physiotherapy west
+  // vancouver" head term.
+  const where = loc.slug === 'ocean-walk' ? 'on Marine Drive' : 'in Ambleside'
+  const area = loc.slug === 'ocean-walk' ? 'Dundarave and the west side of West Vancouver' : 'Ambleside and central West Vancouver'
   return {
-    title: `Physiotherapy on ${where}, West Vancouver | ${loc.name}`,
-    description: `${loc.name}: ${loc.street}, West Vancouver. Physiotherapy and multidisciplinary care, direct billing, no referral needed. ${loc.hours[0].days} ${loc.hours[0].time}. Call ${loc.telLabel}.`,
+    title: `Physiotherapy ${where}, West Vancouver | ${loc.name}`,
+    description: `${loc.name}: ${loc.street}, West Vancouver. Physiotherapy and multidisciplinary care for ${area}. Direct billing, no referral needed. ${loc.hours[0].days} ${loc.hours[0].time}. Call ${loc.telLabel}.`,
     alternates: { canonical: `/locations/${loc.slug}` },
   }
 }
@@ -137,7 +141,7 @@ export default async function LocationDetail({ params }: { params: Promise<{ slu
             What we offer here
           </h2>
           <p className="font-sans text-[16px] text-muted mb-10 max-w-[620px] reveal">
-            All ten disciplines are available at this location, coordinated under one roof.
+            All eleven disciplines are available at this location, coordinated under one roof.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {services.map((s) => (

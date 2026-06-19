@@ -6,6 +6,26 @@ Pick up here when continuing SEO work.
 
 ---
 
+## ✅ Shipped 2026-06-19 (this session)
+
+On-page work done; `next build` clean (16 condition pages, was 11). Not yet committed/pushed.
+
+1. **Cannibalization fixed.** `/services/physiotherapy` is now the sole owner of "physiotherapy west vancouver" (its title is unchanged). Location pages re-titled hyperlocally — "Physiotherapy in Ambleside" (16th Street) and "Physiotherapy on Marine Drive" (Ocean Walk) — with neighbourhood body copy (Ambleside / British Properties / central West Van; Dundarave / west side / Horseshoe Bay / Lions Bay). Home stays brand-led. No two pages now chase the bare head term.
+2. **Massage orphan fixed.** Home service list is now data-driven from `clinic.ts` (massage + any future service auto-appears). Massage added to `relatedServices` of back-neck-pain (replacing unstaffed osteopathy), sports-injuries, and arthritis-joint-pain, so condition pages link in. Title override added (`metaTitle` field) → "Registered Massage Therapy (RMT) in West Vancouver"; excerpt now carries "(RMT)".
+3. **3 condition pages added** (P0/P1): `/conditions/sciatica`, `/conditions/tennis-elbow`, `/conditions/plantar-fasciitis` — fully enriched (symptoms, approach, recovery, FAQ schema). Wired into physiotherapy + acupuncture related conditions.
+4. **Golf & ski/snowboard added** (P1): `/conditions/golf-injury`, `/conditions/ski-snowboard-injury` — enriched, name Braedan's golf-performance background + Cypress proximity, wired into sports-injury.
+5. **MARKETING-STRATEGY.md refreshed:** added massage/RMT (2.3), sciatica/tennis/plantar (2.4), golf/ski (new 2.4a) and counselling note; osteopathy flagged UNSTAFFED and de-prioritised; takeaway (2.7) and on-page map (4.3) updated; stale "12 practitioners" callout fixed.
+6. **Factual count fixes:** "12 practitioners" → 8 and "ten disciplines" → eleven sitewide (home hero + stat grid, /services, /locations, /about, layout meta).
+
+### Still open after this session
+- **`/fa` Farsi landing + Farsi ICBC** — deferred by Abtin (needs his native Farsi review; biggest single item). Still the #1 uncontested lane. **Next dedicated piece.**
+- **Counselling / Persian therapist page** — fold into the `/fa` work (Asal is Farsi-only/virtual).
+- **Hyperlocal P1 #7** partly done via location titles/body; could go deeper later.
+- **Osteopathy decision** — page kept but unstaffed and now de-emphasised on home; Abtin to either staff it or de-list it. The "eleven disciplines" count includes it.
+- Pull real volumes from Keyword Planner once the Ads account exists.
+
+---
+
 ## Current coverage (baseline)
 
 - **Services (11):** physiotherapy, sports-injury, acupuncture, **massage-therapy (new)**, occupational-therapy, kinesiology, osteopathy (UNSTAFFED), chiropractic, weight-loss, yoga-therapy, elderly-care. Title template `"{Service} in West Vancouver | Azalea Physiotherapy"`.

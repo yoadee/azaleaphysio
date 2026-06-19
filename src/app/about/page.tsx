@@ -8,7 +8,7 @@ import RevealObserver from '@/components/RevealObserver'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Azalea Physiotherapy has served West Vancouver and the North Shore since 2011. Eight practitioners, ten disciplines, two locations, one connected team.',
+    'Azalea Physiotherapy has served West Vancouver and the North Shore since 2011. Eight practitioners, eleven disciplines, two locations, one connected team.',
   alternates: { canonical: '/about' },
 }
 

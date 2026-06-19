@@ -137,6 +137,9 @@ export type ServiceFact = { label: string; value: string }
 export type Service = {
   slug: string
   name: string
+  // Optional SEO title override. Defaults to "{name} in West Vancouver" when
+  // omitted; set only where a secondary term matters (e.g. RMT for massage).
+  metaTitle?: string
   excerpt: string
   whoThisHelps: string[]
   whatWeDo: string
@@ -230,7 +233,7 @@ export const services: Service[] = [
       },
     ],
     practitioners: ['mary-ghoroghi', 'braedan-lalor', 'noushin-nouri'],
-    relatedConditions: ['back-neck-pain', 'knee-pain', 'shoulder-injuries', 'post-surgical-rehab'],
+    relatedConditions: ['back-neck-pain', 'sciatica', 'knee-pain', 'shoulder-injuries', 'post-surgical-rehab', 'plantar-fasciitis'],
   },
   {
     slug: 'sports-injury',
@@ -265,7 +268,7 @@ export const services: Service[] = [
       { category: 'insurance', q: 'How much does it cost?', a: 'An initial assessment runs roughly $110 to $135 and follow-ups roughly $90 to $110. Most extended health plans reimburse a significant share, and WorkSafeBC and ICBC visits are typically covered in full with nothing to pay upfront.' },
     ],
     practitioners: ['braedan-lalor'],
-    relatedConditions: ['sports-injuries', 'knee-pain', 'shoulder-injuries'],
+    relatedConditions: ['sports-injuries', 'knee-pain', 'shoulder-injuries', 'tennis-elbow', 'golf-injury', 'ski-snowboard-injury'],
   },
   {
     slug: 'acupuncture',
@@ -300,12 +303,13 @@ export const services: Service[] = [
       { category: 'treatment', q: 'Do you offer IMS or dry needling?', a: 'Yes. Alongside traditional acupuncture, our practitioners use intramuscular stimulation (IMS), a dry-needling technique that releases tight muscle bands and trigger points. Your practitioner will tell you which approach suits your problem, and the two are often combined.' },
     ],
     practitioners: ['kambiz-navirian'],
-    relatedConditions: ['headaches-jaw-pain', 'back-neck-pain', 'arthritis-joint-pain'],
+    relatedConditions: ['headaches-jaw-pain', 'back-neck-pain', 'sciatica', 'arthritis-joint-pain'],
   },
   {
     slug: 'massage-therapy',
     name: 'Massage Therapy',
-    excerpt: 'Registered massage therapy in West Vancouver for muscle tension, pain, and recovery, alongside physiotherapy under one roof.',
+    metaTitle: 'Registered Massage Therapy (RMT) in West Vancouver',
+    excerpt: 'Registered massage therapy (RMT) in West Vancouver for muscle tension, pain, and recovery, alongside physiotherapy under one roof.',
     whoThisHelps: [
       'Tight, aching muscles that will not settle on their own.',
       'Tension headaches, a stiff neck, or a tight back from desk work or training.',
@@ -596,7 +600,7 @@ export const conditions: Condition[] = [
     name: 'Back & Neck Pain',
     short: 'Desk strain, disc trouble, and the ache that will not settle.',
     intro: 'Most back and neck pain comes from how you move and hold yourself all day, not from one dramatic moment. We find what is driving it and treat the cause, so relief lasts past the appointment.',
-    relatedServices: ['physiotherapy', 'osteopathy', 'chiropractic', 'acupuncture'],
+    relatedServices: ['physiotherapy', 'massage-therapy', 'chiropractic', 'acupuncture'],
     symptoms: [
       'A deep ache in your lower back that worsens after sitting or standing too long.',
       'Neck stiffness and tension that creeps into headaches by the end of the day.',
@@ -707,7 +711,7 @@ export const conditions: Condition[] = [
     name: 'Sports Injuries',
     short: 'Sprains, strains, and the return to your sport.',
     intro: 'Getting back to sport is not the same as getting out of pain. We treat the injury and then rebuild the strength, control, and confidence that keep you in the game next season.',
-    relatedServices: ['sports-injury', 'physiotherapy', 'kinesiology'],
+    relatedServices: ['sports-injury', 'physiotherapy', 'kinesiology', 'massage-therapy'],
   },
   {
     slug: 'post-surgical-rehab',
@@ -744,7 +748,7 @@ export const conditions: Condition[] = [
     name: 'Arthritis & Joint Pain',
     short: 'Keeping stiff, painful joints moving.',
     intro: 'Arthritis responds to the right kind of movement. We help you stay active without flaring the joint, using hands-on treatment and a program matched to how the pain behaves.',
-    relatedServices: ['physiotherapy', 'kinesiology', 'acupuncture'],
+    relatedServices: ['physiotherapy', 'kinesiology', 'acupuncture', 'massage-therapy'],
   },
   {
     slug: 'headaches-jaw-pain',
@@ -759,6 +763,116 @@ export const conditions: Condition[] = [
     short: 'Fall prevention and staying independent at home.',
     intro: 'Balance is trainable at any age. Through our Enhanced Care Program we work on strength, steadiness, and confident movement to reduce falls and keep older adults independent at home.',
     relatedServices: ['elderly-care', 'physiotherapy', 'kinesiology'],
+  },
+  {
+    slug: 'sciatica',
+    name: 'Sciatica',
+    short: 'Nerve pain that runs from the lower back into the leg.',
+    intro: 'Sciatica is pain that travels from the lower back through the buttock and down the leg, following the sciatic nerve. It is usually a sign that something is pressing on or irritating the nerve, and it responds well to the right assessment and treatment. We find what is driving it and treat the cause, not just the leg pain.',
+    relatedServices: ['physiotherapy', 'acupuncture', 'kinesiology'],
+    symptoms: [
+      'Pain that radiates from your lower back into a buttock, thigh, or calf.',
+      'Burning, tingling, or an electric-shock sensation down one leg.',
+      'Numbness or weakness in the leg or foot.',
+      'Pain that worsens when you sit, cough, or sneeze.',
+      'A deep ache that makes sitting or standing for long uncomfortable.',
+    ],
+    approach: 'Sciatica is a symptom, not a diagnosis, so the first job is finding what is irritating the nerve, whether that is a disc, tight muscles around the hip, or how you load your lower back. Your physiotherapist assesses the source, settles the nerve pain with hands-on treatment and targeted movement, then rebuilds the strength and mobility that keep the pressure off it. Acupuncture can ease stubborn nerve pain alongside the plan, and kinesiology-led strengthening carries the recovery through.',
+    recovery: 'Many cases of sciatica ease meaningfully within a few weeks once treatment targets the cause, though disc-related or long-standing cases take longer and are worked in stages. Your physiotherapist gives you a realistic timeline after the first assessment, and tells you honestly if anything needs a medical opinion.',
+    faqs: [
+      { category: 'treatment', q: 'Should I see a physiotherapist for sciatica?', a: 'Yes. Most sciatica is caused by something treatable, like a disc irritation or tight muscles pressing on the nerve, and a physiotherapist can diagnose the source and treat it without surgery in the majority of cases. You do not need a referral to book in BC, and if there is any sign of a more serious cause we tell you and coordinate the right care.' },
+      { category: 'treatment', q: 'Should I rest or keep moving with sciatica?', a: 'Gentle movement usually helps more than bed rest. Lying still for long tends to stiffen the area and slow recovery. The assessment shows which positions and movements ease the nerve and which to avoid, so you are guided rather than guessing.' },
+      { category: 'treatment', q: 'How long does sciatica take to settle?', a: 'Often a few weeks with the right treatment, though disc-related or long-standing sciatica takes longer and is staged. We give you a realistic range after the first visit and build the plan around the cause.' },
+      { category: 'treatment', q: 'What causes sciatica?', a: 'It is usually something pressing on or irritating the sciatic nerve: a bulging disc in the lower back, tight or overworked muscles around the hip, or how the lower back is loaded day to day. Finding which one applies to you is exactly what the assessment is for.' },
+    ],
+  },
+  {
+    slug: 'tennis-elbow',
+    name: 'Tennis Elbow',
+    short: 'Pain on the outside of the elbow from overuse, not just tennis.',
+    intro: 'Tennis elbow is pain on the outer elbow where the forearm tendons attach, caused by repetitive gripping and loading rather than tennis specifically. It is slow to settle on its own but responds well to a structured loading program. We treat the tendon and the habits that overloaded it.',
+    relatedServices: ['physiotherapy', 'acupuncture', 'kinesiology'],
+    symptoms: [
+      'Pain and tenderness on the bony outside of the elbow.',
+      'A weak or painful grip, especially lifting or twisting.',
+      'Pain that flares with gripping, shaking hands, or turning a doorknob.',
+      'An ache that travels down into the forearm.',
+      'Stiffness in the elbow in the morning or after rest.',
+    ],
+    approach: 'Tennis elbow is a tendon problem, and tendons recover through the right kind of loading, not rest alone. Your physiotherapist confirms the diagnosis, settles the pain, then guides a progressive strengthening program that rebuilds the tendon’s capacity so it stops flaring. We also look at the grip, work, or training that overloaded it, because treating the tendon without changing the load tends to let it return. Acupuncture can help with stubborn pain alongside the plan.',
+    recovery: 'Tennis elbow is often slow, and a realistic course runs several weeks to a few months depending on how long it has been there and how it is loaded day to day. The good news is that a structured program reliably turns it around. Your physiotherapist gives you a clear timeline and milestones at the first visit.',
+    faqs: [
+      { category: 'treatment', q: 'Do I need to play tennis to get tennis elbow?', a: 'No. Most people we treat for tennis elbow have never played. It comes from repetitive gripping and forearm loading, so it is common in trades, desk work, lifting, and racquet sports alike. The name describes the location, not the cause.' },
+      { category: 'treatment', q: 'Will tennis elbow heal on its own?', a: 'It sometimes settles with enough rest, but it is slow and prone to returning if the underlying load is not addressed. A structured strengthening program recovers it more reliably and reduces the chance of it coming back, which is why it is worth getting assessed rather than waiting it out.' },
+      { category: 'treatment', q: 'Should I rest it completely?', a: 'Complete rest usually is not the answer for a tendon. The tendon needs gradual, controlled loading to rebuild its capacity. We settle the pain first, then load it progressively, and adjust the grip or activity that overloaded it in the first place.' },
+      { category: 'treatment', q: 'How long does tennis elbow take to recover?', a: 'Typically several weeks to a few months, depending on how long it has been present and the demands you put on the arm. A guided loading program is what makes the difference. We give you a realistic range and clear milestones after the first assessment.' },
+    ],
+  },
+  {
+    slug: 'plantar-fasciitis',
+    name: 'Plantar Fasciitis',
+    short: 'Heel pain that bites with your first steps in the morning.',
+    intro: 'Plantar fasciitis is pain under the heel from irritation of the thick band of tissue along the sole of the foot. It is classically worst with the first steps in the morning and after rest. It responds well to the right treatment and loading, and we treat the foot and the factors that overloaded it.',
+    relatedServices: ['physiotherapy', 'kinesiology', 'acupuncture'],
+    symptoms: [
+      'Sharp heel pain with your first steps in the morning.',
+      'Pain under the heel that eases as you warm up, then returns after rest.',
+      'Tenderness when you press the inside of the heel.',
+      'Heel pain that worsens after long standing, walking, or running.',
+      'Tightness through the arch or the calf.',
+    ],
+    approach: 'Plantar fasciitis is an overload problem, so the plan settles the irritated tissue and then rebuilds the foot’s tolerance through targeted loading and calf and foot strengthening. Your physiotherapist also looks at the things that overloaded it, like footwear, a spike in training, calf tightness, or how you load the foot, because addressing those is what stops it returning. Acupuncture can ease stubborn heel pain alongside the program.',
+    recovery: 'Plantar fasciitis can be stubborn, and a realistic course runs several weeks to a few months, faster when treatment starts early. A structured loading program and addressing the cause reliably turn it around. Your physiotherapist gives you a clear timeline at the first visit.',
+    faqs: [
+      { category: 'treatment', q: 'Why is plantar fasciitis worse in the morning?', a: 'The tissue tightens and settles overnight, so the first steps stretch and load it suddenly, which is what produces that sharp heel pain. It typically eases as you warm up and then returns after periods of rest. That pattern is one of the clearest signs of plantar fasciitis.' },
+      { category: 'treatment', q: 'Should I stop exercising with plantar fasciitis?', a: 'Not necessarily. Complete rest rarely fixes it and can let the foot lose tolerance. The aim is to manage the load, settle the irritation, and rebuild the tissue’s capacity with a guided program. We tell you what to modify rather than asking you to stop everything.' },
+      { category: 'treatment', q: 'Do I need special insoles or orthotics?', a: 'Sometimes supportive footwear or a temporary insert helps settle symptoms, but they are not a cure on their own. The lasting fix is treating the irritation and rebuilding the foot and calf so they tolerate load again. We advise on footwear as part of the plan where it helps.' },
+      { category: 'treatment', q: 'How long does plantar fasciitis take to heal?', a: 'Often several weeks to a few months, and faster when treatment starts early. A structured loading program and addressing what overloaded the foot are what make it resolve. We give you a realistic range and milestones after the first assessment.' },
+    ],
+  },
+  {
+    slug: 'golf-injury',
+    name: 'Golf Injuries',
+    short: 'Back, elbow, shoulder, and wrist pain that comes with the swing.',
+    intro: 'Golf loads the back, shoulders, elbows, and wrists through a repetitive, rotational swing, and small faults add up over a season. We treat the injury and look at how you move and load the swing, so you play through the season instead of around it. Braedan Lalor leads our golf work and is recognised internationally for golf performance.',
+    relatedServices: ['sports-injury', 'physiotherapy', 'kinesiology'],
+    symptoms: [
+      'Lower back pain or stiffness that builds over a round or a season.',
+      'Golfer’s or tennis elbow from the grip and impact.',
+      'Shoulder pain at the top or the finish of the swing.',
+      'Wrist pain from impact or catching the turf.',
+      'A recurring niggle that flares every time you ramp up your golf.',
+    ],
+    approach: 'We treat the injury first, then look at the thing most golfers never get assessed: how your body moves through the swing and where it is overloading. Your physiotherapist settles the pain with hands-on treatment, rebuilds the strength, mobility, and rotation the swing demands, and works on the pattern driving the problem. Braedan’s background in golf performance means the plan is built around the real demands of the swing rather than generic rehab, with kinesiology-led strengthening to carry it through.',
+    recovery: 'It depends on the injury, from a few weeks for a settled strain to a staged program for a stubborn back or elbow. Because the work also addresses the swing load behind it, the aim is not just pain-free but durable through a full season. Your physiotherapist gives you a realistic timeline and a plan to return to play after the first assessment.',
+    faqs: [
+      { category: 'treatment', q: 'Can physiotherapy help my golf game, not just the injury?', a: 'Yes. Treating the injury is the start; the lasting fix is building the mobility, rotation, and strength the swing demands and addressing the movement fault that overloaded you. Braedan works specifically in golf performance, so the plan is built around the swing rather than generic rehab.' },
+      { category: 'treatment', q: 'What are the most common golf injuries?', a: 'Lower back pain leads, followed by elbow (golfer’s and tennis elbow), shoulder, and wrist problems. They usually come from the repetitive, rotational load of the swing rather than one bad shot, which is why assessing how you move matters as much as treating the sore spot.' },
+      { category: 'treatment', q: 'Do I have to stop golfing while I recover?', a: 'Often not entirely. We manage the load and modify rather than shut you down where it is safe to keep playing, and we are honest when a problem genuinely needs a pause. The plan is built around getting you through the season.' },
+      { category: 'booking', q: 'Do I need a referral to be seen?', a: 'No. You can book directly in BC. Bring the details of how and when the pain shows up in your golf, and we build the assessment around it.' },
+    ],
+  },
+  {
+    slug: 'ski-snowboard-injury',
+    name: 'Ski & Snowboard Injuries',
+    short: 'Knee, shoulder, and wrist injuries from the slopes, minutes from Cypress.',
+    intro: 'Skiing and snowboarding load the knees, shoulders, and wrists, and the North Shore mountains put them right on our doorstep. We treat the acute injury and rebuild the strength and control that get you back on the slopes safely, whether the season is just starting or you are mid-winter.',
+    relatedServices: ['sports-injury', 'physiotherapy', 'kinesiology'],
+    symptoms: [
+      'A knee injury from a twist or a fall, including suspected ligament damage.',
+      'Shoulder pain or instability after a fall.',
+      'Wrist pain from bracing a fall, common in snowboarding.',
+      'An old injury you want rehabbed before the season starts.',
+      'You want to build the strength and control to ski or ride with less risk.',
+    ],
+    approach: 'Snow-sport injuries split into the acute, like a twisted knee or a fall on the shoulder or wrist, and the preventable, where strength and control reduce the risk in the first place. Your physiotherapist assesses what is injured, settles it, and rebuilds the specific strength, balance, and control the slopes demand, staged so you return when the tissue can handle it. Minutes from Cypress, we see both ends of the season: pre-season conditioning and mid-winter injuries. Kinesiology-led strengthening carries the later stages back to full activity.',
+    recovery: 'A minor strain can settle in a few weeks; ligament injuries and post-surgical knees are staged over longer and progressed as strength and control return. The plan is built around getting you back on snow safely rather than just out of pain. Your physiotherapist gives you a realistic timeline and milestones after the first assessment.',
+    faqs: [
+      { category: 'treatment', q: 'I hurt my knee skiing. Do I need a scan or surgery?', a: 'Not always. Many ski knee injuries, including some ligament injuries, recover well with structured physiotherapy. The assessment works out what is injured and how serious it is, and we tell you honestly if it needs imaging or a surgical opinion rather than guessing.' },
+      { category: 'treatment', q: 'Can you help me get ready before ski season?', a: 'Yes, and it is one of the best things you can do. Building leg strength, balance, and control before the season reduces injury risk and helps you ski or ride stronger for longer. We build a pre-season program around your history and your sport.' },
+      { category: 'treatment', q: 'How long until I can get back on the slopes?', a: 'It depends on the injury, from a few weeks for a minor strain to a staged return for a ligament or post-surgical knee. We stage the plan so you return when the tissue can handle the load, which is what prevents a repeat. You get a realistic timeline at the first visit.' },
+      { category: 'booking', q: 'Do I need a referral to be seen?', a: 'No. You can book directly in BC. If the injury happened in a car accident or at work, different coverage applies, and we can point you to the right billing.' },
+    ],
   },
 ]
 

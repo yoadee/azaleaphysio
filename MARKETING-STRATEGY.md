@@ -36,6 +36,8 @@ Read this section even if you read nothing else.
 
 ## 2. Keyword Research
 
+> **Refreshed 2026-06-19** to match the current roster and services: added the **massage / RMT** lane (now staffed by Behzad), the **golf & ski/snowboard** lane (Braedan + Cypress), new **sciatica / tennis elbow / plantar fasciitis** condition pages, and a **counselling / Persian therapist** note (Asal). **Osteopathy is now unstaffed** and de-prioritised for paid traffic. See sections 2.3, 2.4, 2.4a and 2.7.
+
 ### How to read this section
 
 - **Search volume** = roughly how many times that phrase is searched per month in your catchment (Greater Vancouver / North Shore). All volumes here are **[Estimated]** because Google Keyword Planner volumes for a town this small are login-gated and are usually shown only as wide ranges (e.g. "10–100"). I have estimated conservatively for the North Shore specifically, not all of Metro Vancouver.
@@ -77,12 +79,19 @@ Read this section even if you read nothing else.
 | physiotherapy north vancouver | 150–400 [Est] | High | $6–$12 [Est] | High |
 | physiotherapist near me (geo) | 100–300 [Est] | High | $5–$11 [Est] | High |
 | acupuncture west vancouver | 30–90 [Est] | High | $4–$9 [Est] | Medium |
-| osteopathy north vancouver | 20–70 [Est] | High | $4–$9 [Est] | Low–Med |
+| massage therapy west vancouver | 90–250 [Est] | High | $4–$9 [Est] | Medium |
+| registered massage therapist (RMT) west vancouver | 30–90 [Est] | High | $4–$9 [Est] | Medium |
+| deep tissue massage west vancouver | 20–70 [Est] | High | $3–$8 [Est] | Low–Med |
 | chiropractor west vancouver | 40–120 [Est] | High | $6–$12 [Est] | High |
 | occupational therapy north vancouver | 10–40 [Est] | Medium | $4–$9 [Est] | Low |
 | kinesiology north vancouver | 20–60 [Est] | Medium | $3–$8 [Est] | Low |
+| osteopathy north vancouver | 20–70 [Est] | High | $4–$9 [Est] | Low–Med |
 
 **Note:** "physiotherapy west vancouver" is the most contested and most expensive term. It is worth holding a position on, but do not let it eat the budget. The insurance and condition lanes give better return per dollar.
+
+**Massage / RMT (added 2026-06-19):** This is now a live, in-house service (Behzad Azari Mobarakeh, RMT) and a genuine new lane. Massage carries higher search volume than most other modalities and direct-billing intent. `/services/massage-therapy` is the landing page; run it as its own ad group, not lumped under physio.
+
+**Osteopathy (correction 2026-06-19): currently UNSTAFFED.** The page is kept for completeness but there is no osteopath on the team. Do **not** bid on osteopathy keywords or send paid traffic to that page until the role is filled. Listed last above for that reason.
 
 ### 2.4 Condition keywords (good intent, often cheaper than head service terms)
 
@@ -97,6 +106,24 @@ Read this section even if you read nothing else.
 | arthritis joint pain physio north shore | <20 [Est] | Medium | $3–$8 [Est] | Low |
 | headache jaw pain physiotherapy (TMJ) | <20 [Est] | Medium | $3–$8 [Est] | Low |
 | balance mobility physiotherapy seniors | <20 [Est] | Medium | $3–$7 [Est] | Low |
+| sciatica treatment west vancouver | 30–90 [Est] | High | $4–$9 [Est] | Low–Med |
+| tennis elbow physio north vancouver | 10–40 [Est] | High | $3–$8 [Est] | Low |
+| plantar fasciitis treatment west vancouver | 20–60 [Est] | High | $3–$8 [Est] | Low |
+
+**New condition pages (added 2026-06-19):** `/conditions/sciatica`, `/conditions/tennis-elbow`, `/conditions/plantar-fasciitis` are now live with full copy + FAQ schema. Sciatica is the priority of the three (highest volume, blog support already in place). These convert cheaper than the head service terms.
+
+### 2.4a Golf & ski/snowboard injury (distinctive, low-competition)
+
+| Keyword | Monthly volume | Intent | Est. CPC (CAD) | Competition |
+|---|---|---|---|---|
+| golf injury physio west vancouver | <20 [Est] | High | $3–$8 [Est] | Very low |
+| golf performance physiotherapy vancouver | <20 [Est] | High | $3–$8 [Est] | Very low |
+| ski injury physiotherapy west vancouver | 10–40 [Est] | High | $4–$9 [Est] | Low |
+| snowboard injury rehab north shore | <20 [Est] | High | $3–$8 [Est] | Very low |
+
+**Why this is an unfair advantage:** Braedan Lalor is recognised internationally for golf performance, and the clinic is minutes from Cypress. Almost nobody competes for these terms locally. Seasonal (ski is winter, golf is spring/summer), so schedule the campaigns to the season rather than running year-round. Landing pages now live at `/conditions/golf-injury` and `/conditions/ski-snowboard-injury`.
+
+**Counselling / Persian therapist (note):** Asal Akbari is a Registered Clinical Counsellor (Farsi-only, virtual). `registered clinical counsellor west vancouver` and the uncontested `persian / farsi counsellor vancouver` are unclaimed, but there is no counselling page yet. Best folded into the `/fa` Farsi build rather than run as a standalone English campaign.
 
 ### 2.5 Farsi / Persian keywords (UNCONTESTED — cheap, high-value)
 
@@ -125,8 +152,10 @@ Competitor bidding is allowed in Canada but you cannot use their name in your ad
 
 1. **ICBC / WorkSafeBC** — funded treatment, extreme intent, direct billing is your hook. **Priority 1.**
 2. **Farsi / Persian** — uncontested, cheap, a team strength competitors can't copy. **Priority 1.**
-3. **Condition keywords** (back, neck, sports injury) — cheaper than head "physiotherapy west vancouver" and still high intent. **Priority 2.**
-4. **Branded** — cheap insurance against poaching. **Always on, tiny spend.**
+3. **Condition keywords** (back, neck, sciatica, sports injury) — cheaper than head "physiotherapy west vancouver" and still high intent. **Priority 2.**
+4. **Massage / RMT** — new in-house service, higher volume than most modalities, real direct-billing intent. **Priority 2.**
+5. **Golf & ski/snowboard injury** — distinctive, near-zero competition, on-brand (Braedan + Cypress). Run seasonally. **Priority 2 (seasonal).**
+6. **Branded** — cheap insurance against poaching. **Always on, tiny spend.**
 
 > **What a media buyer must pull from Keyword Planner once the account exists:** real local volumes for every keyword above (Planner shows them as ranges for small geos), the live "top of page bid" low/high estimates for each (these replace my CPC estimates), and the suggested negative keywords Planner surfaces. Expect some of my volume estimates to come back as "10–100" or even "<10." That is normal for West Van and is exactly why precision beats volume here.
 
@@ -188,7 +217,7 @@ Do not jump straight to tCPA on day one — with no history it will either not s
 - **Device strategy:** mobile dominates "near me" and pain searches. Keep mobile fully on, ensure the click-to-call button is huge and above the fold on mobile landing pages. Monitor mobile vs desktop conversion in month 1 and adjust bids.
 - **Assets / ad extensions (add all relevant ones — they're free and lift CTR):**
   - **Sitelinks:** Book Online, ICBC Direct Billing, Our Team, Services, Locations.
-  - **Callouts:** "No Referral Needed", "Direct Billing ICBC & WorkSafeBC", "Open to 7pm + Saturdays", "Same-Week Appointments", "English & Farsi", "12 Practitioners Under One Roof".
+  - **Callouts:** "No Referral Needed", "Direct Billing ICBC & WorkSafeBC", "Open to 7pm + Saturdays", "Same-Week Appointments", "English & Farsi", "Eleven Disciplines Under One Roof".
   - **Call asset:** phone number with call tracking.
   - **Location assets:** link the two Google Business Profiles so the address and map pin show in the ad.
   - **Structured snippets:** list services (Physiotherapy, Acupuncture, Osteopathy, etc.).
@@ -275,11 +304,11 @@ Build pages that match the keyword research. Priority order (highest commercial 
 
 1. **`/icbc`** — ICBC car accident / active rehab, direct billing, no referral, 25-session auto-approval explained. *Highest ROI page.*
 2. **`/worksafebc`** — workplace injury, direct billing, return-to-work.
-3. **Core service pages** — `/physiotherapy`, `/sports-injury`, `/acupuncture`, `/osteopathy`, `/chiropractic`, `/occupational-therapy`, `/kinesiology`, `/weight-loss`, `/yoga-therapy`, `/elderly-care`. Each its own page (don't lump them).
-4. **Condition pages** — back pain, neck pain, knee pain, shoulder injury, whiplash, post-surgical rehab, arthritis, headaches/TMJ, balance/mobility. These rank for the cheaper, high-intent condition searches and feed the "finds the cause" story.
-5. **Location pages** — one per clinic with embedded map, NAP, hours, parking, the neighbourhoods served.
-6. **Farsi page(s) `/fa`** — at minimum a Farsi homepage and a Farsi ICBC page. Few competitors have genuine Farsi content; this is a ranking opportunity in an uncontested space.
-7. **Team / practitioner pages** — Mary Ghoroghi and the 12 practitioners; supports "finds the cause others missed" and E-E-A-T (Google's trust signals for health content).
+3. **Core service pages** — `/services/physiotherapy`, `/sports-injury`, `/massage-therapy`, `/acupuncture`, `/chiropractic`, `/occupational-therapy`, `/kinesiology`, `/weight-loss`, `/yoga-therapy`, `/elderly-care` (plus `/osteopathy`, kept but unstaffed — no paid traffic). Each its own page (don't lump them). `/services/physiotherapy` is the designated owner of the "physiotherapy west vancouver" head term; home and location pages deliberately do not compete for it.
+4. **Condition pages** — back pain, neck pain, sciatica, knee pain, shoulder injury, whiplash, tennis elbow, plantar fasciitis, golf injury, ski/snowboard injury, post-surgical rehab, arthritis, headaches/TMJ, balance/mobility. These rank for the cheaper, high-intent condition searches and feed the "finds the cause" story.
+5. **Location pages** — one per clinic with embedded map, NAP, hours, parking, the neighbourhoods served. Titled hyperlocally (Ambleside / Marine Drive) so they own local variants instead of cannibalising the head term.
+6. **Farsi page(s) `/fa`** — at minimum a Farsi homepage and a Farsi ICBC page. Few competitors have genuine Farsi content; this is a ranking opportunity in an uncontested space. **Still to build.**
+7. **Team / practitioner pages** — Mary Ghoroghi and the eight practitioners; supports "finds the cause others missed" and E-E-A-T (Google's trust signals for health content).
 
 Each page: one clear H1 with the target keyword + geo, the assurances, internal links to related condition/service pages, a booking CTA, and the practitioner credentials (important for health-topic trust).
 

@@ -8,7 +8,7 @@ import { services } from '@/lib/clinic'
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Ten disciplines under one roof in West Vancouver: physiotherapy, sports injury, acupuncture, kinesiology, osteopathy, chiropractic and more. No referral needed.',
+    'Eleven disciplines under one roof in West Vancouver: physiotherapy, sports injury, massage therapy, acupuncture, kinesiology, chiropractic and more. No referral needed.',
   alternates: { canonical: '/services' },
 }
 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
       <RevealObserver />
       <PageHeader
         trail={[{ label: 'Services' }]}
-        title="Ten disciplines. One address."
+        title="Eleven disciplines. One address."
         lead="Most clinics send you elsewhere the moment your case crosses a line. We do not. Your treatment plan moves between disciplines without a fresh referral or a new waiting list."
       />
 
