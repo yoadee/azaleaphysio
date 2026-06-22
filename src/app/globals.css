@@ -13,7 +13,7 @@
      white on bright azure fails contrast. */
   --color-rose:       #00AEFB;   /* PRIMARY / CTAs — true logo azure */
   --color-rose-dark:  #0094D6;   /* CTA hover (deeper azure) */
-  --color-gold:       #FDA000;   /* logo amber — accents, stats, labels */
+  --color-gold:       #D4AF37;   /* true gold (the logo amber #FDA000 read as orange) */
 
   /* ─── Light surfaces ────────────────────── */
   --color-bg:         #FFFFFF;

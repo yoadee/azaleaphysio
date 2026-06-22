@@ -30,7 +30,7 @@ These map onto the **same token names** as v1 (`globals.css` `@theme`), so the w
   /* ── Brand accents ── */
   --color-rose:       #00AEFB;  /* PRIMARY / all CTAs — TRUE logo azure (was rose) */
   --color-rose-dark:  #0094D6;  /* CTA hover (deeper azure) */
-  --color-gold:       #FDA000;  /* logo amber — accents, stats, labels, rating stars */
+  --color-gold:       #D4AF37;  /* true gold — accents, stats, labels (logo's #FDA000 read as orange) */
 
   /* ── Light surfaces ── */
   --color-bg:         #FFFFFF;  /* page body */
@@ -54,7 +54,7 @@ Plus two non-token rules: (1) azure buttons get **dark navy text** (`color: var(
 |---|---|---|---|---|
 | Brand azure (CTA) | `#00AEFB` | 0,174,251 | 198° 100% 49% | the true logo blue; buttons use dark navy text |
 | Azure hover | `#0094D6` | 0,148,214 | 199° 100% 42% | |
-| Gold | `#FDA000` | 253,160,0 | 38° 100% 50% | true logo amber — accents + emphasis |
+| Gold | `#D4AF37` | 212,175,55 | 46° 60% 52% | true gold (logo amber #FDA000 read as orange) — accents + emphasis |
 | White | `#FFFFFF` | 255,255,255 | — | body |
 | Stone (cool) | `#E9EEF3` | 233,238,243 | 210° 30% 93% | hero panel, cards |
 | Border | `#D5DDE4` | 213,221,228 | 208° 22% 86% | |
@@ -80,7 +80,7 @@ Same bar as v1: dark body copy passes AA; nothing washed out (per the project's 
 | Muted `#4C5A65` on stone | ~4.7:1 | AA (body) |
 | Dark navy text `#0F2230` on azure button `#00AEFB` | ~6.7:1 | AA (button text) |
 | Dark-text `#E8EEF3` on dark `#0E2231` | ~15:1 | AAA |
-| Gold `#FDA000` on dark `#0E2231` | ~9:1 | AAA |
+| Gold `#D4AF37` on dark `#0E2231` | ~9:1 | AAA |
 
 Focus ring uses the brand azure (`--color-rose`).
 
@@ -92,7 +92,7 @@ Focus ring uses the brand azure (`--color-rose`).
 
 - **Neutrals dominate.** White body, cool-stone panels, navy dark sections. Colour is the exception, not the field.
 - **Blue is for action.** Every booking CTA is bright azure (`--color-rose` slot), with dark navy text. Blue is *not* a background or section fill — same discipline rose had in v1 (buttons only).
-- **Gold is the warm counter-note, used in two ways:** (1) **as text on dark** — trust-band labels, stat numbers, rating stars, dark-section eyebrows (high contrast on navy); (2) **as a thin graphic accent rule** (`bg-gold`, 3px) on light surfaces — under the hero headline and above the booking band — where gold *text* would fail contrast but a gold *line* reads fine. This is what makes gold feel present site-wide. Never gold body text on white.
+- **Gold is the warm counter-note, used in two ways:** (1) **as text on dark** — trust-band labels, stat numbers, rating stars, dark-section eyebrows (high contrast on navy); (2) **as a graphic accent rule** (`bg-gold`, ~4px × 56px) repeated above every major section heading — hero, services, conditions, team, testimonial, FAQ, locations, the booking band, the final CTA — where gold *text* would fail contrast but a gold *line* reads crisply. This repeated rule is the motif that carries gold down the whole page. Never gold body text on white.
 - **Dark sections are navy**, giving the same rhythm as v1 but tying the darks to the brand hue.
 
 ### Allowed pairings

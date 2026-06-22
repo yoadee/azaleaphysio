@@ -95,7 +95,7 @@ export default function Home() {
           <p className="font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-muted mb-5">
             West Vancouver · Since 2011
           </p>
-          <div className="w-12 h-[3px] bg-gold mb-8" aria-hidden="true" />
+          <div className="w-14 h-1 bg-gold mb-8" aria-hidden="true" />
           <h1 className="font-display text-[clamp(2.5rem,8vw,4.75rem)] font-light italic leading-[1.04] tracking-[-0.02em] text-text mb-7 max-w-[620px]">
             The cause, not just the symptom.
           </h1>
@@ -209,6 +209,7 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-12 md:gap-16">
             <div className="md:sticky md:top-28 md:self-start">
+              <div className="w-14 h-1 bg-gold mb-6 reveal" aria-hidden="true" />
               <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-text mb-6 reveal">
                 Eleven disciplines.<br />One address.
               </h2>
@@ -247,6 +248,7 @@ export default function Home() {
       <section className="bg-stone px-6 sm:px-10 md:px-14 py-24">
         <div className="max-w-[1200px] mx-auto">
           <div className="mb-14 reveal max-w-[640px]">
+            <div className="w-14 h-1 bg-gold mb-6" aria-hidden="true" />
             <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-text mb-4">
               Start with the pain, not the paperwork.
             </h2>
@@ -320,6 +322,7 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-5">
             <div className="reveal max-w-[560px]">
+              <div className="w-14 h-1 bg-gold mb-6" aria-hidden="true" />
               <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light leading-[1.08] tracking-[-0.02em] text-text mb-4">
                 The people behind your recovery.
               </h2>
@@ -362,6 +365,7 @@ export default function Home() {
       {/* ─── 8. Testimonial ──────────────────────────────────── */}
       <section className="bg-dark px-6 sm:px-10 md:px-14 py-28">
         <figure className="max-w-[820px] mx-auto text-center reveal">
+          <div className="w-14 h-1 bg-gold mx-auto mb-10" aria-hidden="true" />
           <blockquote className="font-display italic text-[clamp(1.6rem,3.4vw,2.25rem)] font-light leading-[1.4] text-dark-text mb-9">
             &#8220;I visited Azalea with my chronic pain. She was able to diagnose the cause, and with the correct treatments my 5-year lasting pain was gone. Her knowledge and experience are outstanding.&#8221;
           </blockquote>
@@ -374,6 +378,7 @@ export default function Home() {
       {/* ─── 9. FAQ ──────────────────────────────────────────── */}
       <section className="bg-bg px-6 sm:px-10 md:px-14 py-24">
         <div className="max-w-[820px] mx-auto">
+          <div className="w-14 h-1 bg-gold mb-6 reveal" aria-hidden="true" />
           <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light tracking-[-0.02em] text-text mb-12 reveal">
             Questions, answered.
           </h2>
@@ -419,6 +424,7 @@ export default function Home() {
         style={{ borderTop: '1px solid var(--color-border)' }}
       >
         <div className="max-w-[1200px] mx-auto">
+          <div className="w-14 h-1 bg-gold mb-6 reveal" aria-hidden="true" />
           <h2 className="font-display italic text-[clamp(2rem,4vw,2.75rem)] font-light tracking-[-0.02em] text-text mb-12 reveal">
             Two West Vancouver locations.
           </h2>
@@ -481,6 +487,7 @@ export default function Home() {
       {/* ─── 11. Final CTA ───────────────────────────────────── */}
       <section className="bg-dark px-6 sm:px-10 md:px-14 py-28">
         <div className="max-w-[720px] mx-auto text-center reveal">
+          <div className="w-14 h-1 bg-gold mx-auto mb-8" aria-hidden="true" />
           <h2 className="font-display italic text-[clamp(2.5rem,6vw,4rem)] font-light leading-[1.05] tracking-[-0.02em] text-dark-text mb-6">
             Let&#8217;s find out what is actually wrong.
           </h2>

@@ -14,7 +14,7 @@ export default function BookCta({
   return (
     <section className="bg-dark px-6 sm:px-10 md:px-14 py-24 md:py-28">
       <div className="max-w-[720px] mx-auto text-center reveal">
-        <div className="w-12 h-[3px] bg-gold mx-auto mb-8" aria-hidden="true" />
+        <div className="w-14 h-1 bg-gold mx-auto mb-8" aria-hidden="true" />
         <h2 className="font-display italic text-[clamp(2.25rem,5vw,3.5rem)] font-light leading-[1.06] tracking-[-0.02em] text-dark-text mb-6">
           {heading}
         </h2>
