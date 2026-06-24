@@ -2,28 +2,20 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-// Site-wide social share card: azure brand panel with the logo mark, wordmark
-// on the dark panel. Matches the site's square, high-contrast brand language.
+// Site-wide social share card: editorial layout with the real two-tone Azalea
+// mark bleeding off the right on a light field, Spectral wordmark on the left.
 export const alt = 'Azalea Physiotherapy — Multidisciplinary physiotherapy in West Vancouver'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 const DARK = '#0F2230'
-const STONE = '#E9EEF3'
+const SLATE = '#4C5A65'
 const GOLD = '#D4AF37'
 const AZURE = '#00AEFB'
-const MUTED = '#9FB0BC'
 
-// Logo mark as a recolourable data URI (the path has no own fill, so the
-// wrapping <g fill> colours it).
-const markInner = readFileSync(join(process.cwd(), 'public', 'logo-mark.svg'), 'utf8')
-  .replace(/^[\s\S]*?<svg[^>]*>/, '')
-  .replace(/<\/svg>\s*$/, '')
-const mark = (color: string) =>
-  'data:image/svg+xml;base64,' +
-  Buffer.from(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"><g fill="${color}">${markInner}</g></svg>`,
-  ).toString('base64')
+const markColor =
+  'data:image/png;base64,' +
+  readFileSync(join(process.cwd(), 'public', 'logo-mark-color.png')).toString('base64')
 
 async function loadGoogleFont(weight: number, italic: boolean) {
   const ital = italic ? '1' : '0'
@@ -34,46 +26,35 @@ async function loadGoogleFont(weight: number, italic: boolean) {
   return await (await fetch(url)).arrayBuffer()
 }
 
+const title = (fs: number) => ({
+  display: 'flex',
+  fontFamily: 'Spectral',
+  fontStyle: 'italic',
+  fontWeight: 600,
+  fontSize: fs,
+  color: DARK,
+  lineHeight: 1.0,
+  letterSpacing: '-0.02em',
+})
+
 export default async function OgImage() {
   const [titleFont, bodyFont] = await Promise.all([loadGoogleFont(600, true), loadGoogleFont(400, false)])
 
   return new ImageResponse(
     (
-      <div style={{ width: '100%', height: '100%', display: 'flex', background: DARK }}>
-        <div
-          style={{
-            width: 440,
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: AZURE,
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={mark('#FFFFFF')} width={300} height={300} alt="" />
+      <div style={{ width: '100%', height: '100%', display: 'flex', background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={markColor} height={760} alt="" style={{ position: 'absolute', right: -120, top: -70 }} />
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 84px' }}>
+          <div style={{ display: 'flex', width: 72, height: 5, background: GOLD, marginBottom: 36 }} />
+          <div style={title(98)}>Azalea</div>
+          <div style={title(98)}>Physiotherapy</div>
+          <div style={{ display: 'flex', fontFamily: 'Spectral', fontWeight: 400, fontSize: 33, color: SLATE, marginTop: 26, maxWidth: 560 }}>
+            The cause, not just the symptom.
+          </div>
         </div>
-        <div
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            padding: '0 70px',
-          }}
-        >
-          <div style={{ display: 'flex', fontFamily: 'Spectral', fontStyle: 'italic', fontWeight: 600, fontSize: 78, color: STONE, lineHeight: 1.02, letterSpacing: '-0.02em' }}>
-            Azalea
-          </div>
-          <div style={{ display: 'flex', fontFamily: 'Spectral', fontStyle: 'italic', fontWeight: 600, fontSize: 78, color: STONE, lineHeight: 1.02, letterSpacing: '-0.02em' }}>
-            Physiotherapy
-          </div>
-          <div style={{ display: 'flex', fontFamily: 'Spectral', fontWeight: 400, fontSize: 30, color: MUTED, marginTop: 24, maxWidth: 460, lineHeight: 1.35 }}>
-            The cause, not just the symptom. West Vancouver, since 2011.
-          </div>
-          <div style={{ display: 'flex', fontFamily: 'Spectral', fontWeight: 400, fontSize: 26, color: GOLD, marginTop: 36, letterSpacing: '0.04em' }}>
-            azaleaphysio.com
-          </div>
+        <div style={{ display: 'flex', position: 'absolute', bottom: 60, left: 84, fontFamily: 'Spectral', fontWeight: 400, fontSize: 27, color: AZURE, letterSpacing: '0.04em' }}>
+          azaleaphysio.com
         </div>
       </div>
     ),
