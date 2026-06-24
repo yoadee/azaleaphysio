@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   },
   description:
     "Multidisciplinary physiotherapy clinic in West Vancouver. 8 practitioners, 11 disciplines, 2 locations. Direct billing to ICBC, WorkSafeBC and most extended health plans. No referral needed.",
-  metadataBase: new URL("https://www.azaleaphysio.com"),
+  metadataBase: new URL("https://azaleaphysio.com"),
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://www.azaleaphysio.com",
+    url: "https://azaleaphysio.com",
     siteName: "Azalea Physiotherapy",
     title: "Azalea Physiotherapy | West Vancouver",
     description:
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  "@id": "https://www.azaleaphysio.com",
+  "@id": "https://azaleaphysio.com",
   name: "Azalea Physiotherapy",
-  url: "https://www.azaleaphysio.com",
+  url: "https://azaleaphysio.com",
   email: "info@azaleaphysio.com",
   foundingDate: "2011",
   priceRange: "$$",

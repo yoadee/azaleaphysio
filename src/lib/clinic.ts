@@ -10,7 +10,7 @@
 
 export const SITE = {
   name: 'Azalea Physiotherapy',
-  url: 'https://www.azaleaphysio.com',
+  url: 'https://azaleaphysio.com',
   email: 'info@azaleaphysio.com',
   founded: '2011',
   googleRating: 4.6,

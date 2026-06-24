@@ -47,3 +47,5 @@ next-env.d.ts
 
 # internal design wireframes — not for the public deploy
 public/wireframe-*.html
+
+.vercel
