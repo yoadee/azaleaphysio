@@ -2,20 +2,22 @@ import { ImageResponse } from 'next/og'
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-// Site-wide social share card: editorial layout with the real two-tone Azalea
-// mark bleeding off the right on a light field, Spectral wordmark on the left.
+// Site-wide social share card: dark editorial panel, Spectral wordmark, with a
+// faint silhouette of the real Azalea mark bleeding off the right edge.
 export const alt = 'Azalea Physiotherapy — Multidisciplinary physiotherapy in West Vancouver'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 const DARK = '#0F2230'
-const SLATE = '#4C5A65'
+const STONE = '#E9EEF3'
 const GOLD = '#D4AF37'
-const AZURE = '#00AEFB'
+const MUTED = '#9FB0BC'
 
-const markColor =
+// Smooth dark silhouette of the real logo (derived from the high-res mark, not
+// the low-quality trace), embedded so Satori can render it.
+const ghost =
   'data:image/png;base64,' +
-  readFileSync(join(process.cwd(), 'public', 'logo-mark-color.png')).toString('base64')
+  readFileSync(join(process.cwd(), 'public', 'logo-mark-ghost.png')).toString('base64')
 
 async function loadGoogleFont(weight: number, italic: boolean) {
   const ital = italic ? '1' : '0'
@@ -32,8 +34,8 @@ const title = (fs: number) => ({
   fontStyle: 'italic',
   fontWeight: 600,
   fontSize: fs,
-  color: DARK,
-  lineHeight: 1.0,
+  color: STONE,
+  lineHeight: 1.02,
   letterSpacing: '-0.02em',
 })
 
@@ -42,19 +44,16 @@ export default async function OgImage() {
 
   return new ImageResponse(
     (
-      <div style={{ width: '100%', height: '100%', display: 'flex', background: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', background: DARK, position: 'relative', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={markColor} height={760} alt="" style={{ position: 'absolute', right: -120, top: -70 }} />
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 84px' }}>
-          <div style={{ display: 'flex', width: 72, height: 5, background: GOLD, marginBottom: 36 }} />
-          <div style={title(98)}>Azalea</div>
-          <div style={title(98)}>Physiotherapy</div>
-          <div style={{ display: 'flex', fontFamily: 'Spectral', fontWeight: 400, fontSize: 33, color: SLATE, marginTop: 26, maxWidth: 560 }}>
+        <img src={ghost} height={780} alt="" style={{ position: 'absolute', right: -170, top: -120 }} />
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 96px' }}>
+          <div style={{ display: 'flex', width: 72, height: 5, background: GOLD, marginBottom: 38 }} />
+          <div style={title(96)}>Azalea</div>
+          <div style={title(96)}>Physiotherapy</div>
+          <div style={{ display: 'flex', fontFamily: 'Spectral', fontWeight: 400, fontSize: 34, color: MUTED, marginTop: 26, maxWidth: 560 }}>
             The cause, not just the symptom.
           </div>
-        </div>
-        <div style={{ display: 'flex', position: 'absolute', bottom: 60, left: 84, fontFamily: 'Spectral', fontWeight: 400, fontSize: 27, color: AZURE, letterSpacing: '0.04em' }}>
-          azaleaphysio.com
         </div>
       </div>
     ),
