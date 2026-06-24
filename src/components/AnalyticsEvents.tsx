@@ -7,9 +7,9 @@ import { SITE } from '@/lib/clinic'
 
 /**
  * Host of the booking portal, derived from SITE.booking rather than hardcoded.
- * The clinic is migrating from ClinicMaster to Jane App; when SITE.booking is
- * repointed to the Jane URL, booking_start tracking follows automatically and
- * does not silently break.
+ * Booking now runs on Jane App; deriving the host from SITE.booking means
+ * booking_start tracking follows any future repoint automatically and does not
+ * silently break.
  */
 const BOOKING_HOST = (() => {
   try {
@@ -72,7 +72,7 @@ export default function AnalyticsEvents() {
 
       // Any link to the booking portal is a booking start, wherever it lives
       // (nav, hero, BookCta band, footer, blog inline). Matched by the live
-      // booking host so it survives the ClinicMaster -> Jane migration.
+      // booking host (Jane App), derived from SITE.booking.
       if (BOOKING_HOST && href.includes(BOOKING_HOST)) {
         track('booking_start', { destination: href, source_path: pathname })
       }

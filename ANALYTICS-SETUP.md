@@ -6,7 +6,7 @@ The code is fully wired. Nothing fires until `NEXT_PUBLIC_GA_ID` is set, so this
 
 - **`src/components/Analytics.tsx`** — loads gtag.js after first paint, configures GA4 with `anonymize_ip` and `send_page_view: false`, and (optionally) Google Ads if `NEXT_PUBLIC_GADS_ID` is set. Renders nothing without a GA ID.
 - **`src/components/AnalyticsEvents.tsx`** — sends a `page_view` on first load and on every client-side route change, and runs one sitewide click listener that fires:
-  - **`booking_start`** — any click on a ClinicMaster booking link (nav, hero, BookCta band, footer, blog inline — all of them).
+  - **`booking_start`** — any click on a Jane App booking link (nav, hero, BookCta band, footer, blog inline — all of them).
   - **`phone_tap`** — any click on a `tel:` link.
 - **`src/lib/analytics.ts`** — the `track()` helper. In dev it logs events to the console so you can confirm the wiring before GA is live.
 
@@ -33,7 +33,7 @@ GA4 → Admin → Events. After the events have fired at least once (click a boo
 - `booking_start`
 - `phone_tap`
 
-> `booking_start` = intent to book (click-through to the portal). True booking completion happens inside ClinicMaster, which we don't control — so `booking_start` is the conversion we optimize Ads against. If ClinicMaster ever exposes a thank-you URL or callback, we can add a `booking_complete` event then.
+> `booking_start` = intent to book (click-through to the portal). True booking completion happens inside Jane App, which we don't control — so `booking_start` is the conversion we optimize Ads against. If Jane App ever exposes a thank-you URL or callback, we can add a `booking_complete` event then.
 
 ## Step 4 — Verify
 

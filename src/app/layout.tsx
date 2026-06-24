@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
 import { websiteSchema } from "@/lib/schema";
+import { SITE } from "@/lib/clinic";
 import "./globals.css";
 
 const spectral = Spectral({
@@ -130,7 +131,7 @@ const localBusinessSchema = {
     "@type": "ReserveAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA",
+      urlTemplate: SITE.booking,
       inLanguage: "en-CA",
       actionPlatform: [
         "http://schema.org/DesktopWebPlatform",

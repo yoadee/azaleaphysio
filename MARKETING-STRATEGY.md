@@ -195,7 +195,7 @@ One Google Ads account. Separate **campaigns** by theme so you can set a distinc
 You cannot manage what you cannot measure. Before launch:
 
 1. **GA4** installed on the new site (it likely will be in the rebuild — confirm).
-2. Define a **booking conversion**: track clicks on the "Book Online" button that go to the ClinicMaster portal as a conversion event in GA4. Because booking completes on ClinicMaster (a third-party portal), you track the *click to book* as the conversion proxy; if ClinicMaster allows a confirmation/thank-you redirect back to your site, track that as the true booking — better. Confirm with ClinicMaster what's possible.
+2. Define a **booking conversion**: track clicks on the "Book Online" button that go to the Jane portal as a conversion event in GA4. Because booking completes on Jane (a third-party portal), you track the *click to book* as the conversion proxy; if Jane allows a confirmation/thank-you redirect back to your site, track that as the true booking — better. Confirm with Jane what's possible.
 3. **Click-to-call tracking**: track taps on the phone number as conversions (a large share of physio bookings happen by phone, especially ICBC and older patients).
 4. **Import both** into Google Ads as conversions, so the bidding can optimise toward real bookings.
 5. **Call tracking**: use a call-tracking number (e.g. via CallRail or Google's own call extensions/forwarding) so you can attribute phone bookings to specific campaigns and keywords. Worth it given how phone-driven physio is.
@@ -264,7 +264,7 @@ The ad and the page it lands on must say the same thing. Mismatched pages waste 
 | Farsi | `/fa` (Farsi page) | Farsi headline, Farsi-speaking team, same offers in Farsi, RTL layout |
 | Branded | home `/` | Brand, reviews (4.6 ★, 83 reviews), book now |
 
-Every landing page needs, above the fold: the hook, a **Book Online** button (to ClinicMaster) and a **tap-to-call** number, the assurances (no referral, direct billing, open to 7pm + Saturdays), and trust signals (4.6★ from 83 reviews, "finding the cause others missed," 12 practitioners). The lead magnet (free 15-min consult or "Is your pain ICBC-covered?" guide) sits as the secondary CTA for people not ready to book. **No discounts** — assurance and access are the offer.
+Every landing page needs, above the fold: the hook, a **Book Online** button (to Jane) and a **tap-to-call** number, the assurances (no referral, direct billing, open to 7pm + Saturdays), and trust signals (4.6★ from 83 reviews, "finding the cause others missed," 12 practitioners). The lead magnet (free 15-min consult or "Is your pain ICBC-covered?" guide) sits as the secondary CTA for people not ready to book. **No discounts** — assurance and access are the offer.
 
 ---
 
@@ -279,7 +279,7 @@ You have two locations, so you run **two Google Business Profiles (GBP)** — th
 - **NAP consistency** (Name, Address, Phone): the business name, both addresses, and phone numbers must be written *identically* everywhere online — same suite format, same abbreviations. Inconsistent NAP is the most common thing that holds back local ranking.
 - **Distinct phone or tracking per location** if possible, but identical business name and branding.
 - **Categories:** primary "Physiotherapist"; secondary as relevant — Acupuncture clinic, Occupational therapist, Chiropractor, Osteopath, Kinesiologist, Sports medicine clinic. Pick the ones you genuinely offer; categories strongly affect what you rank for.
-- **Fill every field:** hours (show the to-7pm and Saturday hours — a differentiator), services, photos (real clinic + team), booking link to ClinicMaster, attributes (wheelchair accessible, languages: English + Farsi/Persian).
+- **Fill every field:** hours (show the to-7pm and Saturday hours — a differentiator), services, photos (real clinic + team), booking link to Jane, attributes (wheelchair accessible, languages: English + Farsi/Persian).
 - **Languages:** explicitly list Farsi/Persian as a spoken language on both profiles — it's a real ranking and trust signal for that audience.
 - **Google Posts:** post regularly (offers info, ICBC reminders, new practitioners) — keeps profiles active.
 
@@ -290,7 +290,7 @@ A "citation" = your clinic listed (NAP) on another site. Consistent citations bu
 - **PainHero.ca** — large Canadian physio/chiro/RMT directory, strong for this niche.
 - **Lumino Health (Sun Life)** — major Canadian health-provider directory; insurers and patients use it.
 - **Yelp.ca**, **Apple Maps (Apple Business Connect)**, **Bing Places** — the big three beyond Google.
-- **ClinicMaster / Jane-style booking directories** — if ClinicMaster has a public provider directory, ensure both clinics are listed and accurate.
+- **Jane App booking directory** — if Jane lists a public provider directory, ensure both clinics are listed and accurate.
 - **Yellow Pages Canada (YP.ca)**, **411.ca**, **Cylex / Nextdoor** — general local citations.
 - **ICBC "find a provider"** and **WorkSafeBC provider** listings — make sure Azalea appears and is accurate; these are high-trust and patient-facing.
 - **Persian-market directories:** ParsaPages (persian physiotherapy clinics directory), Nazdikia, and local North Shore Iranian community sites/Facebook groups — cheap reach into your strongest audience.
@@ -391,7 +391,7 @@ All spend **[Estimated]** and right-sized for a thin-volume, high-value, two-loc
 - **CPCs are benchmark-grounded estimates,** anchored to LocaliQ's verified physio CPC (USD $4.95) and SEO Medics' verified Metro Vancouver range ($6–$12). Live "top of page bid" estimates from your own account will replace them.
 - **The US benchmarks (LocaliQ, WordStream) are USD and US-market;** I used them as directional and labelled them. Canadian/BC sources (SEO Medics) were used where available and are the better anchor for CPC.
 - **Conversion and booking rates assume a well-built landing page and working tracking.** If the new site's booking flow is clunky or tracking is incomplete, real results will be lower. Fix those first.
-- **ClinicMaster's tracking capability is the one external dependency I couldn't verify** — confirm whether it can pass a booking confirmation back to your site for true conversion tracking, or whether you track the booking-button click as a proxy.
+- **Jane's tracking capability is the one external dependency I couldn't verify** — confirm whether it can pass a booking confirmation back to your site for true conversion tracking, or whether you track the booking-button click as a proxy.
 
 ---
 

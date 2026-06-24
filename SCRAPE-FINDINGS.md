@@ -48,6 +48,6 @@ The live azaleaphysio.com team profiles match the current 12-person roster and c
 
 ## 6. Confirmed (no action)
 
-- Booking is the same ClinicMaster `clinicId 1897` link already wired (changes with the Jane migration).
+- Booking now runs on Jane App (`https://azaleaphysiotherapyclinic.janeapp.com/`), wired in `SITE.booking`. Migrated off the old ClinicMaster `clinicId 1897` link.
 - Email `info@azaleaphysio.com`, both clinic phones/faxes and hours all match the rebuild.
 - Social: Facebook, Instagram, Twitter/X (confirm the Twitter/X account still exists or drop it).

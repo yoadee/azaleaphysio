@@ -9,13 +9,13 @@ This sits *above* `MARKETING-STRATEGY.md`, which is the paid-search + SEO/AEO ac
 
 ## 0. Assumptions and dependencies (read first)
 
-> **Platform note (June 2026):** the clinic is moving from **ClinicMaster to Jane App** within ~1 week. Where this document says "ClinicMaster," read it as "the booking / practice-management system," transitioning to Jane. Jane is the more marketing-friendly platform and *helps* most of this plan (stronger automated reminders, per-discipline deep-link booking, easy utilization reports, a "how did you hear about us?" intake field). Three things to handle on switchover: (1) repoint `SITE.booking` to the Jane URL and update the booking schema; the GA4 `booking_start` tracking already derives from `SITE.booking`, so it follows automatically. (2) **Export the patient list (emails, last-visit dates, marketing consent) from ClinicMaster before/around the cutover** so the reactivation campaign has clean data. (3) Jane is not a marketing-email platform (no segmented broadcasts/automation), so the lifecycle email program still runs on a dedicated low-cost ESP; Jane owns transactional reminders.
+> **Platform note (June 2026):** the clinic is moving from **Jane to Jane App** within ~1 week. Where this document says "Jane," read it as "the booking / practice-management system," transitioning to Jane. Jane is the more marketing-friendly platform and *helps* most of this plan (stronger automated reminders, per-discipline deep-link booking, easy utilization reports, a "how did you hear about us?" intake field). Three things to handle on switchover: (1) repoint `SITE.booking` to the Jane URL and update the booking schema; the GA4 `booking_start` tracking already derives from `SITE.booking`, so it follows automatically. (2) **Export the patient list (emails, last-visit dates, marketing consent) from Jane before/around the cutover** so the reactivation campaign has clean data. (3) Jane is not a marketing-email platform (no segmented broadcasts/automation), so the lifecycle email program still runs on a dedicated low-cost ESP; Jane owns transactional reminders.
 
 Built from your answers, to be corrected as facts arrive:
 
-- **Constraint:** assumed *spare capacity* (fill chairs). **Open dependency:** pull the ClinicMaster **Provider Productivity / Schedule Utilization** report for the last 30 days, per practitioner. The likely real answer is *mixed* (a few practitioners full, others with gaps). That report decides where the acquisition spend points and whether retention or acquisition is the priority. Until then this plan optimizes for filling capacity while building the retention asset in parallel.
+- **Constraint:** assumed *spare capacity* (fill chairs). **Open dependency:** pull the Jane **Provider Productivity / Schedule Utilization** report for the last 30 days, per practitioner. The likely real answer is *mixed* (a few practitioners full, others with gaps). That report decides where the acquisition spend points and whether retention or acquisition is the priority. Until then this plan optimizes for filling capacity while building the retention asset in parallel.
 - **Execution:** Phase 1 is *you + light front-desk buy-in*. The full-team version is documented as the goal state, flagged where it needs Mary and staff.
-- **Assets to switch on:** the **ClinicMaster patient list** (retention/reactivation) and **active Instagram/Facebook**. Referrals are build-from-scratch (Section 2.2 is the how-to you asked for).
+- **Assets to switch on:** the **Jane patient list** (retention/reactivation) and **active Instagram/Facebook**. Referrals are build-from-scratch (Section 2.2 is the how-to you asked for).
 - **Budget:** ~$1,500-2,000/mo Google Ads (existing plan) **plus ~$500-1,000/mo** for tools, content, and experiments. Allocation in Section 8.
 - **Positioning is locked:** premium, multidisciplinary, no-referral, direct-billing, English/Farsi, "find the cause others missed." **No discounting** (Section 3 of the search doc explains why for this catchment). Every tactic below respects that.
 
@@ -44,15 +44,15 @@ So the strategy is: keep acquisition running, but treat **retention and referral
 
 | Layer | KPI | Where it's measured | Phase-1 target |
 |---|---|---|---|
-| Acquisition | New patients / month (by source) | ClinicMaster + GA4 + "how did you hear about us" | Establish baseline, then +10%/qtr |
+| Acquisition | New patients / month (by source) | Jane + GA4 + "how did you hear about us" | Establish baseline, then +10%/qtr |
 | Conversion | Lead → booked rate; speed-to-lead | GA4 `booking_start`/`phone_tap`, front-desk log | <2h callback; >60% lead→book |
-| Activation | First-visit → 2nd-visit rebook rate | ClinicMaster | >80% rebook before leaving |
-| Retention | Care-plan completion; no-show/cancel rate | ClinicMaster | No-show <8%; completion up |
-| Reactivation | Lapsed patients re-booked / quarter | ClinicMaster + email tool | Recover 5-10% of dormant list |
-| Expansion | % patients seeing >1 discipline | ClinicMaster | Establish baseline, then grow |
-| Monetization | Revenue / patient / year (LTV) | ClinicMaster | Trend up |
+| Activation | First-visit → 2nd-visit rebook rate | Jane | >80% rebook before leaving |
+| Retention | Care-plan completion; no-show/cancel rate | Jane | No-show <8%; completion up |
+| Reactivation | Lapsed patients re-booked / quarter | Jane + email tool | Recover 5-10% of dormant list |
+| Expansion | % patients seeing >1 discipline | Jane | Establish baseline, then grow |
+| Monetization | Revenue / patient / year (LTV) | Jane | Trend up |
 
-You cannot manage what you cannot see, and **ClinicMaster, not GA4, is the source of truth for revenue.** GA4 measures the website funnel; ClinicMaster measures the business. Section 7 ties them together.
+You cannot manage what you cannot see, and **Jane, not GA4, is the source of truth for revenue.** GA4 measures the website funnel; Jane measures the business. Section 7 ties them together.
 
 ---
 
@@ -80,7 +80,7 @@ Physio is a referral business. A single steady referrer can be worth more than a
 - **A referral one-pager** (PDF + printed): who Azalea is, the differentiators (direct billing, no referral needed, English/Farsi, 12 practitioners, 2 locations, to 7pm + Saturdays), the conditions you treat, and a dead-simple way to refer (phone, fax, email, or a short web form). I can build a `/refer` page and this one-pager.
 - **A named owner.** Referral relationships need a human who maintains them. Phase 1: you assemble the target list and materials. Goal state: Mary or a senior practitioner does periodic warm visits (a coffee, a clinic tour). Doctors refer to *people* they know.
 - **Warm-visit cadence:** introduce, drop materials, then a light touch every quarter (a report, a thank-you, a holiday note). Five solid referrers maintained beats fifty cold drop-ins.
-- **Track it:** add a "referred by" field at intake in ClinicMaster and a "how did you hear about us?" question. Without this you cannot tell which relationships work.
+- **Track it:** add a "referred by" field at intake in Jane and a "how did you hear about us?" question. Without this you cannot tell which relationships work.
 
 **Phase-1 starter (do-able now):** build the `/refer` page + one-pager, list the 5 nearest PI law firms and the 5 nearest GP/walk-in clinics, and make the first 3 introductions (start with PI lawyers, the highest ROI).
 
@@ -104,7 +104,7 @@ Acquisition is wasted if interest doesn't become a booked, attended appointment.
 
 - **Speed-to-lead.** Most physio bookings, especially ICBC and older patients, happen by **phone**. The clinic that calls back first wins. Target: **return every missed call / form within 2 hours, same business day minimum.** This is a front-desk behavior, not a tech fix, and it is probably your single biggest conversion lever. Measure it.
 - **Phone handling.** The front desk converts or loses the ICBC/WorkSafe caller in the first two minutes. A simple script (acknowledge the injury, confirm direct billing and no referral, offer a same-week slot, book on the spot) lifts conversion measurably. Goal state: light training + a one-page script.
-- **Booking friction.** Confirm what ClinicMaster's portal supports: does it deep-link to a location/service/practitioner? If yes, point each ad and page straight at the right pre-filled booking (the search doc flags this as the biggest friction cut). Click-to-call must be huge on mobile (already built).
+- **Booking friction.** Confirm what Jane's portal supports: does it deep-link to a location/service/practitioner? If yes, point each ad and page straight at the right pre-filled booking (the search doc flags this as the biggest friction cut). Click-to-call must be huge on mobile (already built).
 - **The lead magnet for the not-ready.** A free "Is your pain ICBC-covered?" guide or a 15-minute phone consult captures people who won't book yet, into email, so retention can work on them. No discount, consistent with premium positioning.
 
 The website itself (the conversion surface) is built and GA4 now measures `booking_start` and `phone_tap`. The gap is the **human follow-up speed**, which is where most clinics lose money.
@@ -113,13 +113,13 @@ The website itself (the conversion surface) is built and GA4 now measures `booki
 
 ## 4. Lever 3 — Retention and lifetime value (the biggest untapped lever)
 
-You have the asset most clinics wish they had: **a patient list in ClinicMaster.** Past patients are the cheapest revenue in the building. Four moves, cheapest and highest-impact first:
+You have the asset most clinics wish they had: **a patient list in Jane.** Past patients are the cheapest revenue in the building. Four moves, cheapest and highest-impact first:
 
 ### 4.1 Point-of-care rebooking (free, do it now)
 The highest-yield retention act costs nothing: **book the next appointment before the patient leaves.** A patient who walks out with their next visit booked completes care; one who says "I'll call to rebook" often doesn't. This is a front-desk habit. Target: >80% of active patients leave with their next appointment booked. This alone can move revenue more than any ad.
 
 ### 4.2 No-show and late-cancel reduction
-Every no-show is a chair that earned nothing and can't be resold. Confirm ClinicMaster's automated reminder settings (SMS + email, 48h and 2h), make the cancellation policy clear at booking, and track the no-show rate weekly. Target <8%.
+Every no-show is a chair that earned nothing and can't be resold. Confirm Jane's automated reminder settings (SMS + email, 48h and 2h), make the cancellation policy clear at booking, and track the no-show rate weekly. Target <8%.
 
 ### 4.3 Care-plan completion
 Patients who drop off after 2-3 visits leave both money and a worse outcome on the table. A short check-in (call or email) to anyone who lapses mid-plan recovers a meaningful share. The clinical staff own the judgement of who; the system just flags the gap.
@@ -129,7 +129,7 @@ There is a list of people who saw you 6-24 months ago and drifted. A well-run re
 
 ### 4.5 The lifecycle email/SMS program
 
-Grounded in the six standard sequence types, mapped to a clinic. **Compliance first:** Canada's anti-spam law (CASL) requires consent. You generally have *implied* consent to email recent patients (an existing business relationship, time-limited) and need *express* consent (a checkbox at intake) for ongoing marketing. Add the consent checkbox at intake now, and keep a clear unsubscribe in every send. Confirm whether ClinicMaster sends segmented marketing email or whether you need a dedicated tool (a low-cost ESP fits the ~$500-1k budget).
+Grounded in the six standard sequence types, mapped to a clinic. **Compliance first:** Canada's anti-spam law (CASL) requires consent. You generally have *implied* consent to email recent patients (an existing business relationship, time-limited) and need *express* consent (a checkbox at intake) for ongoing marketing. Add the consent checkbox at intake now, and keep a clear unsubscribe in every send. Confirm whether Jane sends segmented marketing email or whether you need a dedicated tool (a low-cost ESP fits the ~$500-1k budget).
 
 Priority order to build:
 
@@ -148,7 +148,7 @@ Preview: How's that [back / knee / shoulder] holding up?
 Body (<120 words): Warm, human, from a named person at the clinic. "It's been a
 while. A lot of pain comes back quietly. If something's nagging, we're here, same
 team, direct billing, no referral needed." One CTA.
-CTA: Book a visit  → ClinicMaster
+CTA: Book a visit  → Jane
 
 Email 2 (day 7) — relevance + reassurance (only to non-openers/non-bookers)
 Subject: Still the clinic that finds the cause
@@ -181,7 +181,7 @@ Single CTA each. The review ask at the moment of a good outcome is the highest-y
 
 **D. Newsletter / retention (Phase 2+).** Monthly, genuinely useful (seasonal injury prevention, a practitioner spotlight, a Farsi edition). Cadence that earns the read, not that fills the calendar. Keeps you top-of-mind for the next flare-up and for referrals.
 
-**E. Transactional** (confirmations, reminders): almost certainly ClinicMaster's job. Make sure they're on and well-worded; don't rebuild them.
+**E. Transactional** (confirmations, reminders): almost certainly Jane's job. Make sure they're on and well-worded; don't rebuild them.
 
 ---
 
@@ -212,18 +212,18 @@ You have active accounts; use them for retention and trust as much as acquisitio
 
 GA4 now fires `booking_start` and `phone_tap` (live). To run the whole system you need three things GA4 alone can't give:
 
-1. **A "How did you hear about us?" field at intake** (ClinicMaster). This is the only honest way to attribute offline channels: referrals, word-of-mouth, the Persian network. Online attribution will systematically undercount these; the intake question corrects it.
+1. **A "How did you hear about us?" field at intake** (Jane). This is the only honest way to attribute offline channels: referrals, word-of-mouth, the Persian network. Online attribution will systematically undercount these; the intake question corrects it.
 2. **Extended event taxonomy** (GA4), naming consistent with what's there (verb_noun, snake_case):
 
 | Event | When fired | Status |
 |---|---|---|
-| `booking_start` | Click any ClinicMaster booking link | Live |
+| `booking_start` | Click any Jane booking link | Live |
 | `phone_tap` | Click any tel: link | Live |
 | `lead_magnet_download` | Submits the ICBC/what-to-bring guide form | To build |
 | `form_submit` | Any contact/refer form submit | To build |
 | `directions_click` | Click a map/directions link | Optional |
 
-3. **The offline reconciliation loop.** Weekly, compare GA4/Ads booking signals against ClinicMaster's actual new patients and revenue. The website tells you *intent*; ClinicMaster tells you *truth*. When they disagree (e.g. ads report 20 booking_starts but only 8 new patients showed), that gap is the conversion/show-rate problem to fix.
+3. **The offline reconciliation loop.** Weekly, compare GA4/Ads booking signals against Jane's actual new patients and revenue. The website tells you *intent*; Jane tells you *truth*. When they disagree (e.g. ads report 20 booking_starts but only 8 new patients showed), that gap is the conversion/show-rate problem to fix.
 
 **Dashboards (one audience each):**
 - **You (operator):** acquisition by source, cost per booking, lead→book, no-show rate, reactivation recovered, weekly.
@@ -239,7 +239,7 @@ Sequenced by fastest, safest return. Don't switch everything on at once.
 
 ### Phase 1 — now (you + light front-desk buy-in, ≤ ~$1k/mo extra)
 The cheap, high-yield moves that don't need full team change:
-1. **Pull the ClinicMaster utilization report** (decides where to point everything).
+1. **Pull the Jane utilization report** (decides where to point everything).
 2. **Point-of-care rebooking habit** + **reminders on** + track no-shows (front-desk, near-free, biggest retention win).
 3. **Reactivation broadcast** to the dormant list (sequence A) once consent/tool are sorted. Fastest revenue.
 4. **Review engine:** post-discharge review-ask email (sequence B) + one-tap Google links per location.
@@ -256,7 +256,7 @@ Structured referral partnerships maintained by Mary/seniors, internal cross-refe
 ### The extra ~$500-1,000/mo, allocated
 | Item | ~Monthly | Why |
 |---|---|---|
-| Email/SMS tool (ESP) | $30-100 | Runs reactivation + lifecycle (if ClinicMaster can't segment-send) |
+| Email/SMS tool (ESP) | $30-100 | Runs reactivation + lifecycle (if Jane can't segment-send) |
 | Content / social (design, scheduling, or light freelance) | $200-500 | Sustains the cadence; repurpose blog |
 | Review/reputation tooling (optional) | $0-100 | One-tap review links; often free/manual |
 | Referral materials (one-pager print, `/refer` page) | one-off | Enables the highest-ROI channel |
@@ -270,7 +270,7 @@ Keep the ~$1.5-2k Google Ads budget separate and as-planned in the search doc.
 
 - **The capacity report is the gating unknown.** If certain practitioners are already full, point acquisition only at the ones with gaps, and lean harder on retention/yield than on raw new-patient volume.
 - **CASL consent** governs the email program. Add the intake checkbox now; rely on implied consent only for recent patients; always include unsubscribe.
-- **ClinicMaster capabilities are an external dependency:** confirm segmented email/recall, automated reminders, deep-link booking, and report exports. Some of the plan's mechanics depend on what it supports; if it's thin, a low-cost ESP covers email.
+- **Jane capabilities are an external dependency:** confirm segmented email/recall, automated reminders, deep-link booking, and report exports. Some of the plan's mechanics depend on what it supports; if it's thin, a low-cost ESP covers email.
 - **The front desk is make-or-break** for the two biggest levers (speed-to-lead and point-of-care rebooking). These need light buy-in (Phase 1) and pay back faster than any ad.
 - **Small market ceiling:** acquisition will cap (search doc). That is *why* this plan weights retention, referrals, and expansion, which have no volume ceiling.
 - **No-discount discipline holds throughout.** Every lever here grows revenue without cheapening the brand.

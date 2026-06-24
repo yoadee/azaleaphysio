@@ -16,8 +16,8 @@ export const SITE = {
   googleRating: 4.6,
   reviewCount: '83',
   tagline: 'Multidisciplinary physiotherapy, rooted on the North Shore since 2011.',
-  // Live ClinicMaster online booking portal (handles both locations + practitioner choice).
-  booking: 'https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA',
+  // Live Jane App online booking (handles both locations + practitioner choice).
+  booking: 'https://azaleaphysiotherapyclinic.janeapp.com/',
   social: [
     'https://www.facebook.com/AzaleaPhysio/',
     'https://www.instagram.com/azaleaphysiowestvancouver/',

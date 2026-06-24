@@ -69,7 +69,7 @@ Measured, grounded, exact. Patient as protagonist. No hype, no performative warm
 7. **About** — make Mary's cause-finding reputation and the "one roof" philosophy central, not incidental. Surface Farsi + community roots.
 8. **Locations** — already good copy; the work is per-location pages (below) + deep-linked booking.
 9. **FAQ** — strong; add cancellation policy and a Farsi-availability question.
-10. **Book** — its only job is a frictionless, expectation-set handoff to ClinicMaster ("about two minutes, have your insurer handy, here is what we will ask").
+10. **Book** — its only job is a frictionless, expectation-set handoff to Jane ("about two minutes, have your insurer handy, here is what we will ask").
 
 ### New pages to create (high-intent, ranked)
 1. **/icbc** (or /insurance/icbc) — `ICBC Physiotherapy in West Vancouver, Direct Billing, No Upfront Cost`. Highest-ROI page on the site. Sessions covered, $0 upfront, claim-number process, no adjuster approval, what to bring. FAQ + schema.
@@ -94,7 +94,7 @@ Measured, grounded, exact. Patient as protagonist. No hype, no performative warm
 
 - **Wave 1 (biggest revenue, offer-independent):** enrich the 9 service pages to the physiotherapy template; sharpen the home hook; build /icbc and /pricing; extend FAQ + MedicalClinic schema and write /llms.txt.
 - **Wave 2:** condition pages (big four + whiplash split); per-location pages + per-location schema; team bio credentials/languages/CTAs; insurance + what-to-expect rewrites.
-- **Wave 3:** Farsi landing page; lead-magnet asset for paid traffic; deep-link the ClinicMaster portal + GA4 booking events; review-generation system.
+- **Wave 3:** Farsi landing page; lead-magnet asset for paid traffic; deep-link the Jane portal + GA4 booking events; review-generation system.
 
 ---
 
@@ -109,6 +109,6 @@ Measured, grounded, exact. Patient as protagonist. No hype, no performative warm
 - **Practitioner assignment for the support services:** Occupational Therapy, Chiropractic, Weight Loss, Yoga Therapy, Elderly Care have no obvious match in the current 12-person team list. Mary to confirm who delivers each before those service pages get explicit `practitioners`.
 
 **To verify (not blocking copy):**
-- **ClinicMaster deep links:** does the portal accept URL params for location/service/practitioner? If yes, biggest booking-friction cut.
+- **Jane deep links:** does the portal accept URL params for location/service/practitioner? If yes, biggest booking-friction cut.
 - **Rating:** confirm 4.6 / 75+ is current before leaning on it harder.
 - **GA4 + Google Ads conversion tracking:** must be wired before/with the ad launch.

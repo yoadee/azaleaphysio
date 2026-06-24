@@ -6,7 +6,7 @@ _Last updated: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done
 
 ## ▶ CURRENT STATE (2026-06-18, GA4 + production cutover)
 
-- **GA4 wired** (commit `5c9a86f`): `Analytics.tsx` + `AnalyticsEvents.tsx` send SPA pageviews + a sitewide delegated click listener firing `booking_start` (any ClinicMaster link) and `phone_tap` (any tel:). Measurement ID `G-MP980R9WH4`. Setup steps in `ANALYTICS-SETUP.md`. Mark both events as Key events in GA4; import to Google Ads post-launch.
+- **GA4 wired** (commit `5c9a86f`): `Analytics.tsx` + `AnalyticsEvents.tsx` send SPA pageviews + a sitewide delegated click listener firing `booking_start` (any Jane App booking link) and `phone_tap` (any tel:). Measurement ID `G-MP980R9WH4`. Setup steps in `ANALYTICS-SETUP.md`. Mark both events as Key events in GA4; import to Google Ads post-launch.
 - **Production cutover:** direct push to `master` is blocked by the safety classifier. Instead, Vercel **Production Branch was changed to `mvp-rebuild`** so production builds from the real code. `master` is still the abandoned scaffold (commit `507c259`) — do not rely on it. Public domain `www.azaleaphysio.com` still points at the OLD nginx host; DNS cutover is the final, deliberate launch step (not done).
 - **Emil Kowalski design pass: DONE** (commit `26bee15`) — motion/interaction polish landed; design system untouched and LOCKED.
 
@@ -88,7 +88,7 @@ To compare design alternatives going forward: commit a known-good state first, b
 ## Architecture (important)
 
 - **Content source = `src/lib/clinic.ts`** (local TypeScript), not Sanity yet. Pages render real content without CMS entry. The 8 Sanity schemas in `src/sanity/schemaTypes/` mirror these shapes. Migration path: enter content in the Studio, then swap reads for GROQ queries of the same fields.
-- **Booking = WIRED (ClinicMaster).** Live portal in `SITE.booking` (`https://azaleaphysio.clinicmaster.com/landing?clinicId=1897&lang=en-CA`). All "Book online" CTAs open it in a new tab.
+- **Booking = WIRED (Jane App).** Live portal in `SITE.booking` (`https://azaleaphysiotherapyclinic.janeapp.com/`). All "Book online" CTAs open it in a new tab. (Migrated off ClinicMaster.)
 - **Analytics = placeholder.** `src/components/Analytics.tsx` loads GA4 only if `NEXT_PUBLIC_GA_ID` is set. Safe no-op until then.
 - **Schema helpers** in `src/lib/schema.ts`: `serviceSchema` (MedicalProcedure + `clinicProvider`), `faqPageSchema`, `howToSchema`, `practitionerSchema`, `websiteSchema`. Sitewide `MedicalBusiness` schema lives in `src/app/layout.tsx` (now with `aggregateRating` 4.6/83, `availableLanguage` English+Persian, `areaServed`, `paymentAccepted`, 2 MedicalClinic locations).
 - **Tooling:** `sharp` + `puppeteer` are devDeps. Puppeteer can drive headless Chrome (used to pull Google reviews; also enables live-page screenshots for visual QA). Logo trace scripts in `scripts/logo-*.mjs` (need `npm i -D potrace` to re-run).
@@ -122,7 +122,7 @@ To compare design alternatives going forward: commit a known-good state first, b
 
 - **Practitioner assignment for support services.** weight-loss → faranak-shekoohi and elderly-care → mary-ghoroghi + noushin-nouri are inferred (confirm). occupational-therapy, chiropractic, yoga-therapy have NO team member in that discipline, so "Who you might see" is hidden on those pages until she names the providers (or confirms these services run).
 - **Skin / aesthetic services.** Instagram ran a "skin facial" promo; these services are nowhere on the site. Real and ongoing? If so, add a page + physio cross-sell.
-- **ClinicMaster deep links:** does the portal accept URL params for location/service/practitioner? If yes, biggest booking-friction cut.
+- **Jane App deep links:** does the booking portal accept URL params for location/service/practitioner? If yes, biggest booking-friction cut.
 - A few practitioner names in reviews are not on the team list (Behzad RMT, Amir Ahmadi physio) — confirm current roster.
 
 ---

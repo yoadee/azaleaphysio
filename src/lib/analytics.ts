@@ -2,7 +2,7 @@
  * Booking-funnel analytics helper (CRO research P0 events).
  *
  * Events are sent to GA4 via gtag. They are fired from <AnalyticsEvents/> (a
- * sitewide delegated click listener) — booking_start when any ClinicMaster
+ * sitewide delegated click listener) — booking_start when any Jane App booking
  * link is clicked, phone_tap on any tel: link. Safe no-op until
  * NEXT_PUBLIC_GA_ID is set: track() does nothing on the server and logs to the
  * console in dev so funnel wiring can be verified before GA is live.

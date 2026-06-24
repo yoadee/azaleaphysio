@@ -66,7 +66,7 @@ const faqs: Faq[] = [
   {
     category: 'insurance',
     q: 'Can I also get kinesiology or other treatment under my claim?',
-    a: 'Often, yes. ICBC also covers active rehabilitation (kinesiology), acupuncture, and other treatments within your plan. Because we are multidisciplinary, your physiotherapist can bring those in under one coordinated plan rather than sending you to separate clinics.',
+    a: 'Often, yes. Alongside physiotherapy, ICBC pre-approves visits for chiropractic, massage therapy, acupuncture, kinesiology (active rehab), and counselling, each with its own visit limit in the first 12 weeks. Because we are multidisciplinary, your physiotherapist can bring the right ones into one coordinated plan rather than sending you to separate clinics.',
   },
 ]
 
@@ -74,7 +74,17 @@ const covered = [
   { label: 'Pre-approved visits', value: '25 physiotherapy visits in the first 12 weeks' },
   { label: 'Referral', value: 'Not required, just your claim number' },
   { label: 'Upfront cost', value: 'None for the covered portion, billed direct to ICBC' },
-  { label: 'Also covered', value: 'Active rehab (kinesiology) & acupuncture within your plan' },
+  { label: 'Also covered', value: 'Five more treatments, each pre-approved separately (below)' },
+]
+
+// ICBC Enhanced Care pre-approved visits per discipline, in the first 12 weeks.
+const preApproved = [
+  { service: 'Physiotherapy', sessions: 25 },
+  { service: 'Chiropractic', sessions: 25 },
+  { service: 'Massage therapy', sessions: 12 },
+  { service: 'Acupuncture', sessions: 12 },
+  { service: 'Kinesiology (active rehab)', sessions: 12 },
+  { service: 'Counselling', sessions: 12 },
 ]
 
 export default function IcbcPage() {
@@ -109,8 +119,8 @@ export default function IcbcPage() {
             <p className="font-sans text-[17px] text-muted leading-[1.75] max-w-[60ch] mt-6">
               The 12-week window starts on the day of the accident, so the sooner you book, the more of your coverage
               you actually use, and the better whiplash and soft-tissue injuries respond. If your recovery needs more
-              than the pre-approved visits, we request the extension for you. ICBC also covers active rehabilitation
-              and acupuncture within your plan, which we coordinate under one roof.
+              than the pre-approved visits, we request the extension for you. ICBC also pre-approves a set number of
+              visits for several other treatments, listed below, which we coordinate under one roof.
             </p>
           </div>
 
@@ -131,6 +141,41 @@ export default function IcbcPage() {
               ))}
             </dl>
           </aside>
+        </div>
+      </section>
+
+      {/* Pre-approved visits by treatment — multidisciplinary coverage at a glance */}
+      <section className="bg-stone px-6 sm:px-10 md:px-14 py-20 md:py-24" style={{ borderTop: '1px solid var(--color-border)' }}>
+        <div className="max-w-[1100px] mx-auto">
+          <div className="max-w-[640px] mb-12 md:mb-16 reveal">
+            <h2 className="font-display italic text-[clamp(1.75rem,3.4vw,2.5rem)] font-light leading-[1.1] tracking-[-0.02em] text-text mb-6">
+              What ICBC pre-approves, by treatment
+            </h2>
+            <p className="font-sans text-[17px] text-muted leading-[1.75]">
+              Enhanced Care pre-approves a set number of visits for each type of treatment in the first 12 weeks, with no
+              referral and no adjuster approval needed. Because we are multidisciplinary, your physiotherapist can bring
+              more than one of these into a single, coordinated plan.
+            </p>
+          </div>
+
+          <dl
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px reveal"
+            style={{ backgroundColor: 'var(--color-border)', border: '1px solid var(--color-border)' }}
+          >
+            {preApproved.map((s) => (
+              <div key={s.service} className="bg-stone flex items-baseline justify-between gap-4 px-7 py-7">
+                <dt className="font-display text-[19px] font-normal text-text leading-tight">{s.service}</dt>
+                <dd className="font-display text-[clamp(2.25rem,4vw,3rem)] font-light text-text tabular-nums leading-none shrink-0">
+                  {s.sessions}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="font-sans text-[14px] text-muted leading-[1.7] mt-8 max-w-[640px] reveal">
+            These are the visits ICBC pre-approves up front. If your recovery needs more, your practitioner requests an
+            extension on your behalf, no out-of-pocket guesswork on your end.
+          </p>
         </div>
       </section>
 
