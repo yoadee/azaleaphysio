@@ -13,8 +13,8 @@ const STONE = '#E9EEF3'
 const GOLD = '#D4AF37'
 const MUTED = '#9FB0BC'
 
-// Smooth dark silhouette of the real logo (derived from the high-res mark, not
-// the low-quality trace), embedded so Satori can render it.
+// Soft, defocused silhouette of the real logo (vectorised, then gently blurred)
+// so the brand motif reads as an intentional graphic element, embedded for Satori.
 const ghost =
   'data:image/png;base64,' +
   readFileSync(join(process.cwd(), 'public', 'logo-mark-ghost.png')).toString('base64')
@@ -46,7 +46,7 @@ export default async function OgImage() {
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', background: DARK, position: 'relative', overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={ghost} height={780} alt="" style={{ position: 'absolute', right: -170, top: -120 }} />
+        <img src={ghost} height={820} alt="" style={{ position: 'absolute', right: -150, top: -130 }} />
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 96px' }}>
           <div style={{ display: 'flex', width: 72, height: 5, background: GOLD, marginBottom: 38 }} />
           <div style={title(96)}>Azalea</div>
