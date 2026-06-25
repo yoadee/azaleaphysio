@@ -3,6 +3,7 @@ import { Spectral } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Analytics from "@/components/Analytics";
+import Script from "next/script";
 import { websiteSchema } from "@/lib/schema";
 import { SITE } from "@/lib/clinic";
 import "./globals.css";
@@ -182,6 +183,12 @@ export default function RootLayout({
         <main id="main" className="flex-1">{children}</main>
         <Footer />
         <Analytics />
+        {/* Ahrefs Web Analytics (privacy-friendly, cookieless) */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="XxUMfSFQI2ISx1b7h7yOuA"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
