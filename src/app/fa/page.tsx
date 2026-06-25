@@ -3,6 +3,10 @@ import Link from 'next/link'
 import JsonLd from '@/components/JsonLd'
 import { SITE, locations, type Faq } from '@/lib/clinic'
 import { faqPageSchema } from '@/lib/schema'
+import { getGoogleRating } from '@/lib/googleRating'
+
+// Western digits -> Persian digits, so the live rating reads natively in Farsi.
+const toFa = (s: string | number) => String(s).replace(/[0-9]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[+d])
 
 export const metadata: Metadata = {
   title: 'فیزیوتراپی فارسی‌زبان در وست ونکوور',
@@ -65,7 +69,8 @@ const faqs: Faq[] = [
   },
 ]
 
-export default function FaHome() {
+export default async function FaHome() {
+  const { rating, reviewCount } = await getGoogleRating()
   return (
     <>
       <JsonLd data={faqPageSchema(faqs)} />
@@ -98,7 +103,7 @@ export default function FaHome() {
           </div>
           <div className="flex items-center gap-3">
             <span className="text-gold text-[15px]" aria-hidden="true">★★★★★</span>
-            <span className="text-[14px] text-text font-medium">امتیاز ۴.۶ از ۵ در گوگل، از بیش از ۸۰ نظر</span>
+            <span className="text-[14px] text-text font-medium">امتیاز {toFa(rating)} از ۵ در گوگل، از {toFa(reviewCount)} نظر</span>
           </div>
         </div>
       </section>

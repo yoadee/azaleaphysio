@@ -1,5 +1,6 @@
 import Breadcrumbs, { type Crumb } from './Breadcrumbs'
 import { SITE, locations } from '@/lib/clinic'
+import { getGoogleRating } from '@/lib/googleRating'
 
 /**
  * Standard inner-page header on the stone panel: breadcrumbs, an optional
@@ -7,7 +8,7 @@ import { SITE, locations } from '@/lib/clinic'
  * booking CTA. Conversion pages (service detail, etc.) pass `cta` so a visitor
  * arriving from an ad sees a Book action without scrolling.
  */
-export default function PageHeader({
+export default async function PageHeader({
   title,
   lead,
   eyebrow,
@@ -20,6 +21,7 @@ export default function PageHeader({
   trail: Crumb[]
   cta?: boolean
 }) {
+  const { rating, reviewCount } = cta ? await getGoogleRating() : { rating: SITE.googleRating, reviewCount: SITE.reviewCount }
   return (
     <header className="bg-stone px-6 sm:px-10 md:px-14 pt-36 pb-16 md:pt-40 md:pb-20">
       <div className="max-w-[1200px] mx-auto">
@@ -57,7 +59,7 @@ export default function PageHeader({
             </div>
             <p className="font-sans text-[13px] text-muted mt-4 flex items-center gap-2">
               <span className="text-gold" aria-hidden="true">★</span>
-              {SITE.googleRating} from {SITE.reviewCount} Google reviews
+              {rating} from {reviewCount} Google reviews
             </p>
           </div>
         )}

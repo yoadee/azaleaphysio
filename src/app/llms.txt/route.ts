@@ -1,12 +1,14 @@
 import { SITE, services, conditions, locations } from '@/lib/clinic'
+import { getGoogleRating } from '@/lib/googleRating'
 
 /**
  * /llms.txt — a plain-text map of the site for AI crawlers and answer engines.
  * Served as text/plain so it is trivially parseable. Answer-first facts up top so
  * an assistant can quote them directly for "physio West Vancouver" style queries.
  */
-export function GET() {
+export async function GET() {
   const base = SITE.url
+  const { rating, reviewCount } = await getGoogleRating()
 
   const serviceLines = services
     .map((s) => `- [${s.name}](${base}/services/${s.slug}): ${s.excerpt}`)
@@ -40,7 +42,7 @@ Azalea Physiotherapy has served the North Shore since 2011. The clinic employs e
 - Appointments are usually available the same week. Weekday hours run until 7pm, plus Saturday mornings.
 - Treatment is available in English and Farsi.
 - Two locations, both in West Vancouver, serving the whole North Shore (West Vancouver and North Vancouver).
-- Google rating: ${SITE.googleRating} out of 5 from ${SITE.reviewCount} reviews.
+- Google rating: ${rating} out of 5 from ${reviewCount} reviews.
 - Online booking: ${SITE.booking}
 
 ## High-intent pages

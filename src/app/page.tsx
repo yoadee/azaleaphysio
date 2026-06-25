@@ -58,6 +58,28 @@ const faqs = [
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
 
+  // Live Google rating (16th Street clinic). Starts from the hardcoded fallback so
+  // it renders instantly, then swaps to the live figure from the cached API route.
+  const [gr, setGr] = useState<{ rating: number | string; reviewCount: string }>({
+    rating: SITE.googleRating,
+    reviewCount: SITE.reviewCount,
+  })
+
+  useEffect(() => {
+    let active = true
+    fetch('/api/google-rating')
+      .then((r) => r.json())
+      .then((d) => {
+        if (active && d && typeof d.rating !== 'undefined') {
+          setGr({ rating: d.rating, reviewCount: d.reviewCount })
+        }
+      })
+      .catch(() => {})
+    return () => {
+      active = false
+    }
+  }, [])
+
   useEffect(() => {
     const els = document.querySelectorAll('.reveal')
     const observer = new IntersectionObserver(
@@ -124,7 +146,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3 mb-12">
             <span className="text-gold text-[15px] tracking-tight" aria-hidden="true">★★★★★</span>
-            <span className="font-sans text-[13px] text-text font-medium">{SITE.googleRating} out of 5, from {SITE.reviewCount} Google reviews</span>
+            <span className="font-sans text-[13px] text-text font-medium">{gr.rating} out of 5, from {gr.reviewCount} Google reviews</span>
           </div>
           <div
             className="grid grid-cols-4 gap-4 pt-9"
