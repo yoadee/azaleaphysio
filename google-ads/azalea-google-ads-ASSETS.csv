@@ -1,0 +1,26 @@
+﻿Asset type,Field 1,Field 2,Field 3,Field 4
+,,,,
+SITELINKS,Link text,Description 1,Description 2,Final URL
+Sitelink,Book Online,Reserve your visit in minutes,Open until 7pm and Saturdays,https://azaleaphysio.com/book
+Sitelink,ICBC Direct Billing,Car accident? No referral needed,Up to 25 visits covered,https://azaleaphysio.com/icbc
+Sitelink,WorkSafeBC Injuries,"Hurt at work, we bill direct",Return-to-work focused care,https://azaleaphysio.com/worksafebc
+Sitelink,Our Services,"Physio, massage, acupuncture","One team, one coordinated plan",https://azaleaphysio.com/services
+Sitelink,Pricing,Clear fees by service,Direct billing to most plans,https://azaleaphysio.com/pricing
+Sitelink,Our Locations,16th Street and Ocean Walk,Two clinics in West Vancouver,https://azaleaphysio.com/locations
+Sitelink,Meet the Team,"Registered, experienced team",English and Farsi speaking,https://azaleaphysio.com/team
+,,,,
+CALLOUTS,Callout text,,,
+Callout,No referral needed,,,
+Callout,Direct billing to ICBC,,,
+Callout,Open until 7pm,,,
+Callout,Open Saturdays,,,
+Callout,Same-week appointments,,,
+Callout,English & Farsi speaking,,,
+Callout,Two West Van locations,,,
+Callout,Multidisciplinary clinic,,,
+Callout,Book online or by phone,,,
+Callout,Rated 4.6 on Google,,,
+,,,,
+STRUCTURED SNIPPETS,Header,Values (comma separated),,
+Structured snippet,Service catalog,"Physiotherapy, Massage Therapy, Acupuncture, Chiropractic, Kinesiology, Occupational Therapy",,
+Structured snippet,Insurance coverage,"ICBC, WorkSafeBC, Pacific Blue Cross, Sun Life, Manulife, Canada Life",,
