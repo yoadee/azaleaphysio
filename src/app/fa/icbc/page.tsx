@@ -5,12 +5,12 @@ import { SITE, locations, type Faq } from '@/lib/clinic'
 import { faqPageSchema, howToSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'فیزیوتراپی ICBC به زبان فارسی در وست ونکوور',
+  title: { absolute: 'فیزیوتراپی ICBC به زبان فارسی در وست ونکوور | آزالیا فیزیوتراپی' },
   description:
     'بعد از تصادف رانندگی، ICBC در ۱۲ هفتهٔ اول تا ۲۵ جلسه فیزیوتراپی را بدون نیاز به ارجاع پوشش می‌دهد. ما مستقیم با ICBC تسویه می‌کنیم. راهنمای کامل به زبان فارسی.',
   alternates: {
     canonical: '/fa/icbc',
-    languages: { 'en-CA': '/icbc', fa: '/fa/icbc' },
+    languages: { 'en-CA': '/icbc', fa: '/fa/icbc', 'x-default': '/icbc' },
   },
 }
 

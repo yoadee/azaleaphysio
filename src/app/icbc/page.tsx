@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     'ICBC covers 25 pre-approved physiotherapy visits in the first 12 weeks after a crash, with no referral needed. We bill ICBC directly. Book at either West Vancouver clinic.',
   alternates: {
     canonical: '/icbc',
-    languages: { 'en-CA': '/icbc', fa: '/fa/icbc' },
+    languages: { 'en-CA': '/icbc', fa: '/fa/icbc', 'x-default': '/icbc' },
   },
 }
 

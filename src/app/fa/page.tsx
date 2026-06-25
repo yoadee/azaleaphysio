@@ -9,7 +9,7 @@ import { getGoogleRating } from '@/lib/googleRating'
 const toFa = (s: string | number) => String(s).replace(/[0-9]/g, (d) => '۰۱۲۳۴۵۶۷۸۹'[+d])
 
 export const metadata: Metadata = {
-  title: 'فیزیوتراپی فارسی‌زبان در وست ونکوور',
+  title: { absolute: 'فیزیوتراپی فارسی‌زبان در وست ونکوور | آزالیا فیزیوتراپی' },
   description:
     'کلینیک فیزیوتراپی آزالیا در وست ونکوور؛ تیمی فارسی‌زبان که علت اصلی درد را پیدا می‌کند. بدون نیاز به ارجاع، تسویهٔ مستقیم با ICBC و بیمه‌های تکمیلی، نوبت معمولاً در همان هفته.',
   alternates: {
