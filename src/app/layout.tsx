@@ -101,7 +101,7 @@ const localBusinessSchema = {
         streetAddress: "1884 Marine Drive",
         addressLocality: "West Vancouver",
         addressRegion: "BC",
-        postalCode: "V6B 5C6",
+        postalCode: "V7V 1J6",
         addressCountry: "CA",
       },
       telephone: "+16042813122",

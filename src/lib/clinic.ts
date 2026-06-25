@@ -61,7 +61,7 @@ export const locations: Location[] = [
     name: 'Ocean Walk Clinic',
     street: '1884 Marine Drive',
     city: 'West Vancouver, BC',
-    postal: 'V6B 5C6',
+    postal: 'V7V 1J6',
     tel: '+16042813122',
     telLabel: '(604) 281-3122',
     fax: '(604) 281-3123',

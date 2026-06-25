@@ -435,7 +435,7 @@ export default function Home() {
               {
                 name: 'Ocean Walk Clinic',
                 addr1: '1884 Marine Drive',
-                addr2: 'West Vancouver, BC V6B 5C6',
+                addr2: 'West Vancouver, BC V7V 1J6',
                 tel: '+16042813122',
                 telLabel: '(604) 281-3122',
                 hours: 'Mon to Fri 8:30am to 7pm · Sat 9am to 3pm',
