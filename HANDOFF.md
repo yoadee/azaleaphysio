@@ -1,6 +1,36 @@
 # Azalea Physiotherapy — Handoff
 
-_Last updated: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO, 19-article SEO/AEO blog. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin._
+_Last updated: 2026-06-25 — SITE IS LIVE at https://azaleaphysio.com. Domain cutover, Jane booking, email restore, Search Console, and SEO pass 1 all done this session. See the 2026-06-25 current-state block below. Older context retained beneath it._
+
+_Prior: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO, 19-article SEO/AEO blog. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin._
+
+---
+
+## ▶ CURRENT STATE (2026-06-25 — LIVE: launch, email, SEO pass 1)
+
+**The site is live in production at https://azaleaphysio.com.** Production branch = `mvp-rebuild` (Vercel auto-deploys it). Vercel CLI is linked (`vercel whoami` = `yoadee`, team `yoadees-projects`).
+
+**Done this session:**
+- **Domain live.** Nameservers on Vercel; apex `azaleaphysio.com` is canonical, `www` 308-redirects to apex. `SITE.url` + all hardcoded hosts updated to apex. Propagated on all major resolvers.
+- **Booking = Jane App** (`https://azaleaphysiotherapyclinic.janeapp.com/`), migrated off ClinicMaster everywhere (`SITE.booking`, JSON-LD ReserveAction, analytics host, docs).
+- **Email RESTORED (Zoho).** NS move had dropped mail; re-added in Vercel DNS: **MX** (mx/mx2/mx3.zoho.com), **SPF** (`v=spf1 include:zoho.com ~all`), **DKIM** (`zoho._domainkey`), **DMARC** (`_dmarc`, p=none). ⚠️ Abtin still to: click Verify/Enable on DKIM in Zoho admin + send a test to info@azaleaphysio.com.
+- **Search Console**: Domain property verified (TXT in DNS), sitemap submitted (`https://azaleaphysio.com/sitemap.xml`, ~75 pages). **Bing**: import-from-GSC in progress.
+- **OG share card**: text-only typographic version live (the only logo file is low-res; revisit with the original vector if obtained — see note below).
+- **ICBC pages** (`/icbc` + `/fa/icbc`): added per-treatment ICBC visit table (physio 25, chiro 25, massage/acu/kinesio/counselling 12). Farsi translated.
+- **Brand icons**: favicon.ico + icon.png + apple-icon.png generated from the logo mark.
+- **SEO pass 1 — on `seo-pass` PREVIEW branch, NOT yet merged to production.** Full plan in `SEO-PLAN.md` (output of a 14-agent RampStack SEO orchestration + synthesis + penalty review). Implemented: removed self-serving `aggregateRating` from JSON-LD; practitioner `Physician`→`Person`; fixed invalid location `@type` + dead `SearchAction`; unique metaTitle+metaDescription on all services + expanded static titles (clears Bing duplicate/short flags); hreflang/canonical; `llms.txt` cleanup; **postal code fixed `V6B 5C6`→`V7V 1J6`** (verified for 1884 Marine Dr, was a downtown-Van code).
+
+**Confirmed facts:** founded **2011** (correct). Osteopathy **is** staffed (**Sara Lotfi**; she does not need her own team page) so the service page stays. Ocean Walk postal = **V7V 1J6**.
+
+**PENDING — pick up tomorrow:**
+1. **Decide: merge `seo-pass` → `mvp-rebuild`** to push SEO pass 1 live (after Abtin reviews the `seo-pass` preview).
+2. **Pricing**: pull real prices from Jane (vary by discipline / initial-vs-followup / provider). Jane landing page is a SPA — prices are behind the booking flow or in Jane admin. Current site claims physio $110–135 / $90–110 (`clinic.ts`, `llms.txt`); verify or soften to "varies, see booking".
+3. **Local SEO (biggest remaining lever):** Google Business Profile ×2 (16th St + Ocean Walk) + Apple Business Connect ×2; finish Bing import. Use the corrected NAP (V7V 1J6). Staffed-only GBP categories (NOT osteopathy as a category unless intended). Compliant review engine via Jane (no gating/incentives).
+4. **Tier-1 citations** with byte-identical NAP (ICBC Find-a-Provider, WorkSafeBC, PainHero, Lumino, Yelp.ca, Apple/Bing).
+5. **Content/E-E-A-T:** enrich the 5 thin condition pages; practitioner `sameAs` to colleges (CPTBC etc.); `MedicalWebPage` reviewedBy/lastReviewed only where genuinely reviewed.
+6. **Optional:** connect the **Ahrefs MCP** to unlock the crawler-based SEO skills (technical / site-health / backlink) for real data.
+
+**Tooling note:** RampStack SEO skills are installed (`~/.claude/plugins/cache/rampstack/...`, 16 SEO skills). The orchestration workflow that produced `SEO-PLAN.md` can be re-run.
 
 ---
 
