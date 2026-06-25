@@ -46,7 +46,9 @@ export function serviceSchema(service: Service) {
 export function practitionerSchema(p: Practitioner) {
   return {
     '@context': 'https://schema.org',
-    '@type': p.role.toLowerCase().includes('physiotherap') ? 'Physician' : 'Person',
+    // Physiotherapists are not physicians; Person + jobTitle + memberOf is the
+    // accurate, non-misleading representation on a YMYL page.
+    '@type': 'Person',
     name: p.name,
     jobTitle: p.role,
     description: p.bio,
@@ -117,7 +119,8 @@ const DAY_MAP: Record<string, string[]> = {
 export function locationSchema(loc: Location) {
   return {
     '@context': 'https://schema.org',
-    '@type': ['MedicalClinic', 'Physiotherapy'],
+    '@type': 'MedicalClinic',
+    medicalSpecialty: 'https://schema.org/PhysicalTherapy',
     '@id': `${SITE.url}/locations/${loc.slug}`,
     name: `${SITE.name}, ${loc.name.replace(' Clinic', '')}`,
     url: `${SITE.url}/locations/${loc.slug}`,
@@ -138,13 +141,9 @@ export function locationSchema(loc: Location) {
     areaServed: AREA_SERVED,
     availableLanguage: ['English', 'Persian'],
     hasMap: loc.maps,
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: String(SITE.googleRating),
-      reviewCount: SITE.reviewCount,
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // No aggregateRating in JSON-LD: self-serving review markup without
+    // first-party reviews rendered on the page violates Google's policy and is
+    // risky on a YMYL site. Re-add only once real on-page reviews exist.
     openingHoursSpecification: loc.hours.map((h) => {
       const [opens, closes] = h.time.split(' to ').map(to24h)
       return {
@@ -201,9 +200,6 @@ export const websiteSchema = {
   '@type': 'WebSite',
   name: SITE.name,
   url: SITE.url,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${SITE.url}/search?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
+  // No SearchAction: the site has no /search route, so advertising one points
+  // crawlers at a 404.
 }

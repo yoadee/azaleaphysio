@@ -4,7 +4,7 @@ import RevealObserver from '@/components/RevealObserver'
 import { SITE, locations } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Book an Appointment',
+  title: 'Book a Physiotherapy Appointment',
   description:
     'Book physiotherapy at Azalea in West Vancouver online or by phone. No referral needed, direct billing, and most new patients seen within the same week.',
   alternates: { canonical: '/book' },

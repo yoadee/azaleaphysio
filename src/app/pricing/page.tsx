@@ -8,7 +8,7 @@ import { locations, type Faq } from '@/lib/clinic'
 import { faqPageSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Physiotherapy Pricing in West Vancouver | Fees & Direct Billing',
+  title: { absolute: 'Physiotherapy Pricing in West Vancouver | Azalea Physiotherapy' },
   description:
     'Transparent physiotherapy fees in West Vancouver: assessments from $110, follow-ups from $90. Most extended health plans reimburse a share, and ICBC and WorkSafeBC visits are covered in full.',
   alternates: { canonical: '/pricing' },

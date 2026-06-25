@@ -6,7 +6,7 @@ import JsonLd from '@/components/JsonLd'
 import { howToSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Your First Visit',
+  title: 'Your First Physiotherapy Visit',
   description:
     'Exactly what happens at your first physiotherapy visit at Azalea in West Vancouver, step by step. No referral needed, and treatment starts the same day.',
   alternates: { canonical: '/what-to-expect' },

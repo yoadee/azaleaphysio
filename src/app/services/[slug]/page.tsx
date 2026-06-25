@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!s) return {}
   return {
     title: s.metaTitle ?? `${s.name} in West Vancouver`,
-    description: `${s.excerpt} Direct billing and usually same-week. Book online or call.`,
+    description: s.metaDescription ?? s.excerpt,
     alternates: { canonical: `/services/${s.slug}` },
   }
 }

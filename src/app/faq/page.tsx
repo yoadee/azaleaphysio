@@ -8,7 +8,7 @@ import { faqs } from '@/lib/clinic'
 import { faqPageSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions',
+  title: 'Physiotherapy FAQ for West Vancouver',
   description:
     'Referrals, insurance, ICBC claims, first visits, pricing and locations. Common questions about physiotherapy at Azalea in West Vancouver, answered.',
   alternates: { canonical: '/faq' },

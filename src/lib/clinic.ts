@@ -140,6 +140,9 @@ export type Service = {
   // Optional SEO title override. Defaults to "{name} in West Vancouver" when
   // omitted; set only where a secondary term matters (e.g. RMT for massage).
   metaTitle?: string
+  // Optional SEO meta description override. Defaults to the excerpt on the
+  // service page when omitted. Written per-service so no two pages share a suffix.
+  metaDescription?: string
   excerpt: string
   whoThisHelps: string[]
   whatWeDo: string
@@ -172,6 +175,8 @@ export const services: Service[] = [
   {
     slug: 'physiotherapy',
     name: 'Physiotherapy',
+    metaTitle: 'Physiotherapy in West Vancouver',
+    metaDescription: 'Registered physiotherapy in West Vancouver for back pain, joint injuries, and post-surgical recovery. No referral needed, and treatment starts at your first visit.',
     excerpt: 'Physiotherapy in West Vancouver for back pain, joint injuries, and recovery after surgery, with no referral needed.',
     whoThisHelps: [
       'You are in pain after an injury, surgery, or accident and want it properly assessed, not just told to rest.',
@@ -238,6 +243,8 @@ export const services: Service[] = [
   {
     slug: 'sports-injury',
     name: 'Sports Injury',
+    metaTitle: 'Sports Injury Physiotherapy in West Vancouver',
+    metaDescription: 'Sports injury physiotherapy in West Vancouver for sprains, strains, and tears. We treat the injury, then rebuild the strength for a safe, staged return to your sport.',
     excerpt: 'Sports injury physiotherapy in West Vancouver for sprains, strains, and a safe return to your sport.',
     whoThisHelps: [
       'You have sprained, strained, or torn something and want a clear path back to your sport.',
@@ -273,6 +280,8 @@ export const services: Service[] = [
   {
     slug: 'acupuncture',
     name: 'Acupuncture',
+    metaTitle: 'Acupuncture in West Vancouver',
+    metaDescription: 'Registered acupuncture in West Vancouver for persistent pain, muscle tension, and headaches. IMS and dry needling available, and often paired with physiotherapy in one plan.',
     excerpt: 'Acupuncture in West Vancouver for pain, tension, and recovery, offered alongside physiotherapy under one roof.',
     whoThisHelps: [
       'Persistent pain or muscle tension has not fully responded to other treatment.',
@@ -309,6 +318,7 @@ export const services: Service[] = [
     slug: 'massage-therapy',
     name: 'Massage Therapy',
     metaTitle: 'Registered Massage Therapy (RMT) in West Vancouver',
+    metaDescription: 'Registered massage therapy (RMT) in West Vancouver for muscle tension and soft-tissue pain. Sessions of 30, 45, or 60 minutes, often paired with physiotherapy in one plan.',
     excerpt: 'Registered massage therapy (RMT) in West Vancouver for muscle tension, pain, and recovery, alongside physiotherapy under one roof.',
     whoThisHelps: [
       'Tight, aching muscles that will not settle on their own.',
@@ -342,6 +352,8 @@ export const services: Service[] = [
   {
     slug: 'occupational-therapy',
     name: 'Occupational Therapy',
+    metaTitle: 'Occupational Therapy in West Vancouver',
+    metaDescription: 'Occupational therapy in West Vancouver to rebuild daily function at home and work after injury or illness. ICBC and WorkSafeBC billed directly, no referral required.',
     excerpt: 'Occupational therapy in West Vancouver to help you return to daily life, work, and independence after injury or illness.',
     whoThisHelps: [
       'An injury or condition is making everyday tasks at home or work hard or unsafe.',
@@ -375,6 +387,8 @@ export const services: Service[] = [
   {
     slug: 'kinesiology',
     name: 'Kinesiology',
+    metaTitle: 'Kinesiology & Active Rehab in West Vancouver',
+    metaDescription: 'Kinesiology in West Vancouver: supervised, active rehab that rebuilds strength and movement after injury. ICBC active rehab billed directly, coordinated with physiotherapy.',
     excerpt: 'Kinesiology in West Vancouver. Supervised, active rehab that rebuilds strength and movement after injury.',
     whoThisHelps: [
       'You have finished hands-on treatment and need to rebuild strength before you are truly recovered.',
@@ -409,6 +423,8 @@ export const services: Service[] = [
   {
     slug: 'osteopathy',
     name: 'Osteopathy',
+    metaTitle: 'Osteopathy in West Vancouver',
+    metaDescription: 'Osteopathy in West Vancouver: hands-on, whole-body manual therapy for pain, stiffness, and restricted movement, often where the source sits away from where it hurts.',
     excerpt: 'Osteopathy in West Vancouver. Whole-body manual therapy for pain, stiffness, and restricted movement.',
     whoThisHelps: [
       'Pain or stiffness that seems connected across more than one area of the body.',
@@ -442,6 +458,8 @@ export const services: Service[] = [
   {
     slug: 'chiropractic',
     name: 'Chiropractic',
+    metaTitle: 'Chiropractic Care in West Vancouver',
+    metaDescription: 'Chiropractic care in West Vancouver for back pain, neck pain, and joint stiffness. Adjustment and manual techniques, coordinated with physiotherapy in one plan.',
     excerpt: 'Chiropractic care in West Vancouver for back pain, neck pain, and joint function.',
     whoThisHelps: [
       'Back or neck pain that affects how you move through the day.',
@@ -476,6 +494,8 @@ export const services: Service[] = [
   {
     slug: 'weight-loss',
     name: 'Weight Loss Program',
+    metaTitle: 'Clinician-Led Weight Loss in West Vancouver',
+    metaDescription: 'A clinician-led weight loss program in West Vancouver built on safe, progressive movement. Designed around injuries and joint pain so the change is steady and lasting.',
     excerpt: 'A clinician-led weight loss program in West Vancouver, built on movement, structure, and realistic goals.',
     whoThisHelps: [
       'You want to lose weight in a way that is supervised and clinical, not guesswork.',
@@ -511,6 +531,8 @@ export const services: Service[] = [
   {
     slug: 'yoga-therapy',
     name: 'Yoga Therapy',
+    metaTitle: 'One-on-One Yoga Therapy in West Vancouver',
+    metaDescription: 'Yoga therapy in West Vancouver: therapeutic, one-on-one sessions adapted to your injury, stiffness, and recovery goals. A safe bridge from rehab back to everyday movement.',
     excerpt: 'Yoga therapy in West Vancouver. Therapeutic, one-on-one yoga adapted to your injury and recovery.',
     whoThisHelps: [
       'You want the benefits of yoga but have an injury or limitation to work around.',
@@ -544,6 +566,8 @@ export const services: Service[] = [
   {
     slug: 'elderly-care',
     name: 'Elderly Care',
+    metaTitle: 'Physiotherapy for Seniors in West Vancouver',
+    metaDescription: 'Physiotherapy for seniors in West Vancouver, focused on balance, strength, and fall prevention. Seen in clinic, or at home where travel is hard, with care built around later life.',
     excerpt: 'The Enhanced Care Program in West Vancouver. Physiotherapy for seniors focused on mobility, balance, and independence.',
     whoThisHelps: [
       'An older adult who wants to stay mobile and independent at home.',

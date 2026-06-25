@@ -6,7 +6,7 @@ import RevealObserver from '@/components/RevealObserver'
 import { locations, SITE } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Locations & Hours',
+  title: 'Our West Vancouver Locations & Hours',
   description:
     'Two Azalea Physiotherapy clinics in West Vancouver: 16th Street and Ocean Walk on Marine Drive. Addresses, phone numbers, hours and directions.',
   alternates: { canonical: '/locations' },

@@ -6,7 +6,7 @@ import RevealObserver from '@/components/RevealObserver'
 import { services } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Physiotherapy Services in West Vancouver',
   description:
     'Eleven disciplines under one roof in West Vancouver: physiotherapy, sports injury, massage therapy, acupuncture, kinesiology, chiropractic and more. No referral needed.',
   alternates: { canonical: '/services' },

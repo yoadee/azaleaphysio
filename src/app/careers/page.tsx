@@ -3,7 +3,7 @@ import PageHeader from '@/components/PageHeader'
 import RevealObserver from '@/components/RevealObserver'
 
 export const metadata: Metadata = {
-  title: 'Careers',
+  title: 'Careers at a West Vancouver Clinic',
   description:
     'Join Azalea Physiotherapy in West Vancouver. We hire physiotherapists, kinesiologists and allied practitioners who want to work as part of a connected team.',
   alternates: { canonical: '/careers' },

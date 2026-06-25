@@ -172,7 +172,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <div className="relative aspect-[16/9] overflow-hidden bg-stone reveal">
               <Image
                 src={post.coverImage}
-                alt=""
+                alt={post.title}
                 fill
                 priority
                 className="object-cover"

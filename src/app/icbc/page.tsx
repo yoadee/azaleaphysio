@@ -8,7 +8,7 @@ import { locations, testimonials, type Faq } from '@/lib/clinic'
 import { faqPageSchema, howToSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'ICBC Physiotherapy in West Vancouver | Direct Billing, No Referral',
+  title: { absolute: 'ICBC Physiotherapy in West Vancouver | Azalea Physiotherapy' },
   description:
     'ICBC covers 25 pre-approved physiotherapy visits in the first 12 weeks after a crash, with no referral needed. We bill ICBC directly. Book at either West Vancouver clinic.',
   alternates: {

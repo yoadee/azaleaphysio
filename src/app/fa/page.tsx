@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   title: 'فیزیوتراپی فارسی‌زبان در وست ونکوور',
   description:
     'کلینیک فیزیوتراپی آزالیا در وست ونکوور؛ تیمی فارسی‌زبان که علت اصلی درد را پیدا می‌کند. بدون نیاز به ارجاع، تسویهٔ مستقیم با ICBC و بیمه‌های تکمیلی، نوبت معمولاً در همان هفته.',
-  alternates: { canonical: '/fa' },
+  alternates: {
+    canonical: '/fa',
+    languages: { 'en-CA': '/', fa: '/fa', 'x-default': '/' },
+  },
 }
 
 // Farsi disciplines, shown as the "one roof" list. Links go to the English

@@ -6,7 +6,7 @@ import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About the Clinic & Our Approach',
   description:
     'Azalea Physiotherapy has served West Vancouver and the North Shore since 2011. Eight practitioners, eleven disciplines, two locations, one connected team.',
   alternates: { canonical: '/about' },

@@ -7,7 +7,7 @@ import Portrait from '@/components/Portrait'
 import { team, formatLanguages } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Our Team',
+  title: 'Our Physiotherapists & Practitioners',
   description:
     'Meet the eight practitioners at Azalea Physiotherapy in West Vancouver. Physiotherapists, a chiropractor, kinesiologist, acupuncturist, massage therapist and counsellor. Several treat in Farsi.',
   alternates: { canonical: '/team' },

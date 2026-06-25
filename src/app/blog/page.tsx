@@ -8,7 +8,7 @@ import { posts } from '@/content/posts'
 import { practitionerBySlug } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Notes & Articles',
+  title: 'Physiotherapy Notes & Articles',
   description:
     'Practical, evidence-informed writing on injuries, recovery, ICBC, and getting the most from physiotherapy, from the practitioners at Azalea in West Vancouver.',
   alternates: { canonical: '/blog' },
@@ -49,7 +49,7 @@ export default function BlogPage() {
                 <div className="relative aspect-[2/1] overflow-hidden bg-stone">
                   <Image
                     src={featured.coverImage}
-                    alt=""
+                    alt={featured.title}
                     fill
                     priority
                     className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
@@ -94,7 +94,7 @@ export default function BlogPage() {
                         <div className="relative aspect-[16/10] overflow-hidden bg-stone">
                           <Image
                             src={p.coverImage}
-                            alt=""
+                            alt={p.title}
                             fill
                             className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.02]"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"

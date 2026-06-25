@@ -17,20 +17,24 @@ const spectral = Spectral({
 
 export const metadata: Metadata = {
   title: {
-    default: "Azalea Physiotherapy | West Vancouver",
+    default: "Physiotherapy in West Vancouver | Azalea Physiotherapy",
     template: "%s | Azalea Physiotherapy",
   },
   description:
-    "Multidisciplinary physiotherapy clinic in West Vancouver. 8 practitioners, 11 disciplines, 2 locations. Direct billing to ICBC, WorkSafeBC and most extended health plans. No referral needed.",
+    "No-referral physiotherapy in West Vancouver across two clinics. Direct billing to ICBC, WorkSafeBC and extended health, with appointments usually the same week.",
   metadataBase: new URL("https://azaleaphysio.com"),
+  alternates: {
+    canonical: "/",
+    languages: { "en-CA": "/", fa: "/fa", "x-default": "/" },
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://azaleaphysio.com",
     siteName: "Azalea Physiotherapy",
-    title: "Azalea Physiotherapy | West Vancouver",
+    title: "Physiotherapy in West Vancouver | Azalea Physiotherapy",
     description:
-      "Multidisciplinary physiotherapy in West Vancouver. Direct billing to ICBC, WorkSafeBC and extended health. No referral needed.",
+      "No-referral physiotherapy in West Vancouver. Direct billing to ICBC, WorkSafeBC and extended health. Usually seen the same week.",
   },
   robots: {
     index: true,
@@ -50,13 +54,8 @@ const localBusinessSchema = {
   paymentAccepted: "ICBC, WorkSafeBC, extended health insurance, debit, credit",
   areaServed: ["West Vancouver", "North Vancouver", "North Shore"],
   availableLanguage: ["English", "Persian"],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    reviewCount: "83",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // aggregateRating intentionally omitted until first-party reviews render on
+  // the page (Google structured-data policy; YMYL risk). See schema.ts.
   medicalSpecialty: [
     "Physiotherapy",
     "Sports Medicine",

@@ -6,7 +6,7 @@ import RevealObserver from '@/components/RevealObserver'
 import { conditions } from '@/lib/clinic'
 
 export const metadata: Metadata = {
-  title: 'Conditions We Treat',
+  title: 'Conditions We Treat in West Vancouver',
   description:
     'Back pain, knee pain, shoulder injuries, ICBC car accident injuries, sports injuries and more, treated in West Vancouver with direct billing and no referral.',
   alternates: { canonical: '/conditions' },
