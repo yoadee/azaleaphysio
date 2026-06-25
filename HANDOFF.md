@@ -34,6 +34,10 @@ _Prior: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 1
 5. **Content/E-E-A-T:** enrich the 5 thin condition pages; practitioner `sameAs` to colleges (CPTBC etc.); `MedicalWebPage` reviewedBy/lastReviewed only where genuinely reviewed.
 6. **Optional:** connect the **Ahrefs MCP** to unlock the crawler-based SEO skills (technical / site-health / backlink) for real data.
 
+**SEO audit (2026-06-25, post-pass-1).** Re-audited live site + code (RampStack seo-technical/onpage/site-health). Most of pass 1 held (apex self-canonicals, robots, no aggregateRating in JSON-LD, NAP exact, www→apex 308, home fully server-rendered, sitemap clean). **Fixed + shipped this session:** x-default hreflang added to the `/icbc`↔`/fa/icbc` pair; Farsi `/fa` + `/fa/icbc` titles forced to the Persian brand (were inheriting the English root template suffix). **Non-issues:** `/icbc` has exactly one H1 (audit's "2 H1s" was a fetch artifact); fee ranges ($110–135 / $90–110) technically contain the real Jane prices ($130/$110) so not "wrong," just loose (optional tightening, ~7 files incl. a blog post + /pricing + llms.txt + clinic.ts).
+
+**SEO — CRITICAL OPEN ITEM (not yet fixed):** the Farsi pages `/fa` and `/fa/icbc` are served to crawlers as `<html lang="en" dir="ltr">` in the static HTML. `src/app/layout.tsx:152` hard-codes it; `src/components/FaLangDir.tsx` only flips `document.documentElement` client-side via `useEffect` (post-hydration), so raw HTML and JS-light crawlers see English. This undercuts the `/fa` Farsi-SEO play (contradicts the `hreflang="fa"`). Proper fix = per-locale root layouts via **route groups** (`app/(en)/` + `app/(fa)/`, delete single `app/layout.tsx`), so `/fa` gets a true server-side `<html lang="fa" dir="rtl">`. This moves every page route and re-wires metadataBase/analytics/fonts into two roots — a focused, build+curl-verified pass, deliberately NOT rushed alongside small edits. Delete `FaLangDir` once done.
+
 **Tooling note:** RampStack SEO skills are installed (`~/.claude/plugins/cache/rampstack/...`, 16 SEO skills). The orchestration workflow that produced `SEO-PLAN.md` can be re-run.
 
 ---
