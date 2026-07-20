@@ -917,13 +917,13 @@ export type Practitioner = {
 export const team: Practitioner[] = [
   {
     slug: 'mary-ghoroghi',
-    name: 'Mary Ghoroghi',
+    name: 'Mary Gheissari',
     role: 'Registered Physiotherapist',
     credentials: 'Registered Physiotherapist, MSc (PT), CMA, MCPA',
     img: '/images/existing/team-Mary-Gheissari.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Complex and chronic pain', 'Post-surgical rehab', 'Manual therapy'],
-    bio: 'Mary founded Azalea in 2011 and still treats most days. She trained at Tehran University of Medical Sciences, holds a master’s in physiotherapy, and is a certified medical acupuncturist who has taught the next generation of clinicians as a placement instructor at the University of Alberta Hospital. Patients come to her for the problems other clinics have only managed: she finds the cause, then explains it in plain language. She treats in English and Farsi.',
+    bio: 'Mary Gheissari has over 14 years of professional experience as a Physiotherapist working in a variety of orthopedic clinics and hospitals. She was a Clinical Placement Instructor for Physiotherapy students at the University of Alberta Hospital. Mary graduated from Tehran University of Medical Sciences with an honors Baccalaureate degree in Physical Therapy and later achieved a Master’s degree in Physiotherapy from Queen’s University in Ontario. She is also certified in Medical Acupuncture from the University of Alberta, Faculty of Medicine & Dentistry. She has a wealth of experience in treatment of musculoskeletal problems involving the knee, shoulder, hip, foot and ankle, lower back, neck, thoracic spine, and post-surgical rehabilitation, with an emphasis on hands-on treatment, acupuncture, and core-strength-based exercise therapy. She also maintains her skills in treatment of cardiopulmonary conditions, women’s health, weight-loss management, osteoporosis, and neurological conditions such as Parkinson’s disease, stroke, and multiple sclerosis. She has completed advanced courses in orthopedic manual therapy, Exercise Therapy, and Motor Control Disorders. Mary enjoys keeping active when she isn’t at work, playing sports and enjoying the outdoors any chance she gets.',
     registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
@@ -934,7 +934,7 @@ export const team: Practitioner[] = [
     img: '/images/existing/team-Braedan.jpg',
     languages: ['English'],
     focus: ['Sports injuries', 'Athletic performance', 'Return to activity'],
-    bio: 'Braedan works with active patients who want a clear route back to training and sport. Trained at the University of Alberta with further acupuncture study in Beijing, he has worked alongside professional and national-team athletes, ran the BC Lions’ training centre through their championship years, and is recognised internationally for his work in golf performance. His rehab pairs hands-on treatment with progressive loading, so recovery holds up under real demand.',
+    bio: 'Braedan Lalor hails from Alberta, where he became a Physical Therapist before extending his healthcare experience in Florida and then coming to BC. Recently from White Rock, he has extensive and diverse education in treatment methodologies too extensive to list, including a very unique extension to his U of A acupuncture training in Beijing, China. He has run several clinics and training centers, including the BC Lions’ official training center through their successful Grey Cup runs in the 2000s. He works with pro and national team athletes in the USA and Canada in almost all the major leagues, and enjoys teaching other clinicians how to develop young athletes and fix difficult pain problems. In his free time he plays sports (loves combat sports) and writes thriller novels. Braedan believes in a full-scope physio practice where the clinician provides simultaneous solutions for pain, prevention, and performance. His intellectual property has helped launch well-known local clinical practices and was at one time licensed for seven figures. Although he has solutions for all types of athletes, he has received awards for his work in golf performance from international golf clinician networks. He works many local and international sporting events of his choosing, so if your club or event needs help or your coaches need an informative lecturer, ask him and he’ll probably say yes.',
     registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
@@ -945,7 +945,7 @@ export const team: Practitioner[] = [
     img: '/images/existing/team-Noushin.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Orthopaedic rehab', 'Neck and back pain', 'ICBC recovery'],
-    bio: 'Noushin focuses on orthopaedic and motor-vehicle-accident recovery, guiding patients from the acute, painful stage through to full function. A physiotherapist since 2011 whose career began in Iran before she qualified in Canada, she works through manual therapy and active rehabilitation, and treats in English and Farsi.',
+    bio: 'Noushin Nouri is a Registered Physiotherapist with over 11 years of experience helping patients recover from injuries, improve mobility, and return to the activities they enjoy. She began her physiotherapy career in Iran after graduating in 2011 and continued practicing in orthopedic and rehabilitation settings before relocating to Canada and becoming fully licensed as a physiotherapist. Her clinical focus includes musculoskeletal conditions, sports injuries, post-operative rehabilitation, and chronic pain management. Noushin believes in creating individualized treatment plans based on each patient’s specific needs and goals. Her approach combines manual therapy, active rehabilitation, and evidence-informed techniques to support long-term recovery and functional improvement. She values building strong connections with her patients and empowering them through education and movement-based therapy. Noushin is committed to providing a supportive and positive environment where patients feel confident throughout their rehabilitation journey. Outside the clinic, she enjoys travelling, camping, spending time outdoors, and exploring nature with family and friends. She provides care in both English and Farsi.',
     registration: 'Registered with the College of Physical Therapists of British Columbia',
   },
   {
@@ -956,7 +956,7 @@ export const team: Practitioner[] = [
     img: '/images/existing/team-asal.jpg',
     languages: ['Farsi'],
     focus: ['Cognitive behavioural therapy', 'Pain and stress', 'Recovery support'],
-    bio: 'Asal supports patients whose recovery carries a mental and emotional weight, from the strain of a long injury to the anxiety that can follow an accident. She holds a master’s in psychology and works through cognitive behavioural therapy, ACT, and mindfulness. Her sessions are offered in Farsi, by video.',
+    bio: 'Asal holds bachelor’s and master’s degrees in general psychology from Arak University in Iran. She was enrolled in a PhD in psychology when she decided to move to Canada a few years ago. She is a member of the British Columbia Association of Clinical Counsellors and utilizes various approaches including Cognitive Behavioral Therapy (CBT), Integrated Psychotherapy, Acceptance and Commitment Therapy (ACT), and Mindfulness. She has extensive experience in areas such as PTSD, depression, ADHD, parenting, and couples and individual counselling.',
   },
   {
     slug: 'faranak-shekoohi',
@@ -966,17 +966,17 @@ export const team: Practitioner[] = [
     img: '/images/existing/team-Faranak-Shekoohi.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Kinesiology and active rehab', 'ICBC programs', 'Strength rebuilding'],
-    bio: 'With a physiotherapy degree from Shiraz University and fifteen years in active rehabilitation across two countries, Faranak designs and supervises the exercise programs that turn early recovery into lasting strength. She runs many of our ICBC active-rehab plans, and offers home-based sessions for patients who cannot easily travel.',
+    bio: 'Faranak Shekoohi has 10 years of Iranian clinical and hospital experience in the field of Physiotherapy and more than 5 years of Canadian experience as a Physio-Assistant and as a Practicing Kinesiologist. She earned a Bachelor of Physiotherapy from Shiraz University of Medical Sciences, Iran, in 2000. She mainly worked with orthopedic, rheumatoid and musculoskeletal disorders and sport-injury patients in private clinics, general hospitals and home care centres. Besides, Faranak has been an active member of the Iranian Physiotherapy Association and a member of the BC Association of Kinesiology as well. Having lots of experience working with different patients makes her confident enough to implement therapeutic exercise to help people who suffer from poor posture, poor condition and osteoporosis, etc., and also people who are candidates for the Active Rehab Program, ICBC clients. She speaks English and Farsi fluently.',
   },
   {
     slug: 'kambiz-navirian',
     name: 'Kambiz Navirian',
-    role: 'Acupuncture',
+    role: 'Registered Acupuncturist',
     credentials: 'Registered Acupuncturist, MD, Physical Medicine & Rehabilitation',
     img: '/images/existing/team-kambiz.jpg',
     languages: ['English', 'Farsi'],
     focus: ['Pain relief', 'Tension and headaches', 'Integrative care'],
-    bio: 'Kambiz brings unusual depth to acupuncture: a physician by training, with a specialization in physical medicine and rehabilitation and more than thirty years of practice, he once led a hospital rehabilitation ward. He treats pain, tension, and headaches with acupuncture, moxibustion, and cupping, integrating it with the physiotherapy running alongside so the two reinforce each other.',
+    bio: 'Kambiz is a highly skilled Registered Acupuncturist, renowned for his expertise in acupuncture, moxibustion, and cupping. With a deep commitment to alternative medicine, he earned a Certificate in Acupuncture, which has become the cornerstone of his practice. His approach centers on holistic care, integrating traditional acupuncture techniques to address a wide range of health issues, particularly in pain management. His medical journey began with a Doctor of Medicine degree earned in 1989 from Iran, followed by a specialization in Physical Medicine and Rehabilitation in 1997. His extensive experience spans over three decades, during which he has served in various capacities within private practices and hospital environments, including as Chief of the Rehabilitation Ward. In addition to his acupuncture expertise, he is an instructor of Anatomy and Physiology at Central College of Acupuncture in New Westminster, BC. In his previous role, he performed Nerve Conduction Studies and Electromyography on over 40,000 patients, with a particular focus on musculoskeletal pain. He is dedicated to offering comprehensive patient care through the best practices of alternative medicine with the help of his vast knowledge of Western medicine.',
   },
   {
     slug: 'sirus-vakilian',
@@ -985,7 +985,7 @@ export const team: Practitioner[] = [
     credentials: 'Chiropractor (DC), BSc Kinesiology',
     languages: ['English', 'Farsi'],
     focus: ['Chiropractic care', 'Sports injury and rehab', 'Movement assessment'],
-    bio: 'Sirus is the clinic’s chiropractor. He holds a kinesiology degree from UBC and a Doctor of Chiropractic from the Canadian Memorial Chiropractic College, and a background in high-level tennis shapes how he treats sport and movement. He works on the structural side of recovery, using adjustment and manual techniques alongside the rest of the team’s plan so the result holds.',
+    bio: 'Dr. Vakilian is a strong believer that health is a “state of complete physical, mental and social well-being and not merely the absence of disease or infirmity” (WHO). He is an advocate of using the most up-to-date scientific research in providing his patients with evidence-based and patient-centred care. Prior to graduating from the University of British Columbia with a Kinesiology degree in 2015, he studied business at the University of Toronto. His passion for health care was a driving factor for his work as a Kinesiologist alongside many health care professionals in a multidisciplinary environment. He then earned his Doctor of Chiropractic Degree from the Canadian Memorial Chiropractic College in 2020. While completing his Doctor of Chiropractic degree, he fulfilled his clinical internship at St. John’s Rehabilitation Hospital (Sunnybrook) in Toronto, ON. His motivation to become a Chiropractor started in his teenage years after being involved in two severe car accidents. He was experiencing chronic headaches and back pain when he was encouraged to see a Chiropractor by his family physician. After a few treatments, he was impressed with the outcome of Chiropractic care for the various symptoms he was suffering from. Dr. Vakilian has always been involved in giving back to his community through different organizations. He was an active volunteer with the Canucks Autism Network (C.A.N) who have a vision for all individuals with autism to be understood, accepted and supported in all community spaces. He has helped enrich the lives of children diagnosed with Autism Spectrum Disorder through sports and community-based activities. He has also previously volunteered for the Cypress Mountain Ski Patrol and the West Vancouver Aquatic Centre. Dr. Vakilian has been a lifelong resident of Vancouver and has been very active in the sporting community, both as an athlete as well as a trainer. Alongside his eleven years of post-secondary education, he earned his national and international tennis coaching certification and has been heavily involved in the tennis community for over 20 years. In his spare time, he enjoys skiing, running, research, and exploring his talents in the kitchen.',
   },
   {
     slug: 'behzad-azari-mobarakeh',
