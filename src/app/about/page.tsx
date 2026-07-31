@@ -45,7 +45,7 @@ export default function AboutPage() {
           <div className="relative aspect-[16/9] overflow-hidden bg-stone reveal">
             <Image
               src="/about-clinic.webp"
-              alt="A calm, light-filled treatment room at Azalea Physiotherapy overlooking the water in West Vancouver"
+              alt="The reception at Azalea Physiotherapy in West Vancouver, with the clinic logo on the wall"
               fill
               className="object-cover"
               sizes="(max-width: 1100px) 100vw, 1100px"

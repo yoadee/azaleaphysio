@@ -6,11 +6,23 @@ import RevealObserver from '@/components/RevealObserver'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Portrait from '@/components/Portrait'
 import JsonLd from '@/components/JsonLd'
-import { team, practitionerBySlug, SITE, formatLanguages } from '@/lib/clinic'
+import { team, practitionerBySlug, SITE } from '@/lib/clinic'
 import { practitionerSchema } from '@/lib/schema'
 
 export function generateStaticParams() {
   return team.map((p) => ({ slug: p.slug }))
+}
+
+// Whole sentences from the start of `text`, staying under `max` characters.
+function firstSentences(text: string, max: number) {
+  if (text.length <= max) return text
+  const sentences = text.match(/[^.!?]+[.!?]+/g) ?? [text]
+  let out = ''
+  for (const s of sentences) {
+    if ((out + s).length > max) break
+    out += s
+  }
+  return out.trim() || text.slice(0, max)
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -19,7 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {}
   return {
     title: `${p.name}, ${p.role}`,
-    description: p.bio,
+    // Meta description: first sentence(s) of the bio, capped near SERP length (~155 chars).
+    description: firstSentences(p.bio.split('\n\n')[0], 155),
     alternates: { canonical: `/team/${p.slug}` },
   }
 }
@@ -47,12 +60,14 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
               </h1>
               <p className="font-sans text-[13px] uppercase tracking-[0.12em] text-muted mb-1">{p.role}</p>
               <p className="font-sans text-[14px] text-muted mb-3">{p.credentials}</p>
-              {p.languages.length > 0 && (
-                <span className="inline-flex items-center gap-2 font-sans text-[11px] font-semibold tracking-[0.08em] uppercase text-text px-3 py-1.5 mb-8" style={{ border: '1px solid var(--color-border)' }}>
-                  Treats in {formatLanguages(p.languages)}
-                </span>
-              )}
-              <p className="font-sans text-[17px] text-text leading-[1.75] mb-6 mt-6 max-w-[560px]">{p.bio}</p>
+              {/* Bio paragraphs mirror the practitioner-supplied text, one voice throughout. */}
+              <div className="mt-6 mb-6 max-w-[560px] flex flex-col gap-5">
+                {p.bio.split('\n\n').map((para, i) => (
+                  <p key={i} className="font-sans text-[16px] text-text leading-[1.75]">
+                    {para}
+                  </p>
+                ))}
+              </div>
               {p.registration && (
                 <p className="font-sans text-[13px] text-muted leading-[1.6] mb-10 max-w-[480px] flex items-start gap-2">
                   <span className="text-gold mt-px" aria-hidden="true">✓</span>
@@ -73,7 +88,7 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
       </section>
 
       <section className="bg-bg px-6 sm:px-10 md:px-14 py-16 md:py-20">
-        <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-10">
+        <div className="max-w-[1100px] mx-auto">
           <div className="reveal">
             <h2 className="font-sans text-[11px] uppercase tracking-[0.16em] text-muted mb-5">Focus areas</h2>
             <ul className="list-none flex flex-col gap-3">
@@ -81,10 +96,6 @@ export default async function PractitionerPage({ params }: { params: Promise<{ s
                 <li key={i} className="font-display italic text-[20px] font-light text-text">{f}</li>
               ))}
             </ul>
-          </div>
-          <div className="reveal">
-            <h2 className="font-sans text-[11px] uppercase tracking-[0.16em] text-muted mb-5">Languages</h2>
-            <p className="font-display italic text-[20px] font-light text-text">{formatLanguages(p.languages)}</p>
           </div>
         </div>
       </section>

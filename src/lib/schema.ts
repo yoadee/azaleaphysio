@@ -51,7 +51,7 @@ export function practitionerSchema(p: Practitioner) {
     '@type': 'Person',
     name: p.name,
     jobTitle: p.role,
-    description: p.bio,
+    description: p.bio.replace(/\n\n/g, ' '),
     knowsLanguage: p.languages,
     knowsAbout: p.focus,
     ...(p.registration

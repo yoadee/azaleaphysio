@@ -168,8 +168,8 @@ export default function Home() {
 
         <div className="relative hidden md:block min-h-[520px]">
           <Image
-            src="/images/generated/clinic-hero.jpg"
-            alt="Treatment room at Azalea Physiotherapy, with daylight over the West Vancouver shoreline"
+            src="/images/generated/hero-option-1.jpg"
+            alt="A physiotherapist guiding a patient through a resistance-band exercise at Azalea Physiotherapy"
             fill
             className="object-cover object-center"
             priority
@@ -301,7 +301,7 @@ export default function Home() {
           <div className="relative min-h-[360px] md:min-h-0 overflow-hidden">
             <Image
               src="/images/generated/clinic-about.jpg"
-              alt="A calm, daylit treatment room in warm wood and stone tones, with coastal trees through the window"
+              alt="The daylit rehab gym at Azalea Physiotherapy, with treatment tables, weights and mirrors"
               fill
               className="object-cover object-center"
               sizes="(max-width: 768px) 100vw, 42vw"

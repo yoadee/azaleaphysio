@@ -1,6 +1,26 @@
 # Azalea Physiotherapy — Handoff
 
-_Last updated: 2026-06-25 — SITE IS LIVE at https://azaleaphysio.com. Domain cutover, Jane booking, email restore, Search Console, and SEO pass 1 all done this session. See the 2026-06-25 current-state block below. Older context retained beneath it._
+_Last updated: 2026-07-20 — imagery overhaul + logo rebuild sit UNCOMMITTED in the working tree awaiting Abtin's review (see block below). NOTHING is ever pushed without Abtin's explicit approval. Site remains live at https://azaleaphysio.com._
+
+---
+
+## ▶ AWAITING ABTIN'S REVIEW (2026-07-20 — uncommitted working tree, DO NOT PUSH)
+
+**Why:** Mary's feedback — the AI imagery read as massage-parlour/spa; Azalea is a sports-injury and rehab centre. Full imagery replacement done, plus the real vector logo was found (`images/azalea_logo.ai`, PDF-compatible) and all logo assets rebuilt from it.
+
+**Real photos now used** (from `images/AZALEA MASTERS-*.jpg`, processed via `scripts/prep-real-photos.mjs` into `public/images/real/`): sports-injury (ankle taping), acupuncture (needling close-up), kinesiology (recumbent bike), elderly-care (gait training), about page (reception with logo wall). Spare portrait crops also in `public/images/real/`.
+
+**Generated with Higgsfield — v2 set (nano_banana_2/pro at 2k)** after Abtin rejected the first soul_2 set (artifacts, warped faces, unrealistic body hair — see memory feedback-image-gen-quality). Every image was zoom-QC'd at full res on faces/hands/skin before acceptance; one duplicate-person artifact (weight-loss) was caught and re-rolled, one gibberish shirt print (hero-option-1) removed via an image edit. Final set: home hero (knee manual therapy), hero-option-1 (band exercise), hero-option-2 (sunlit empty gym with mountains), home-about (wide bright gym, no people), and services: physiotherapy, chiropractic, massage-therapy (NEW — page previously referenced a nonexistent file), occupational-therapy (hands close-up), osteopathy, weight-loss (treadmill coaching), yoga-therapy. Total spend ≈30 of 1000 Higgsfield credits. Regenerate/iterate via `scripts/integrate-images.mjs` (sources in gitignored `scripts/gen/`, nb-*.png).
+
+**Logo rebuilt from true vector** via `scripts/rebuild-logo.mjs` (MuPDF WASM renders the .ai): crisp `public/logo-mark-color.png`, re-traced `public/logo-mark.svg` mask (nav logo), new `favicon.ico`/`icon.png`/`apple-icon.png`, plus `public/images/brand/logo-full.png` (2400px lockup). This resolves the long-standing "placeholder traced logo" blocker — pending this review.
+
+**Also in this tree:** Mary's displayed surname is Ghoroghi everywhere (about page prose, llms.txt, home team teaser, clinic.ts — reverted from the brief Gheissari change; URL slug `/team/mary-ghoroghi` and photo filename unchanged). Alt texts updated for the new hero/about images. Languages line ("Treats in Farsi and English" badge, team-card line, and profile Languages section) removed from all bios per Mary (2026-07-31); `formatLanguages` retained in clinic.ts but unused in UI.
+
+**State:** build + tsc clean. NOT committed, NOT pushed. Review then tell Claude to push. Earlier sessions this month: practitioner bios replaced with Mary-supplied verbatim copy (pushed, c69db4c).
+
+---
+
+_Prior: 2026-06-25 — SITE IS LIVE at https://azaleaphysio.com. Domain cutover, Jane booking, email restore, Search Console, and SEO pass 1 all done that session. See the 2026-06-25 current-state block below. Older context retained beneath it._
 
 _Prior: 2026-06-18 (overnight build session). MVP + launch waves 1-2 done: all 10 service pages, enriched conditions + /whiplash, new /icbc + /worksafebc + /pricing money pages, per-location pages, team E-E-A-T, home hook rewrite, sitewide AEO, 19-article SEO/AEO blog. Full research-backed Google Ads + SEO strategy in MARKETING-STRATEGY.md. Build passes (clean). DEPLOYED to Vercel **Preview** (mvp-rebuild branch); production (master) promotion still needs Abtin._
 

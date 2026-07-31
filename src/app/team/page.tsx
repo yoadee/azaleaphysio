@@ -4,7 +4,7 @@ import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
 import RevealObserver from '@/components/RevealObserver'
 import Portrait from '@/components/Portrait'
-import { team, formatLanguages } from '@/lib/clinic'
+import { team } from '@/lib/clinic'
 
 export const metadata: Metadata = {
   title: 'Our Physiotherapists & Practitioners',
@@ -36,8 +36,7 @@ export default function TeamPage() {
                 <Portrait p={p} />
               </div>
               <p className="font-display text-[18px] text-text mb-1">{p.name}</p>
-              <p className="font-sans text-[11px] uppercase tracking-[0.1em] text-muted mb-2">{p.role}</p>
-              <p className="font-sans text-[11px] text-muted">Treats in {formatLanguages(p.languages)}</p>
+              <p className="font-sans text-[11px] uppercase tracking-[0.1em] text-muted">{p.role}</p>
             </Link>
           ))}
         </div>

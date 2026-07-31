@@ -274,7 +274,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <p className="font-display italic text-[22px] font-light text-text group-hover:text-rose-dark transition-colors">{author.name}</p>
             </Link>
             <p className="font-sans text-[13px] uppercase tracking-[0.1em] text-muted mt-1 mb-3">{author.role}</p>
-            <p className="font-sans text-[15px] text-muted leading-[1.7] max-w-[600px]">{author.bio}</p>
+            {/* Author strip shows the credentials paragraph only; full bio lives on the team page.
+                text-text/70 (not text-muted): muted on stone falls just under AA contrast. */}
+            <p className="font-sans text-[15px] text-text/70 leading-[1.7] max-w-[600px]">{author.bio.split('\n\n')[0]}</p>
           </div>
         </section>
       )}

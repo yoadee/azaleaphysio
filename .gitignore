@@ -49,3 +49,7 @@ next-env.d.ts
 public/wireframe-*.html
 
 .vercel
+
+# image-generation working files (not for deploy)
+/scripts/gen/
+/scripts/_*.png

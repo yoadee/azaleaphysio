@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import PageHeader from '@/components/PageHeader'
 import BookCta from '@/components/BookCta'
@@ -80,22 +79,11 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         title={`${service.name} in West Vancouver`}
         lead={service.excerpt}
         cta
+        image={{
+          src: `/images/generated/services/${service.slug}.jpg`,
+          alt: `${service.name} at Azalea Physiotherapy in West Vancouver`,
+        }}
       />
-
-      <div className="bg-bg px-6 sm:px-10 md:px-14 pt-10 md:pt-14">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="relative w-full aspect-[16/9] overflow-hidden bg-stone reveal">
-            <Image
-              src={`/images/generated/services/${service.slug}.jpg`}
-              alt={`${service.name} at Azalea Physiotherapy in West Vancouver`}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1100px) 100vw, 1100px"
-              priority
-            />
-          </div>
-        </div>
-      </div>
 
       {/* What we do + Good to know facts rail */}
       <section className="bg-bg px-6 sm:px-10 md:px-14 py-20 md:py-24">
